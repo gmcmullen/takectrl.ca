@@ -6,11 +6,29 @@
     <title>takectrl.ca: Canadian Tech Rights Lab</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
     <style>
-      h1 span {
-        font-family: 'Orbitron', monospace;
-      }
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('/fonts/ibm-plex-mono/IBMPlexMono-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('/fonts/ibm-plex-mono/IBMPlexMono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  body {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  h1 span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+  }
     </style>
   </head>
   <body class="min-h-screen flex flex-col items-center justify-center px-6 py-12">
