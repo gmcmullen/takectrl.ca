@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: gmcmullen/takectrl.ca
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+local_backend: true
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Categories", name: "categories", widget: "list", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Draft", name: "draft", widget: "boolean", default: false}
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Welcome Message", name: "welcome_message", widget: "text"}
+          - {label: "Latest Updates", name: "latest_updates", widget: "text"}
+          - {label: "Get Involved", name: "get_involved", widget: "text"} 
