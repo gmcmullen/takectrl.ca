@@ -10,75 +10,104 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <header class="hero">
-      <div class="hero-content">
-        <h1 class="terminal-text">
-          Ctrl the future of tech
-          <span class="cursor"></span>
-        </h1>
-        <p class="hero-subtitle">Canadian Tech Rights Lab</p>
+    <header class="site-header">
+      <div class="header-content">
+        <h1>Take CTRL, Canada</h1>
+        <p>Canadian Tech Rights Lab</p>
       </div>
     </header>
 
-    <main class="main-content">
-      <div class="content-grid">
-        <div class="terminal-card" data-cms-content="welcome_section">
-          <div class="card-header">
-            <span class="card-title" data-cms-element="welcome_title">About CTRL</span>
-            <div class="card-controls">
+    <div class="container">
+      <aside class="sidebar">
+        <div class="terminal-window projects-window">
+          <div class="window-header">
+            <div class="window-title">Projects</div>
+            <div class="window-controls">
               <span class="control"></span>
               <span class="control"></span>
               <span class="control"></span>
             </div>
           </div>
-          <div class="card-body">
-            <p data-cms-element="welcome_content">We're a grassroots organization fighting for Canadians' rights in our digital future. Our mission is to ensure that technology serves the public interest and protects individual freedoms.</p>
+          <div class="window-content">
+            <ul>
+              <li><a href="{{ site.baseurl }}/projects/ai-policing.html">AI in Policing</a></li>
+              <li><a href="{{ site.baseurl }}/projects/device-searches.html">Electronic Device Searches</a></li>
+              <li><a href="{{ site.baseurl }}/projects/biometrics.html">Biometrics</a></li>
+            </ul>
           </div>
         </div>
 
-        <div class="terminal-card" data-cms-content="updates_section">
-          <div class="card-header">
-            <span class="card-title" data-cms-element="updates_title">Latest Updates</span>
-            <div class="card-controls">
+        <div class="terminal-window recent-window">
+          <div class="window-header">
+            <div class="window-title">Recent</div>
+            <div class="window-controls">
               <span class="control"></span>
               <span class="control"></span>
               <span class="control"></span>
             </div>
           </div>
-          <div class="card-body">
-            <p data-cms-element="updates_content">Stay tuned for our latest research, advocacy work, and community initiatives. We're working on several key projects that will be announced soon.</p>
+          <div class="window-content">
+            <ul class="recent-posts">
+              <!-- Posts will be populated by Jekyll -->
+              {% for post in site.posts limit:3 %}
+              <li>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                  <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                  <span class="post-title">{{ post.title }}</span>
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
           </div>
         </div>
 
-        <div class="terminal-card" data-cms-content="involve_section">
-          <div class="card-header">
-            <span class="card-title" data-cms-element="involve_title">Get Involved</span>
-            <div class="card-controls">
+        <div class="terminal-window about-window">
+          <div class="window-header">
+            <div class="window-title">About</div>
+            <div class="window-controls">
               <span class="control"></span>
               <span class="control"></span>
               <span class="control"></span>
             </div>
           </div>
-          <div class="card-body">
-            <p data-cms-element="involve_content">We believe in the power of community action. Whether you're a technologist, activist, or concerned citizen, there are many ways to contribute to our mission.</p>
+          <div class="window-content">
+            <ul>
+              <li><a href="{{ site.baseurl }}/about/mission.html">Mission</a></li>
+              <li><a href="{{ site.baseurl }}/about/support.html">Support</a></li>
+              <li><a href="{{ site.baseurl }}/about/contact.html">Contact</a></li>
+            </ul>
           </div>
         </div>
-      </div>
-    </main>
+      </aside>
 
-    <footer class="terminal-footer">
+      <main class="main-content">
+        <div class="terminal-window content-window">
+          <div class="window-header">
+            <div class="window-title">{{ page.title }}</div>
+            <div class="window-controls">
+              <span class="control"></span>
+              <span class="control"></span>
+              <span class="control"></span>
+            </div>
+          </div>
+          <div class="window-content">
+            {{ content }}
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer class="site-footer">
       <div class="footer-content">
         <div class="footer-section">
-          <span class="footer-label">Version:</span>
-          <span class="footer-value">1.0.0</span>
+          <span>Version: 1.0.0</span>
         </div>
         <div class="footer-section">
-          <span class="footer-label">Last Updated:</span>
-          <span class="footer-value" id="last-updated">2024-03-21</span>
+          <span>Date: {{ site.posts.first.date | date: "%Y-%m-%d" }}</span>
         </div>
-        <div class="footer-section">
-          <span class="footer-label">Status:</span>
-          <span class="footer-value">Active</span>
+        <div class="footer-links">
+          <a href="{{ site.baseurl }}/terms.html">Terms</a>
+          <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
         </div>
         <button class="theme-toggle" aria-label="Toggle dark mode"></button>
       </div>
@@ -100,9 +129,6 @@
       themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
       });
-
-      // Update last updated date
-      document.getElementById('last-updated').textContent = new Date().toISOString().split('T')[0];
     </script>
   </body>
 </html>

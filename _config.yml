@@ -1,0 +1,34 @@
+title: CTRL - Canadian Tech Rights Lab
+description: Canadian Tech Rights Lab - Fighting for Canadians' rights in our digital future
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://takectrl.ca" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  about:
+    output: true
+    permalink: /about/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "about"
+    values:
+      layout: "post" 
