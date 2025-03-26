@@ -3,11 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CTRL - Canadian Tech Rights Lab</title>
+    <title>{{ site.title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
     <header class="site-header">
@@ -30,9 +29,9 @@
           </div>
           <div class="window-content">
             <ul>
-              <li><a href="{{ site.baseurl }}/projects/ai-policing.html">AI in Policing</a></li>
-              <li><a href="{{ site.baseurl }}/projects/device-searches.html">Electronic Device Searches</a></li>
-              <li><a href="{{ site.baseurl }}/projects/biometrics.html">Biometrics</a></li>
+              <li><a href="{{ '/projects/ai-policing' | relative_url }}">AI in Policing</a></li>
+              <li><a href="{{ '/projects/device-searches' | relative_url }}">Electronic Device Searches</a></li>
+              <li><a href="{{ '/projects/biometrics' | relative_url }}">Biometrics</a></li>
             </ul>
           </div>
         </div>
@@ -48,10 +47,9 @@
           </div>
           <div class="window-content">
             <ul class="recent-posts">
-              <!-- Posts will be populated by Jekyll -->
               {% for post in site.posts limit:3 %}
               <li>
-                <a href="{{ site.baseurl }}{{ post.url }}">
+                <a href="{{ post.url | relative_url }}">
                   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
                   <span class="post-title">{{ post.title }}</span>
                 </a>
@@ -72,9 +70,9 @@
           </div>
           <div class="window-content">
             <ul>
-              <li><a href="{{ site.baseurl }}/about/mission.html">Mission</a></li>
-              <li><a href="{{ site.baseurl }}/about/support.html">Support</a></li>
-              <li><a href="{{ site.baseurl }}/about/contact.html">Contact</a></li>
+              <li><a href="{{ '/about/mission' | relative_url }}">Mission</a></li>
+              <li><a href="{{ '/about/support' | relative_url }}">Support</a></li>
+              <li><a href="{{ '/about/contact' | relative_url }}">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -106,24 +104,14 @@
           <span>Date: {{ site.posts.first.date | date: "%Y-%m-%d" }}</span>
         </div>
         <div class="footer-links">
-          <a href="{{ site.baseurl }}/terms.html">Terms</a>
-          <a href="{{ site.baseurl }}/privacy.html">Privacy</a>
+          <a href="{{ '/terms' | relative_url }}">Terms</a>
+          <a href="{{ '/privacy' | relative_url }}">Privacy</a>
         </div>
         <button class="theme-toggle" aria-label="Toggle dark mode"></button>
       </div>
     </footer>
 
     <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-
       // Theme toggle functionality
       const themeToggle = document.querySelector('.theme-toggle');
       themeToggle.addEventListener('click', () => {
@@ -131,4 +119,4 @@
       });
     </script>
   </body>
-</html>
+</html> 

@@ -1,11 +1,18 @@
 title: CTRL - Canadian Tech Rights Lab
 description: Canadian Tech Rights Lab - Fighting for Canadians' rights in our digital future
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://takectrl.ca" # the base hostname & protocol for your site
+baseurl: ""
+url: "https://takectrl.ca"
 
-# Build settings
-markdown: kramdown
-permalink: /:year/:month/:day/:title/
+# GitHub Pages settings
+lsi: false
+safe: true
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
 
 # Collections
 collections:
@@ -16,19 +23,29 @@ collections:
     output: true
     permalink: /about/:path/
 
+# Defaults
 defaults:
   - scope:
       path: ""
-      type: "posts"
     values:
-      layout: "post"
+      layout: "default"
   - scope:
-      path: ""
-      type: "projects"
+      path: "_posts"
     values:
-      layout: "post"
+      layout: "default"
   - scope:
-      path: ""
-      type: "about"
+      path: "_projects"
     values:
-      layout: "post" 
+      layout: "default"
+  - scope:
+      path: "_about"
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git 
