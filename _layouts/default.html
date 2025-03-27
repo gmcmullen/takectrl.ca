@@ -67,9 +67,9 @@
           </div>
           <div class="window-content">
             <ul>
-              {% for page in site.about %}
-              <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-              {% endfor %}
+              <li><a href="{{ '/pages/mission' | relative_url }}">Our Mission</a></li>
+              <li><a href="{{ '/pages/support' | relative_url }}">Support</a></li>
+              <li><a href="{{ '/pages/contact' | relative_url }}">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -84,9 +84,9 @@
             </div>
           </div>
           <div class="window-content">
-            <ul>
-              <li><span class="system-label">Version:</span> 1.0.0</li>
-              <li><span class="system-label">Date:</span> {{ site.time | date: "%Y-%m-%d" }}</li>
+            <ul class="system-list">
+              <li><span class="system-label">Version:</span> <span>1.0.0</span></li>
+              <li><span class="system-label">Date:</span> <span>{{ site.time | date: "%Y-%m-%d" }}</span></li>
               <li><span class="system-label">Theme:</span> <button class="theme-toggle" aria-label="Toggle dark mode"></button></li>
               <li><a href="{{ '/pages/terms' | relative_url }}">Terms</a></li>
               <li><a href="{{ '/pages/privacy' | relative_url }}">Privacy</a></li>
