@@ -2,35 +2,98 @@ backend:
   name: github
   repo: gmcmullen/takectrl.ca
   branch: main
+  base_url: https://api.netlify.com
   auth_endpoint: auth
+  site_domain: iridescent-strudel-8b05a9.netlify.app
 
-media_folder: "public/images"
+media_folder: "images"
 public_folder: "/images"
 
 local_backend: true
 
+publish_mode: editorial_workflow
+
 collections:
-  - name: "blog"
+  - name: "posts"
     label: "Blog Posts"
     folder: "_posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
       - {label: "Categories", name: "categories", widget: "list", required: false}
-      - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Draft", name: "draft", widget: "boolean", default: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "projects"
+    label: "Projects"
+    folder: "_projects"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "about"
+    label: "About Pages"
+    folder: "_about"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages"
-    label: "Pages"
+    label: "Static Pages"
     files:
+      - name: "terms"
+        label: "Terms of Use"
+        file: "pages/terms.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - name: "privacy"
+        label: "Privacy Policy"
+        file: "pages/privacy.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - name: "contact"
+        label: "Contact Us"
+        file: "pages/contact.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - name: "support"
+        label: "Support CTRL"
+        file: "pages/support.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
+      - name: "mission"
+        label: "Our Mission"
+        file: "pages/mission.md"
+        fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+      
       - name: "home"
         label: "Home Page"
-        file: "index.html"
+        file: "index.md"
         fields:
+          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Welcome Message", name: "welcome_message", widget: "text"}
-          - {label: "Latest Updates", name: "latest_updates", widget: "text"}
-          - {label: "Get Involved", name: "get_involved", widget: "text"} 
+          - {label: "Body", name: "body", widget: "markdown"} 
