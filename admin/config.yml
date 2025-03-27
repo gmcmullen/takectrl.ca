@@ -2,9 +2,7 @@ backend:
   name: github
   repo: gmcmullen/takectrl.ca
   branch: main
-  base_url: https://api.netlify.com
   auth_endpoint: auth
-  site_domain: takectrl.ca
 
 media_folder: "public/images"
 public_folder: "/images"
