@@ -37,18 +37,14 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "about"
-    label: "About Pages"
-    folder: "_about"
+  - name: "static_pages"
+    label: "Static Pages"
+    folder: "pages"
     create: true
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "pages"
-    label: "Static Pages"
     files:
       - name: "terms"
         label: "Terms of Use"
@@ -89,7 +85,10 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
-      
+
+  - name: "home"
+    label: "Home"
+    files:
       - name: "home"
         label: "Home Page"
         file: "index.md"

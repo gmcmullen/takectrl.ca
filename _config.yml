@@ -19,9 +19,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
-  about:
+  pages:
     output: true
-    permalink: /about/:path/
+    permalink: /pages/:path/
 
 # Defaults
 defaults:
@@ -32,15 +32,15 @@ defaults:
   - scope:
       path: "_posts"
     values:
-      layout: "default"
+      layout: "post"
   - scope:
       path: "_projects"
     values:
-      layout: "default"
+      layout: "post"
   - scope:
-      path: "_about"
+      path: "pages"
     values:
-      layout: "default"
+      layout: "page"
 
 # Exclude from processing
 exclude:

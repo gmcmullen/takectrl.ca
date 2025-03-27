@@ -377,6 +377,7 @@ body.dark-mode {
   align-items: center;
   gap: 0.5rem;
   margin: 0;
+  padding: 0.25rem 0;
 }
 
 .system-label {
@@ -438,29 +439,36 @@ body.dark-mode {
 }
 
 .theme-toggle {
-  grid-column: 3;
-  grid-row: 1 / 3;
   background: none;
   border: none;
   color: var(--accent);
   cursor: pointer;
-  padding: 0.5rem;
+  padding: 0;
   font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
-  width: 4rem;
-  text-align: right;
-  position: relative;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.5rem;
 }
 
 .theme-toggle::before {
   content: "☀";
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   opacity: 1;
+  transition: opacity 0.2s ease;
 }
 
 .dark-mode .theme-toggle::before {
   content: "☽";
-  opacity: 0.5;
+  opacity: 0.8;
+}
+
+.theme-toggle:hover::before {
+  opacity: 0.7;
+}
+
+.dark-mode .theme-toggle:hover::before {
+  opacity: 1;
 }
 
 .toggle-icon {
