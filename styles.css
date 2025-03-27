@@ -326,14 +326,23 @@ body.dark-mode {
   margin-left: 0.5rem;
 }
 
-.recent-posts .post-title {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 0.9rem;
-  display: block;
-  padding-left: 0;
+.post-title {
+  color: var(--text-light);
+  text-decoration: none;
   white-space: normal;
   word-wrap: break-word;
-  padding-left: 0rem;
+  display: block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.dark-mode .post-title {
+  color: var(--text-dark);
+}
+
+.post-title:hover {
+  color: var(--accent);
 }
 
 .main-content {
