@@ -3,9 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{ page.title }} - Canadian Tech Rights Lab</title>
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <title>CTRL - Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+      /* Quick style to show content boundaries */
+      .debug .terminal-window {
+        outline: 1px dashed rgba(255, 0, 0, 0.2);
+      }
+      .debug .window-content {
+        outline: 1px dashed rgba(0, 255, 0, 0.2);
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -28,9 +38,9 @@
           </div>
           <div class="window-content">
             <ul>
-              {% for project in site.projects %}
-              <li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
-              {% endfor %}
+              <li><a href="#ai-policing">AI in Policing</a></li>
+              <li><a href="#device-searches">Electronic Device Searches</a></li>
+              <li><a href="#biometrics">Biometrics</a></li>
             </ul>
           </div>
         </div>
@@ -46,12 +56,18 @@
           </div>
           <div class="window-content">
             <ul class="recent-posts">
-              {% for post in site.posts limit:5 %}
               <li>
-                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                <span class="post-title">{{ post.title }}</span>
+                <span class="post-date">2025-03-26</span>
+                <span class="post-title">RCMP's Use of AI Tools Revealed</span>
               </li>
-              {% endfor %}
+              <li>
+                <span class="post-date">2025-03-25</span>
+                <span class="post-title">New Research on Border Device Searches</span>
+              </li>
+              <li>
+                <span class="post-date">2025-03-24</span>
+                <span class="post-title">Facial Recognition in Canadian Cities</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -67,9 +83,9 @@
           </div>
           <div class="window-content">
             <ul>
-              {% for page in site.about %}
-              <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-              {% endfor %}
+              <li><a href="#mission">Mission</a></li>
+              <li><a href="#support">Support</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -86,9 +102,9 @@
           <div class="window-content">
             <ul>
               <li><span class="system-label">Version:</span> 1.0.0</li>
-              <li><span class="system-label">Date:</span> {{ site.time | date: "%Y-%m-%d" }}</li>
-              <li><a href="{{ '/terms' | relative_url }}">Terms</a></li>
-              <li><a href="{{ '/privacy' | relative_url }}">Privacy</a></li>
+              <li><span class="system-label">Date:</span> 2025-03-26</li>
+              <li><a href="#terms">Terms</a></li>
+              <li><a href="#privacy">Privacy</a></li>
             </ul>
           </div>
         </div>
@@ -97,7 +113,7 @@
       <main class="main-content">
         <div class="terminal-window content-window">
           <div class="window-header">
-            <div class="window-title">{{ page.title }}</div>
+            <div class="window-title">RCMP's Use of AI Tools Revealed</div>
             <div class="window-controls">
               <span class="control"></span>
               <span class="control"></span>
@@ -105,7 +121,29 @@
             </div>
           </div>
           <div class="window-content">
-            {{ content }}
+            <h1>RCMP's Use of AI Tools Revealed</h1>
+            
+            <p>Through access to information requests, we've uncovered the extent of AI tool usage in Canadian law enforcement.</p>
+
+            <h2>Key Findings</h2>
+            <ul>
+              <li>Predictive policing algorithms in major cities</li>
+              <li>Facial recognition without oversight</li>
+              <li>Social media monitoring tools</li>
+            </ul>
+
+            <h2>Technical Details</h2>
+            <p>Here's some code-style text:</p>
+            <pre><code>$ grep -r "facial_recognition" /var/log/police_tools/
+> 2025-03-26 Multiple matches found
+> System active in: Toronto, Vancouver, Montreal</code></pre>
+
+            <h2>Impact</h2>
+            <p>This investigation reveals the urgent need for proper oversight and regulation of AI tools in law enforcement.</p>
+            
+            <blockquote>
+              <p>"The lack of transparency around these tools is deeply concerning." - Privacy Expert</p>
+            </blockquote>
           </div>
         </div>
       </main>
@@ -122,14 +160,14 @@
       const themeToggle = document.querySelector('.theme-toggle');
       themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
       });
 
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
+      // Debug mode toggle (press D key)
+      document.addEventListener('keydown', (e) => {
+        if (e.key.toLowerCase() === 'd') {
+          document.body.classList.toggle('debug');
+        }
+      });
     </script>
   </body>
 </html> 
