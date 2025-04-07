@@ -10,7 +10,9 @@
     <header class="site-header">
       <div class="header-content">
         <div class="ascii-header" id="ascii-header">
-          {{ site.data.ascii_headers.headers[0] }}
+          {% for line in site.data.ascii_headers.headers %}
+          {{ line }}<br>
+          {% endfor %}
         </div>
         <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
