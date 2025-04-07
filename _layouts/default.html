@@ -110,43 +110,32 @@
     </footer>
 
     <script>
-      // ASCII headers stored directly in the code
-      const ASCII_HEADERS = [
-        
-`________/\\\\\\\\\\__/\\\\\\\\\\\\\\____/\\\\\\\\\\______/\\\____________        
- _____/\\\\////////__/////\\\\///___/\\\\//////\\\\___/\\\\____________       
-  ___/\\\/_________________/\\\\______/\\\\____/\\\\___/\\\\____________      
-   __/\\\\__________________/\\\\______/\\\\\\\\\\\\\\____/\\\\____________     
-    _/\\\\___________________/\\\\______/\\\\//////\\\\____/\\\\____________    
-     _\\\\\\__________________/\\\\______/\\\\____\\\\\\___/\\\\____________   
-      __\\\\\\________________/\\\\______/\\\\____\\\\\\__/\\\\____________  
-       ____\\\\\\\\\\\\\_______/\\\\______/\\\\______\\\\\_/\\\\\\\\\\\\\\\\\_ 
-        _______/////////_______////_______///________///__///////////////__`,
-
-` ██████╗████████╗██████╗ ██╗     
-██╔════╝╚══██╔══╝██╔══██╗██║     
-██║        ██║   ██████╔╝██║     
-██║        ██║   ██╔══██╗██║     
-╚██████╗   ██║   ██║  ██║███████╗
- ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝`,
-
-`   _____ _______ _____  _      
-  / ____|__   __|  __ \\| |     
- | |       | |  | |__) | |     
- | |       | |  |  _  /| |     
- | |____   | |  | | \\ \\| |____ 
-  \\_____|  |_|  |_|  \\_\\______|`
-      ];
+      // Function to load ASCII headers from file
+      async function loadAsciiHeaders() {
+        try {
+          const response = await fetch('{{ "/_includes/ascii_headers.txt" | relative_url }}');
+          const text = await response.text();
+          // Split the text by the separator (---)
+          const headers = text.split('---').map(header => header.trim()).filter(header => header);
+          return headers;
+        } catch (error) {
+          console.error('Error loading ASCII headers:', error);
+          return [];
+        }
+      }
 
       // Get random header
-      function getRandomHeader() {
-        return ASCII_HEADERS[Math.floor(Math.random() * ASCII_HEADERS.length)];
+      function getRandomHeader(headers) {
+        return headers[Math.floor(Math.random() * headers.length)];
       }
       
-      document.addEventListener('DOMContentLoaded', () => {
-        // Set random ASCII header
-        const randomHeader = getRandomHeader();
-        document.getElementById('ascii-header').textContent = randomHeader;
+      document.addEventListener('DOMContentLoaded', async () => {
+        // Load and set random ASCII header
+        const headers = await loadAsciiHeaders();
+        if (headers.length > 0) {
+          const randomHeader = getRandomHeader(headers);
+          document.getElementById('ascii-header').textContent = randomHeader;
+        }
 
         // Set initial theme from localStorage
         const savedTheme = localStorage.getItem('theme');
@@ -156,7 +145,7 @@
       });
       
       // Add BBS-style keyboard navigation
-      document.addEventListener('keydown', (e) => {
+      document.addEventListener('keydown', async (e) => {
         if (e.key === 'h' || e.key === 'H') {
           alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
         } else if (e.key === 'q' || e.key === 'Q') {
@@ -171,8 +160,11 @@
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          const randomHeader = getRandomHeader();
-          document.getElementById('ascii-header').textContent = randomHeader;
+          const headers = await loadAsciiHeaders();
+          if (headers.length > 0) {
+            const randomHeader = getRandomHeader(headers);
+            document.getElementById('ascii-header').textContent = randomHeader;
+          }
         } else if (e.key >= '1' && e.key <= '9') {
           const menuItems = document.querySelectorAll('a[href^="{{ "/" | relative_url }}"]');
           const index = parseInt(e.key) - 1;
