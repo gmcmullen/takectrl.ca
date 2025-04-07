@@ -10,7 +10,9 @@
     <header class="site-header">
       <div class="header-content">
         <div class="ascii-header" id="ascii-header">
-          {{ site.data.ascii_headers[0] | strip }}
+          {% assign header_count = site.data.ascii_headers | size %}
+          {% assign random_index = site.time | date: '%s' | modulo: header_count %}
+          {{ site.data.ascii_headers[random_index] | strip }}
         </div>
         <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
