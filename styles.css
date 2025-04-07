@@ -182,7 +182,9 @@ body.light-mode {
 .site-header {
   background-color: transparent;
   padding: 0;
+  padding-left: var(--space-md);
   margin: 0;
+  margin-bottom: var(--space-lg);
   border: none;
 }
 
@@ -222,7 +224,7 @@ body.light-mode {
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--space-md) var(--space-md);
+  padding: 0 0 var(--space-md) var(--space-md);
   gap: var(--space-lg);
   width: 100%;
   box-sizing: border-box;
