@@ -10,11 +10,9 @@
     <header class="site-header">
       <div class="header-content">
         <div class="ascii-header" id="ascii-header">
-          {% for header in site.data.ascii_headers %}
-            {% if forloop.first %}
-              {{ header | strip }}
-            {% endif %}
-          {% endfor %}
+          {% assign header_count = site.data.ascii_headers | size %}
+          {% assign random_index = site.time | date: '%s' | modulo: header_count %}
+          {{ site.data.ascii_headers[random_index] | strip }}
         </div>
         <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
@@ -119,26 +117,7 @@
     </footer>
 
     <script>
-      // Get all hidden headers
-      function getHeaders() {
-        const headers = [];
-        document.querySelectorAll('.hidden-header').forEach(div => {
-          headers.push(div.textContent);
-        });
-        return headers;
-      }
-
-      // Get random header
-      function getRandomHeader() {
-        const headers = getHeaders();
-        return headers[Math.floor(Math.random() * headers.length)];
-      }
-      
       document.addEventListener('DOMContentLoaded', () => {
-        // Set random ASCII header
-        const headerElement = document.getElementById('ascii-header');
-        headerElement.textContent = getRandomHeader();
-
         // Set initial theme from localStorage
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
@@ -162,8 +141,8 @@
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          // Get a new random header
-          document.getElementById('ascii-header').textContent = getRandomHeader();
+          // Reload the page to get a new random header
+          window.location.reload();
         } else if (e.key >= '1' && e.key <= '9') {
           const menuItems = document.querySelectorAll('a[href^="{{ "/" | relative_url }}"]');
           const index = parseInt(e.key) - 1;
