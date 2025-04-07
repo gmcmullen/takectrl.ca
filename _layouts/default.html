@@ -9,10 +9,11 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <div class="ascii-header" id="ascii-header" data-headers='{{ site.data.ascii_headers | jsonify }}'>
-          Loading...
+        <div class="ascii-header" id="ascii-header">
+          {% assign random_index = site.time | date: '%s' | modulo: site.data.ascii_headers.size %}
+          {{ site.data.ascii_headers[random_index] | strip }}
         </div>
-        <p>[=== Canadian Tech Rights Lab ===]</p>
+        <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
     </header>
 
@@ -110,23 +111,7 @@
     </footer>
 
     <script>
-      // Get random header from the data attribute
-      function getRandomHeader() {
-        const headerElement = document.getElementById('ascii-header');
-        const headers = JSON.parse(headerElement.dataset.headers);
-        return headers[Math.floor(Math.random() * headers.length)];
-      }
-      
       document.addEventListener('DOMContentLoaded', () => {
-        // Set random ASCII header
-        const headerElement = document.getElementById('ascii-header');
-        try {
-          const randomHeader = getRandomHeader();
-          headerElement.textContent = randomHeader;
-        } catch (error) {
-          console.error('Error setting ASCII header:', error);
-        }
-
         // Set initial theme from localStorage
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
@@ -150,12 +135,8 @@
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          try {
-            const randomHeader = getRandomHeader();
-            document.getElementById('ascii-header').textContent = randomHeader;
-          } catch (error) {
-            console.error('Error refreshing ASCII header:', error);
-          }
+          // Reload the page to get a new random header
+          window.location.reload();
         } else if (e.key >= '1' && e.key <= '9') {
           const menuItems = document.querySelectorAll('a[href^="{{ "/" | relative_url }}"]');
           const index = parseInt(e.key) - 1;
