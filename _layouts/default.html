@@ -113,14 +113,24 @@
       // Function to load ASCII headers from file
       async function loadAsciiHeaders() {
         try {
-          const response = await fetch('{{ "/_includes/ascii_headers.txt" | relative_url }}');
+          const response = await fetch('_includes/ascii_headers.txt');
           const text = await response.text();
           // Split the text by the separator (---)
           const headers = text.split('---').map(header => header.trim()).filter(header => header);
           return headers;
         } catch (error) {
           console.error('Error loading ASCII headers:', error);
-          return [];
+          // Provide a fallback header if loading fails
+          return [`
+________/\\\\\\\\\__/\\\\\\\\\\\\\\\____/\\\\\\\\\______/\\\_____________        
+______/\\\////////__\///////\\\/////___/\\\///////\\\___\/\\\_____________       
+_____/\\\/_________________\/\\\_______\/\\\_____\/\\\___\/\\\_____________      
+_____/\\\___________________\/\\\_______\/\\\\\\\\\\\/____\/\\\_____________     
+_____\/\\\___________________\/\\\_______\/\\\//////\\\____\/\\\_____________    
+______\//\\\__________________\/\\\_______\/\\\____\//\\\___\/\\\_____________   
+________\///\\\________________\/\\\_______\/\\\_____\//\\\__\/\\\_____________  
+___________\////\\\\\\\\\_______\/\\\_______\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_ 
+_______________\/////////________\///________\///________\///__\///////////////__`];
         }
       }
 
