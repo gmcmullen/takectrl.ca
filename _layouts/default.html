@@ -110,28 +110,11 @@
     </footer>
 
     <script>
-      // Function to load ASCII headers from file
-      async function loadAsciiHeaders() {
-        try {
-          const response = await fetch('{{ "/ascii_headers.txt" | relative_url }}');
-          const text = await response.text();
-          // Split the text by the separator (---)
-          const headers = text.split('---').map(header => header.trim()).filter(header => header);
-          return headers;
-        } catch (error) {
-          console.error('Error loading ASCII headers:', error);
-          // Provide a fallback header if loading fails
-          return [`
-________/\\\\\\\\\__/\\\\\\\\\\\\\\\____/\\\\\\\\\______/\\\_____________        
-______/\\\////////__\///////\\\/////___/\\\///////\\\___\/\\\_____________       
-_____/\\\/_________________\/\\\_______\/\\\_____\/\\\___\/\\\_____________      
-_____/\\\___________________\/\\\_______\/\\\\\\\\\\\/____\/\\\_____________     
-_____\/\\\___________________\/\\\_______\/\\\//////\\\____\/\\\_____________    
-______\//\\\__________________\/\\\_______\/\\\____\//\\\___\/\\\_____________   
-________\///\\\________________\/\\\_______\/\\\_____\//\\\__\/\\\_____________  
-___________\////\\\\\\\\\_______\/\\\_______\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_ 
-_______________\/////////________\///________\///________\///__\///////////////__`];
-        }
+      // Function to load ASCII headers
+      function loadAsciiHeaders() {
+        return [
+          `{{ site.data.ascii_headers | join: "','" }}`
+        ];
       }
 
       // Get random header
@@ -139,9 +122,9 @@ _______________\/////////________\///________\///________\///__\///////////////_
         return headers[Math.floor(Math.random() * headers.length)];
       }
       
-      document.addEventListener('DOMContentLoaded', async () => {
+      document.addEventListener('DOMContentLoaded', () => {
         // Load and set random ASCII header
-        const headers = await loadAsciiHeaders();
+        const headers = loadAsciiHeaders();
         if (headers.length > 0) {
           const randomHeader = getRandomHeader(headers);
           document.getElementById('ascii-header').textContent = randomHeader;
@@ -170,7 +153,7 @@ _______________\/////////________\///________\///________\///__\///////////////_
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          const headers = await loadAsciiHeaders();
+          const headers = loadAsciiHeaders();
           if (headers.length > 0) {
             const randomHeader = getRandomHeader(headers);
             document.getElementById('ascii-header').textContent = randomHeader;
