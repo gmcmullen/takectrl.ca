@@ -9,12 +9,21 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <div class="ascii-header" id="ascii-header" data-headers='{{ site.data.ascii_headers | jsonify | replace: "'", "&apos;" }}'>
-          Loading...
+        <div class="ascii-header" id="ascii-header">
+          {% for header in site.data.ascii_headers %}
+            {% if forloop.first %}
+              {{ header | strip }}
+            {% endif %}
+          {% endfor %}
         </div>
         <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
     </header>
+
+    <!-- Hidden divs containing all ASCII headers -->
+    {% for header in site.data.ascii_headers %}
+    <div class="hidden-header" style="display: none;">{{ header | strip }}</div>
+    {% endfor %}
 
     <div class="container">
       <aside class="sidebar">
@@ -110,10 +119,18 @@
     </footer>
 
     <script>
-      // Get random header from the data attribute
+      // Get all hidden headers
+      function getHeaders() {
+        const headers = [];
+        document.querySelectorAll('.hidden-header').forEach(div => {
+          headers.push(div.textContent);
+        });
+        return headers;
+      }
+
+      // Get random header
       function getRandomHeader() {
-        const headerElement = document.getElementById('ascii-header');
-        const headers = JSON.parse(headerElement.dataset.headers);
+        const headers = getHeaders();
         return headers[Math.floor(Math.random() * headers.length)];
       }
       
