@@ -10,18 +10,11 @@
     <header class="site-header">
       <div class="header-content">
         <div class="ascii-header" id="ascii-header">
-          {% assign header_count = site.data.ascii_headers | size %}
-          {% assign random_index = site.time | date: '%s' | modulo: header_count %}
-          {{ site.data.ascii_headers[random_index] | strip }}
+          {{ site.data.ascii_headers[0] }}
         </div>
         <p>─────────[ Canadian Tech Rights Lab ]─────────</p>
       </div>
     </header>
-
-    <!-- Hidden divs containing all ASCII headers -->
-    {% for header in site.data.ascii_headers %}
-    <div class="hidden-header" style="display: none;">{{ header | strip }}</div>
-    {% endfor %}
 
     <div class="container">
       <aside class="sidebar">
