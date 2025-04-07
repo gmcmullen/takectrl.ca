@@ -9,7 +9,7 @@
   <body>
     <header class="site-header">
       <div class="header-content">
-        <div class="ascii-header" id="ascii-header">
+        <div class="ascii-header" id="ascii-header" data-headers='{{ site.data.ascii_headers | jsonify }}'>
           Loading...
         </div>
         <p>[=== Canadian Tech Rights Lab ===]</p>
@@ -110,24 +110,21 @@
     </footer>
 
     <script>
-      // Function to load ASCII headers
-      function loadAsciiHeaders() {
-        return [
-          `{{ site.data.ascii_headers | join: "','" }}`
-        ];
-      }
-
-      // Get random header
-      function getRandomHeader(headers) {
+      // Get random header from the data attribute
+      function getRandomHeader() {
+        const headerElement = document.getElementById('ascii-header');
+        const headers = JSON.parse(headerElement.dataset.headers);
         return headers[Math.floor(Math.random() * headers.length)];
       }
       
       document.addEventListener('DOMContentLoaded', () => {
-        // Load and set random ASCII header
-        const headers = loadAsciiHeaders();
-        if (headers.length > 0) {
-          const randomHeader = getRandomHeader(headers);
-          document.getElementById('ascii-header').textContent = randomHeader;
+        // Set random ASCII header
+        const headerElement = document.getElementById('ascii-header');
+        try {
+          const randomHeader = getRandomHeader();
+          headerElement.textContent = randomHeader;
+        } catch (error) {
+          console.error('Error setting ASCII header:', error);
         }
 
         // Set initial theme from localStorage
@@ -136,9 +133,9 @@
           document.body.classList.add('light-mode');
         }
       });
-      
+
       // Add BBS-style keyboard navigation
-      document.addEventListener('keydown', async (e) => {
+      document.addEventListener('keydown', (e) => {
         if (e.key === 'h' || e.key === 'H') {
           alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
         } else if (e.key === 'q' || e.key === 'Q') {
@@ -153,10 +150,11 @@
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          const headers = loadAsciiHeaders();
-          if (headers.length > 0) {
-            const randomHeader = getRandomHeader(headers);
+          try {
+            const randomHeader = getRandomHeader();
             document.getElementById('ascii-header').textContent = randomHeader;
+          } catch (error) {
+            console.error('Error refreshing ASCII header:', error);
           }
         } else if (e.key >= '1' && e.key <= '9') {
           const menuItems = document.querySelectorAll('a[href^="{{ "/" | relative_url }}"]');
