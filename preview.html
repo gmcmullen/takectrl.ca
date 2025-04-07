@@ -3,87 +3,208 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CTRL BBS - Preview</title>
+    <title>Preview - Canadian Tech Rights Lab</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <div class="header-content">
         <div class="ascii-header" id="ascii-header">
-          Loading...
+          <!-- Initial header will be set by JavaScript -->
         </div>
-        <p>[=== Canadian Tech Rights Lab ===]</p>
+        <p>[ takectrl.ca | Canadian Tech Rights Lab ]</p>
       </div>
     </header>
+
+    <!-- Hidden divs containing all ASCII headers -->
+    <div id="ascii-headers" style="display: none; position: absolute; left: -9999px;">
+      <div class="header">
+        <pre>________/\\\\\\\\\__/\\\\\\\\\\\\\\\____/\\\\\\\\\______/\\\_____________        
+______/\\\////////__\///////\\\/////___/\\\///////\\\___\/\\\_____________       
+_____/\\\/_________________\/\\\_______\/\\\_____\/\\\___\/\\\_____________      
+_____/\\\___________________\/\\\_______\/\\\\\\\\\\\/____\/\\\_____________     
+_____\/\\\___________________\/\\\_______\/\\\//////\\\____\/\\\_____________    
+______\//\\\__________________\/\\\_______\/\\\____\//\\\___\/\\\_____________   
+________\///\\\________________\/\\\_______\/\\\_____\//\\\__\/\\\_____________  
+___________\////\\\\\\\\\_______\/\\\_______\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_ 
+_______________\/////////________\///________\///________\///__\///////////////__</pre>
+      </div>
+      <div class="header">
+        <pre>   ██████╗████████╗██████╗ ██╗     
+  ██╔════╝╚══██╔══╝██╔══██╗██║     
+  ██║        ██║   ██████╔╝██║     
+  ██║        ██║   ██╔══██╗██║     
+  ╚██████╗   ██║   ██║  ██║███████╗
+   ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝</pre>
+      </div>
+      <div class="header">
+        <pre>                   ,----,              ,--,    
+                 ,/   .`|           ,---.'|    
+  ,----..      ,`   .'  :,-.----.   |   | :    
+ /   /   \   ;    ;     /\    /  \  :   : |    
+|   :     :.'___,/    ,' ;   :    \ |   ' :    
+.   |  ;. /|    :     |  |   | .\ : ;   ; '    
+.   ; /--` ;    |.';  ;  .   : |: | '   | |__  
+;   | ;    `----'  |  |  |   |  \ : |   | :.'| 
+|   : |        '   :  ;  |   : .  / '   :    ; 
+.   | '___     |   |  '  ;   | |  \ |   |  ./  
+'   ; : .'|    '   :  |  |   | ;\  \;   : ;    
+'   | '/  :    ;   |.'   :   ' | \.'|   ,/     
+|   :    /     '---'     :   : :-'  '---'      
+ \   \ .'                |   |.'               
+  `---`                  `---'</pre>
+      </div>
+      <div class="header">
+        <pre> ________ _________  ________  ___          
+|\   ____\\___   ___\\   __  \|\  \         
+\ \  \___\|___ \  \_\ \  \|\  \ \  \        
+ \ \  \       \ \  \ \ \   _  _\ \  \       
+  \ \  \____   \ \  \ \ \  \\  \\ \  \____  
+   \ \_______\  \ \__\ \ \__\\ _\\ \_______\
+    \|_______|   \|__|  \|__|\|__|\|_______|</pre>
+      </div>
+      <div class="header">
+        <pre>          _____                _____                    _____                    _____  
+         /\    \              /\    \                  /\    \                  /\    \ 
+        /::\    \            /::\    \                /::\    \                /::\____\
+       /::::\    \           \:::\    \              /::::\    \              /:::/    /
+      /::::::\    \           \:::\    \            /::::::\    \            /:::/    / 
+     /:::/\:::\    \           \:::\    \          /:::/\:::\    \          /:::/    /  
+    /:::/  \:::\    \           \:::\    \        /:::/__\:::\    \        /:::/    /   
+   /:::/    \:::\    \          /::::\    \      /::::\   \:::\    \      /:::/    /    
+  /:::/    / \:::\    \        /::::::\    \    /::::::\   \:::\    \    /:::/    /     
+ /:::/    /   \:::\    \      /:::/\:::\    \  /:::/\:::\   \:::\____\  /:::/    /      
+/:::/____/     \:::\____\    /:::/  \:::\____\/:::/  \:::\   \:::|    |/:::/____/       
+\:::\    \      \::/    /   /:::/    \::/    /\::/   |::::\  /:::|____|\:::\    \       
+ \:::\    \      \/____/   /:::/    / \/____/  \/____|:::::\/:::/    /  \:::\    \      
+  \:::\    \              /:::/    /                 |:::::::::/    /    \:::\    \     
+   \:::\    \            /:::/    /                  |::|\::::/    /      \:::\    \    
+    \:::\    \           \::/    /                   |::| \::/____/        \:::\    \   
+     \:::\    \           \/____/                    |::|  ~|               \:::\    \  
+      \:::\    \                                     |::|   |                \:::\    \ 
+       \:::\____\                                    \::|   |                 \:::\____\
+        \::/    /                                     \:|   |                  \::/    /
+         \/____/                                       \|___|                   \/____/</pre>
+      </div>
+      <div class="header">
+        <pre>   ,ad8888ba,  888888888888  88888888ba   88           
+   d8"'    `"8b      88       88      "8b  88           
+  d8'                88       88      ,8P  88           
+  88                 88       88aaaaaa8P'  88           
+  88                 88       88""""88'    88           
+  Y8,                88       88    `8b    88           
+   Y8a.    .a8P      88       88     `8b   88           
+    `"Y8888Y"'       88       88      `8b  88888888888</pre>
+      </div>
+      <div class="header">
+        <pre>   _____ _______ _____  _      
+  / ____|__   __|  __ \| |     
+ | |       | |  | |__) | |     
+ | |       | |  |  _  /| |     
+ | |____   | |  | | \ \| |____ 
+  \_____|  |_|  |_|  \_\______|</pre>
+      </div>
+      <div class="header">
+        <pre>   ██████  ██████████ ███████   ██      
+  ██░░░░██░░░░░██░░░ ░██░░░░██ ░██      
+ ██    ░░     ░██    ░██   ░██ ░██      
+░██           ░██    ░███████  ░██      
+░██           ░██    ░██░░░██  ░██      
+░░██    ██    ░██    ░██  ░░██ ░██      
+ ░░██████     ░██    ░██   ░░██░████████
+  ░░░░░░      ░░     ░░     ░░ ░░░░░░░░</pre>
+      </div>
+      <div class="header">
+        <pre>               s                       .. 
+              :8                 x .d88"  
+             .88       .u    .    5888R   
+      .     :888ooo  .d88B :@8c   '888R   
+ .udR88N  -*8888888 ="8888f8888r   888R   
+<888'888k   8888      4888>'88"    888R   
+9888 'Y"    8888      4888> '      888R   
+9888        8888      4888>        888R   
+9888       .8888Lu=  .d888L .+     888R   
+?8888u../  ^%888*    ^"8888*"     .888B . 
+ "8888P'     'Y"        "Y"       ^*888%  
+   "P'                              "%    </pre>
+      </div>
+      <div class="header">
+        <pre>             I8               ,dPYb,
+             I8               IP'`Yb
+          88888888            I8  8I
+             I8               I8  8'
+   ,gggg,    I8     ,gggggg,  I8 dP 
+  dP"  "Yb   I8     dP""""8I  I8dP  
+ i8'        ,I8,   ,8'    8I  I8P   
+,d8,_    _ ,d88b, ,dP     Y8,,d8b,_ 
+P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
+      </div>
+    </div>
+
     <div class="container">
       <aside class="sidebar">
         <div class="menu-section">
           <div class="window-title">Projects</div>
           <div class="window-content">
-            <div class="ascii-border">┌────────────────────────────────</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
-                <li><a href="#ai">[1] AI in Policing</a></li>
-                <li><a href="#biometrics">[2] Surveillance + Biometrics</a></li>
-                <li><a href="#devices">[3] Device Searches</a></li>
+                <li><a href="#">[1] Project One</a></li>
+                <li><a href="#">[2] Project Two</a></li>
+                <li><a href="#">[3] Project Three</a></li>
               </ul>
             </div>
-            <div class="ascii-border">└────────────────────────────────</div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
         </div>
 
         <div class="menu-section">
           <div class="window-title">Recent</div>
           <div class="window-content">
-            <div class="ascii-border">┌────────────────────────────────</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul class="recent-posts">
                 <li>
-                  <span class="post-date">2024-03-26</span>
-                  <a href="#post1" class="post-title">[4] FOI: RCMP's Use of AI Tools Revealed</a>
+                  <span class="post-date">2024-03-15</span>
+                  <a href="#" class="post-title">[4] Recent Post One</a>
                 </li>
                 <li>
-                  <span class="post-date">2024-03-25</span>
-                  <a href="#post2" class="post-title">[5] New Research on Border Device Searches</a>
-                </li>
-                <li>
-                  <span class="post-date">2024-03-24</span>
-                  <a href="#post3" class="post-title">[6] Facial Recognition in Canadian Cities</a>
+                  <span class="post-date">2024-03-14</span>
+                  <a href="#" class="post-title">[5] Recent Post Two</a>
                 </li>
               </ul>
             </div>
-            <div class="ascii-border">└────────────────────────────────</div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
         </div>
 
         <div class="menu-section">
           <div class="window-title">About</div>
           <div class="window-content">
-            <div class="ascii-border">┌────────────────────────────────</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
-                <li><a href="#mission">[7] Mission</a></li>
-                <li><a href="#contact">[8] Contact</a></li>
-                <li><a href="#support">[9] Support</a></li>
+                <li><a href="#">[6] About Us</a></li>
+                <li><a href="#">[7] Contact</a></li>
               </ul>
             </div>
-            <div class="ascii-border">└────────────────────────────────</div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
         </div>
 
         <div class="menu-section">
           <div class="window-title">Site Info</div>
           <div class="window-content">
-            <div class="ascii-border">┌────────────────────────────────</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
                 <li><span class="system-label">Version:</span> 0.9.0 Beta</li>
-                <li><span class="system-label">Updated:</span> 2025-04-04</li>
-                <li><a href="#terms">[98] Terms</a></li>
-                <li><a href="#privacy">[99] Privacy</a></li>
+                <li><span class="system-label">Updated:</span> 2024-03-15</li>
+                <li><a href="#">[98] Terms</a></li>
+                <li><a href="#">[99] Privacy</a></li>
               </ul>
             </div>
-            <div class="ascii-border">└────────────────────────────────</div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
         </div>
       </aside>
@@ -91,23 +212,24 @@
       <main class="main-content">
         <div class="content-window">
           <div class="window-content">
-            <div class="ascii-border">┌────────────────────────────────</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <div class="article-header">
-                <h1>RCMP's Use of AI Surveillance Tools Revealed</h1>
-                <div class="article-date">2025-04-04</div>
+                <h1>Preview Page</h1>
+                <div class="article-date">2024-03-15</div>
               </div>
-              <div class="ascii-divider">═══════════════════════════════════════════════════════════════════════</div>
-              <div class="article-content">
-                <p>Through a series of access to information requests, we've uncovered evidence of widespread AI surveillance tool adoption by the RCMP without public disclosure or oversight.</p>
-                
-                <p>Key findings include:</p>
-                <p>> Undisclosed contracts with facial recognition vendors</p>
-                <p>> Use of predictive policing algorithms in major cities</p>
-                <p>> Lack of privacy impact assessments for AI tools</p>
-              </div>
+              <p>This is a preview of the CTRL BBS theme. Use the following keyboard shortcuts:</p>
+              <ul>
+                <li><strong>H</strong> - Show help</li>
+                <li><strong>Q</strong> - Quit</li>
+                <li><strong>M</strong> - Main menu</li>
+                <li><strong>P</strong> - Previous page</li>
+                <li><strong>L</strong> - Toggle light/dark mode</li>
+                <li><strong>R</strong> - Random ASCII header</li>
+                <li><strong>1-9</strong> - Navigate menu items</li>
+              </ul>
             </div>
-            <div class="ascii-border">└────────────────────────────────</div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
         </div>
       </main>
@@ -121,66 +243,21 @@
     </footer>
 
     <script>
-      // Function to load ASCII headers from file
-      async function loadAsciiHeaders() {
-        try {
-          const response = await fetch('_includes/ascii_headers.txt');
-          const text = await response.text();
-          // Split the text by the separator (---)
-          const headers = text.split('---').map(header => header.trim()).filter(header => header);
-          return headers;
-        } catch (error) {
-          console.error('Error loading ASCII headers:', error);
-          // Provide a fallback header if loading fails
-          return [`
-________/\\\\\\\\\__/\\\\\\\\\\\\\\\____/\\\\\\\\\______/\\\_____________        
-______/\\\////////__\///////\\\/////___/\\\///////\\\___\/\\\_____________       
-_____/\\\/_________________\/\\\_______\/\\\_____\/\\\___\/\\\_____________      
-_____/\\\___________________\/\\\_______\/\\\\\\\\\\\/____\/\\\_____________     
-_____\/\\\___________________\/\\\_______\/\\\//////\\\____\/\\\_____________    
-______\//\\\__________________\/\\\_______\/\\\____\//\\\___\/\\\_____________   
-________\///\\\________________\/\\\_______\/\\\_____\//\\\__\/\\\_____________  
-___________\////\\\\\\\\\_______\/\\\_______\/\\\______\//\\\_\/\\\\\\\\\\\\\\\_ 
-_______________\/////////________\///________\///________\///__\///////////////__`];
-        }
-      }
-
-      // Get random header
-      function getRandomHeader(headers) {
-        return headers[Math.floor(Math.random() * headers.length)];
-      }
-
-      // Update current time
-      function updateCurrentTime() {
-        const now = new Date();
-        const timeString = now.toLocaleString('en-US', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-          hour: '2-digit',
-          minute: '2-digit',
-          hour12: false
-        });
-        document.getElementById('current-time').textContent = timeString;
-      }
-      
-      document.addEventListener('DOMContentLoaded', async () => {
-        // Load and set random ASCII header
-        const headers = await loadAsciiHeaders();
-        if (headers.length > 0) {
-          const randomHeader = getRandomHeader(headers);
-          document.getElementById('ascii-header').textContent = randomHeader;
-        }
-
+      document.addEventListener('DOMContentLoaded', () => {
         // Set initial theme from localStorage
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'light') {
           document.body.classList.add('light-mode');
         }
+
+        // Get all headers and select a random one
+        const headers = document.querySelectorAll('#ascii-headers .header');
+        const randomIndex = Math.floor(Math.random() * headers.length);
+        document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
       });
-      
+
       // Add BBS-style keyboard navigation
-      document.addEventListener('keydown', async (e) => {
+      document.addEventListener('keydown', (e) => {
         if (e.key === 'h' || e.key === 'H') {
           alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
         } else if (e.key === 'q' || e.key === 'Q') {
@@ -188,20 +265,19 @@ _______________\/////////________\///________\///________\///__\///////////////_
             window.close();
           }
         } else if (e.key === 'm' || e.key === 'M') {
-          window.location.href = '#';
+          window.location.href = '/';
         } else if (e.key === 'p' || e.key === 'P') {
           window.history.back();
         } else if (e.key === 'l' || e.key === 'L') {
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
         } else if (e.key === 'r' || e.key === 'R') {
-          const headers = await loadAsciiHeaders();
-          if (headers.length > 0) {
-            const randomHeader = getRandomHeader(headers);
-            document.getElementById('ascii-header').textContent = randomHeader;
-          }
+          // Get all headers and select a new random one
+          const headers = document.querySelectorAll('#ascii-headers .header');
+          const randomIndex = Math.floor(Math.random() * headers.length);
+          document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
         } else if (e.key >= '1' && e.key <= '9') {
-          const menuItems = document.querySelectorAll('a[href^="#"]');
+          const menuItems = document.querySelectorAll('a[href^="/"]');
           const index = parseInt(e.key) - 1;
           if (menuItems[index]) {
             menuItems[index].click();

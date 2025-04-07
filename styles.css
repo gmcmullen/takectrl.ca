@@ -180,12 +180,17 @@ body.light-mode {
 }
 
 .site-header {
-  background-color: var(--bbs-bg);
-  padding: var(--space-xs) var(--space-md);
+  background-color: transparent;
+  padding: 0;
   white-space: pre;
   font-family: monospace;
   color: var(--bbs-header);
   overflow: hidden;
+  border: none;
+  margin: 0;
+  width: 100%;
+  display: block;
+  max-height: none;
 }
 
 .header-content {
@@ -193,6 +198,9 @@ body.light-mode {
   margin: 0 auto;
   padding: 0;
   overflow: hidden;
+  background-color: transparent;
+  border: none;
+  width: 100%;
 }
 
 .header-content h1 {
@@ -209,9 +217,10 @@ body.light-mode {
   color: var(--bbs-text);
   padding-left: 2px;
   letter-spacing: 0.02em;
-  font-weight: 600;
-  margin-top: 0.125rem;
-  margin-bottom: 0.125rem;
+  font-weight: normal !important;
+  margin-top: 0.0625rem;
+  margin-bottom: 0.0625rem;
+  background-color: transparent;
 }
 
 .dark-mode .header-content p {
@@ -223,7 +232,7 @@ body.light-mode {
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-md);
+  padding: 0 var(--space-md) var(--space-md);
   gap: var(--space-lg);
   width: 100%;
   box-sizing: border-box;
@@ -747,18 +756,46 @@ blockquote {
 
 /* ASCII art header */
 .ascii-header {
-  color: var(--bbs-header);
-  white-space: pre;
-  font-family: monospace;
-  text-align: left;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  font-size: 10pt;
   line-height: 1;
-  letter-spacing: 0;
-  font-weight: normal;
+  font-family: monospace;
+  white-space: pre;
+  color: var(--bbs-header);
+  background-color: transparent;
+  border: none;
+  width: 100%;
   display: block;
+  max-height: none;
+}
+
+.ascii-header pre {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-family: monospace;
+  white-space: pre;
+  color: var(--bbs-header);
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  display: block;
+  max-height: none;
+  overflow: visible;
+}
+
+#ascii-headers {
+  display: none;
+  max-height: none;
+}
+
+#ascii-headers .header {
+  max-height: none;
+}
+
+#ascii-headers .header pre {
+  max-height: none;
+  overflow: visible;
 }
 
 /* Tables */
@@ -917,4 +954,13 @@ p {
     width: 100%;
     font-size: 9pt;
   }
+}
+
+.header-text {
+  font-weight: normal !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10pt;
+  color: var(--bbs-text);
 } 
