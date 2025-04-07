@@ -5,108 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ page.title }} - Canadian Tech Rights Lab</title>
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <header class="site-header">
       <div class="header-content">
-        <h1>Canadian Tech Rights Lab</h1>
-        <p>Take back CTRL, Canada</p>
+        <div class="ascii-header" id="ascii-header">
+          Loading...
+        </div>
+        <p>[=== Canadian Tech Rights Lab ===]</p>
       </div>
     </header>
 
     <div class="container">
       <aside class="sidebar">
-        <div class="terminal-window projects-window">
-          <div class="window-header">
-            <div class="window-title">Projects</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Projects</div>
           <div class="window-content">
-            <ul>
-              {% for project in site.projects %}
-              <li><a href="{{ project.url | relative_url }}">{{ project.title }}</a></li>
-              {% endfor %}
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                {% for project in site.projects %}
+                <li><a href="{{ project.url | relative_url }}">[{{ forloop.index }}] {{ project.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window recent-window">
-          <div class="window-header">
-            <div class="window-title">Recent</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Recent</div>
           <div class="window-content">
-            <ul class="recent-posts">
-              {% for post in site.posts limit:5 %}
-              <li>
-                <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                <a href="{{ post.url | relative_url }}" class="post-title">{{ post.title }}</a>
-              </li>
-              {% endfor %}
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul class="recent-posts">
+                {% for post in site.posts limit:5 %}
+                <li>
+                  <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+                  <a href="{{ post.url | relative_url }}" class="post-title">[{{ forloop.index | plus: 3 }}] {{ post.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window about-window">
-          <div class="window-header">
-            <div class="window-title">About</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">About</div>
           <div class="window-content">
-            <ul>
-              {% for page in site.about %}
-              <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-              {% endfor %}
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                {% for page in site.about %}
+                <li><a href="{{ page.url | relative_url }}">[{{ forloop.index | plus: 6 }}] {{ page.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window system-window">
-          <div class="window-header">
-            <div class="window-title">System</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Site Info</div>
           <div class="window-content">
-            <ul>
-              <li><span class="system-label">Version:</span> 1.0.0</li>
-              <li><span class="system-label">Date:</span> {{ site.time | date: "%Y-%m-%d" }}</li>
-              <li><span class="system-label">Theme:</span> <button class="theme-toggle" aria-label="Toggle dark mode"></button></li>
-              <li><a href="{{ '/pages/terms' | relative_url }}">Terms</a></li>
-              <li><a href="{{ '/pages/privacy' | relative_url }}">Privacy</a></li>
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                <li><span class="system-label">Version:</span> 0.9.0 Beta</li>
+                <li><span class="system-label">Updated:</span> {{ site.time | date: "%Y-%m-%d" }}</li>
+                <li><a href="{{ '/pages/terms' | relative_url }}">[98] Terms</a></li>
+                <li><a href="{{ '/pages/privacy' | relative_url }}">[99] Privacy</a></li>
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
       </aside>
 
       <main class="main-content">
-        <div class="terminal-window content-window">
-          <div class="window-header">
-            <div class="window-title">{{ page.title }}</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="content-window">
           <div class="window-content">
-            {{ content }}
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <div class="article-header">
+                <h1>{{ page.title }}</h1>
+                {% if page.date %}
+                <div class="article-date">{{ page.date | date: "%Y-%m-%d" }}</div>
+                {% endif %}
+              </div>
+              {{ content }}
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
       </main>
@@ -114,22 +104,89 @@
 
     <footer class="site-footer">
       <div class="footer-content">
+        <p>Copyright 2025 Canadian Tech Rights Lab</p>
       </div>
+      <button class="theme-toggle">[L]ight/Dark</button>
     </footer>
 
     <script>
-      // Theme toggle functionality
-      const themeToggle = document.querySelector('.theme-toggle');
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-        localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+      // ASCII headers stored directly in the code
+      const ASCII_HEADERS = [
+        
+`________/\\\\\\\\\\__/\\\\\\\\\\\\\\____/\\\\\\\\\\______/\\\____________        
+ _____/\\\\////////__/////\\\\///___/\\\\//////\\\\___/\\\\____________       
+  ___/\\\/_________________/\\\\______/\\\\____/\\\\___/\\\\____________      
+   __/\\\\__________________/\\\\______/\\\\\\\\\\\\\\____/\\\\____________     
+    _/\\\\___________________/\\\\______/\\\\//////\\\\____/\\\\____________    
+     _\\\\\\__________________/\\\\______/\\\\____\\\\\\___/\\\\____________   
+      __\\\\\\________________/\\\\______/\\\\____\\\\\\__/\\\\____________  
+       ____\\\\\\\\\\\\\_______/\\\\______/\\\\______\\\\\_/\\\\\\\\\\\\\\\\\_ 
+        _______/////////_______////_______///________///__///////////////__`,
+
+` ██████╗████████╗██████╗ ██╗     
+██╔════╝╚══██╔══╝██╔══██╗██║     
+██║        ██║   ██████╔╝██║     
+██║        ██║   ██╔══██╗██║     
+╚██████╗   ██║   ██║  ██║███████╗
+ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝`,
+
+`   _____ _______ _____  _      
+  / ____|__   __|  __ \\| |     
+ | |       | |  | |__) | |     
+ | |       | |  |  _  /| |     
+ | |____   | |  | | \\ \\| |____ 
+  \\_____|  |_|  |_|  \\_\\______|`
+      ];
+
+      // Get random header
+      function getRandomHeader() {
+        return ASCII_HEADERS[Math.floor(Math.random() * ASCII_HEADERS.length)];
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // Set random ASCII header
+        const randomHeader = getRandomHeader();
+        document.getElementById('ascii-header').textContent = randomHeader;
+
+        // Set initial theme from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+          document.body.classList.add('light-mode');
+        }
+      });
+      
+      // Add BBS-style keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'h' || e.key === 'H') {
+          alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
+        } else if (e.key === 'q' || e.key === 'Q') {
+          if (confirm('Are you sure you want to quit CTRL BBS?')) {
+            window.close();
+          }
+        } else if (e.key === 'm' || e.key === 'M') {
+          window.location.href = '{{ "/" | relative_url }}';
+        } else if (e.key === 'p' || e.key === 'P') {
+          window.history.back();
+        } else if (e.key === 'l' || e.key === 'L') {
+          document.body.classList.toggle('light-mode');
+          localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        } else if (e.key === 'r' || e.key === 'R') {
+          const randomHeader = getRandomHeader();
+          document.getElementById('ascii-header').textContent = randomHeader;
+        } else if (e.key >= '1' && e.key <= '9') {
+          const menuItems = document.querySelectorAll('a[href^="{{ "/" | relative_url }}"]');
+          const index = parseInt(e.key) - 1;
+          if (menuItems[index]) {
+            menuItems[index].click();
+          }
+        }
       });
 
-      // Check for saved theme preference
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-      }
+      // Theme toggle button
+      document.querySelector('.theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+      });
     </script>
   </body>
 </html> 

@@ -3,147 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CTRL - Preview</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>CTRL BBS - Preview</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <style>
-      /* Quick style to show content boundaries */
-      .debug .terminal-window {
-        outline: 1px dashed rgba(255, 0, 0, 0.2);
-      }
-      .debug .window-content {
-        outline: 1px dashed rgba(0, 255, 0, 0.2);
-      }
-    </style>
   </head>
   <body>
     <header class="site-header">
       <div class="header-content">
-        <h1>Canadian Tech Rights Lab</h1>
-        <p>Take back CTRL, Canada</p>
+        <div class="ascii-header" id="ascii-header"></div>
+        <p>[=== Canadian Tech Rights Lab ===]</p>
       </div>
     </header>
-
     <div class="container">
       <aside class="sidebar">
-        <div class="terminal-window projects-window">
-          <div class="window-header">
-            <div class="window-title">Projects</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Projects</div>
           <div class="window-content">
-            <ul>
-              <li><a href="#ai-policing">AI in Policing</a></li>
-              <li><a href="#device-searches">Electronic Device Searches</a></li>
-              <li><a href="#biometrics">Biometrics</a></li>
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                <li><a href="#ai">[1] AI in Policing</a></li>
+                <li><a href="#biometrics">[2] Surveillance + Biometrics</a></li>
+                <li><a href="#devices">[3] Device Searches</a></li>
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window recent-window">
-          <div class="window-header">
-            <div class="window-title">Recent</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Recent</div>
           <div class="window-content">
-            <ul class="recent-posts">
-              <li>
-                <span class="post-date">2025-03-26</span>
-                <span class="post-title">RCMP's Use of AI Tools Revealed</span>
-              </li>
-              <li>
-                <span class="post-date">2025-03-25</span>
-                <span class="post-title">New Research on Border Device Searches</span>
-              </li>
-              <li>
-                <span class="post-date">2025-03-24</span>
-                <span class="post-title">Facial Recognition in Canadian Cities</span>
-              </li>
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul class="recent-posts">
+                <li>
+                  <span class="post-date">2024-03-26</span>
+                  <a href="#post1" class="post-title">[4] FOI: RCMP's Use of AI Tools Revealed</a>
+                </li>
+                <li>
+                  <span class="post-date">2024-03-25</span>
+                  <a href="#post2" class="post-title">[5] New Research on Border Device Searches</a>
+                </li>
+                <li>
+                  <span class="post-date">2024-03-24</span>
+                  <a href="#post3" class="post-title">[6] Facial Recognition in Canadian Cities</a>
+                </li>
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window about-window">
-          <div class="window-header">
-            <div class="window-title">About</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">About</div>
           <div class="window-content">
-            <ul>
-              <li><a href="#mission">Mission</a></li>
-              <li><a href="#support">Support</a></li>
-              <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                <li><a href="#mission">[7] Mission</a></li>
+                <li><a href="#contact">[8] Contact</a></li>
+                <li><a href="#support">[9] Support</a></li>
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
 
-        <div class="terminal-window system-window">
-          <div class="window-header">
-            <div class="window-title">System</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="menu-section">
+          <div class="window-title">Site Info</div>
           <div class="window-content">
-            <ul>
-              <li><span class="system-label">Version:</span> 1.0.0</li>
-              <li><span class="system-label">Date:</span> 2025-03-26</li>
-              <li><a href="#terms">Terms</a></li>
-              <li><a href="#privacy">Privacy</a></li>
-            </ul>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <ul>
+                <li><span class="system-label">Version:</span> 0.9.0 Beta</li>
+                <li><span class="system-label">Updated:</span> 2025-04-04</li>
+                <li><a href="#terms">[98] Terms</a></li>
+                <li><a href="#privacy">[99] Privacy</a></li>
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
       </aside>
 
       <main class="main-content">
-        <div class="terminal-window content-window">
-          <div class="window-header">
-            <div class="window-title">RCMP's Use of AI Tools Revealed</div>
-            <div class="window-controls">
-              <span class="control"></span>
-              <span class="control"></span>
-              <span class="control"></span>
-            </div>
-          </div>
+        <div class="content-window">
           <div class="window-content">
-            <h1>RCMP's Use of AI Tools Revealed</h1>
-            
-            <p>Through access to information requests, we've uncovered the extent of AI tool usage in Canadian law enforcement.</p>
-
-            <h2>Key Findings</h2>
-            <ul>
-              <li>Predictive policing algorithms in major cities</li>
-              <li>Facial recognition without oversight</li>
-              <li>Social media monitoring tools</li>
-            </ul>
-
-            <h2>Technical Details</h2>
-            <p>Here's some code-style text:</p>
-            <pre><code>$ grep -r "facial_recognition" /var/log/police_tools/
-> 2025-03-26 Multiple matches found
-> System active in: Toronto, Vancouver, Montreal</code></pre>
-
-            <h2>Impact</h2>
-            <p>This investigation reveals the urgent need for proper oversight and regulation of AI tools in law enforcement.</p>
-            
-            <blockquote>
-              <p>"The lack of transparency around these tools is deeply concerning." - Privacy Expert</p>
-            </blockquote>
+            <div class="ascii-border ascii-border-top">┌──────────────────────────────────────────────────────────────────────────────┐</div>
+            <div class="window-inner">
+              <div class="article-header">
+                <h1>RCMP's Use of AI Surveillance Tools Revealed</h1>
+                <div class="article-date">2025-04-04</div>
+              </div>
+              <div class="ascii-divider">═══════════════════════════════════════════════════════════════════════</div>
+              <div class="article-content">
+                <p>Through a series of access to information requests, we've uncovered evidence of widespread AI surveillance tool adoption by the RCMP without public disclosure or oversight.</p>
+                
+                <p>Key findings include:</p>
+                <p>> Undisclosed contracts with facial recognition vendors</p>
+                <p>> Use of predictive policing algorithms in major cities</p>
+                <p>> Lack of privacy impact assessments for AI tools</p>
+              </div>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└──────────────────────────────────────────────────────────────────────────────┘</div>
           </div>
         </div>
       </main>
@@ -151,22 +113,119 @@
 
     <footer class="site-footer">
       <div class="footer-content">
-        <button class="theme-toggle" aria-label="Toggle dark mode"></button>
+        <p>Copyright 2025 Canadian Tech Rights Lab</p>
       </div>
+      <button class="theme-toggle">[L]ight/Dark</button>
     </footer>
 
     <script>
-      // Theme toggle functionality
-      const themeToggle = document.querySelector('.theme-toggle');
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+      // ASCII headers stored directly in the code
+      const ASCII_HEADERS = [
+        
+`________/\\\\\\\\\\__/\\\\\\\\\\\\\\____/\\\\\\\\\\______/\\\____________        
+ _____/\\\\////////__/////\\\\///___/\\\\//////\\\\___/\\\\____________       
+  ___/\\\/_________________/\\\\______/\\\\____/\\\\___/\\\\____________      
+   __/\\\\__________________/\\\\______/\\\\\\\\\\\\\\____/\\\\____________     
+    _/\\\\___________________/\\\\______/\\\\//////\\\\____/\\\\____________    
+     _\\\\\\__________________/\\\\______/\\\\____\\\\\\___/\\\\____________   
+      __\\\\\\________________/\\\\______/\\\\____\\\\\\__/\\\\____________  
+       ____\\\\\\\\\\\\\_______/\\\\______/\\\\______\\\\\_/\\\\\\\\\\\\\\\\\_ 
+        _______/////////_______////_______///________///__///////////////__`,
+
+` ██████╗████████╗██████╗ ██╗     
+██╔════╝╚══██╔══╝██╔══██╗██║     
+██║        ██║   ██████╔╝██║     
+██║        ██║   ██╔══██╗██║     
+╚██████╗   ██║   ██║  ██║███████╗
+ ╚═════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝`,
+
+`   _____ _______ _____  _      
+  / ____|__   __|  __ \\| |     
+ | |       | |  | |__) | |     
+ | |       | |  |  _  /| |     
+ | |____   | |  | | \\ \\| |____ 
+  \\_____|  |_|  |_|  \\_\\______|`,
+
+
+`                   ,----,              ,--,    
+                 ,/   .\`|           ,---.'|    
+  ,----..      ,\`   .'  :,-.----.   |   | :    
+ /   /   \\   ;    ;     /\\    /  \\  :   : |    
+|   :     :.'___,/    ,' ;   :    \\ |   ' :    
+.   |  ;. /|    :     |  |   | .\\ : ;   ; '    
+.   ; /--\` ;    |.';  ;  .   : |: | '   | |__  
+;   | ;    \`----'  |  |  |   |  \\ : |   | :.'| 
+|   : |        '   :  ;  |   : .  / '   :    ; 
+.   | '___     |   |  '  ;   | |  \\ |   |  ./  
+'   ; : .'|    '   :  |  |   | ;\\  \\;   : ;    
+'   | '/  :    ;   |.'   :   ' | \\.'|   ,/     
+|   :    /     '---'     :   : :-'  '---'      
+ \\   \\ .'                |   |.'               
+  \`---\`                  \`---'                 `
+      ];
+
+      // Get random header
+      function getRandomHeader() {
+        return ASCII_HEADERS[Math.floor(Math.random() * ASCII_HEADERS.length)];
+      }
+
+      // Update current time
+      function updateCurrentTime() {
+        const now = new Date();
+        const timeString = now.toLocaleString('en-US', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit',
+          hour12: false
+        });
+        document.getElementById('current-time').textContent = timeString;
+      }
+      
+      document.addEventListener('DOMContentLoaded', () => {
+        // Set random ASCII header
+        const randomHeader = getRandomHeader();
+        document.getElementById('ascii-header').textContent = randomHeader;
+
+        // Set initial theme from localStorage
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+          document.body.classList.add('light-mode');
+        }
+      });
+      
+      // Add BBS-style keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'h' || e.key === 'H') {
+          alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
+        } else if (e.key === 'q' || e.key === 'Q') {
+          if (confirm('Are you sure you want to quit CTRL BBS?')) {
+            window.close();
+          }
+        } else if (e.key === 'm' || e.key === 'M') {
+          window.location.href = '#';
+        } else if (e.key === 'p' || e.key === 'P') {
+          window.history.back();
+        } else if (e.key === 'l' || e.key === 'L') {
+          document.body.classList.toggle('light-mode');
+          localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        } else if (e.key === 'r' || e.key === 'R') {
+          const randomHeader = getRandomHeader();
+          document.getElementById('ascii-header').textContent = randomHeader;
+        } else if (e.key >= '1' && e.key <= '9') {
+          const menuItems = document.querySelectorAll('a[href^="#"]');
+          const index = parseInt(e.key) - 1;
+          if (menuItems[index]) {
+            menuItems[index].click();
+          }
+        }
       });
 
-      // Debug mode toggle (press D key)
-      document.addEventListener('keydown', (e) => {
-        if (e.key.toLowerCase() === 'd') {
-          document.body.classList.toggle('debug');
-        }
+      // Theme toggle button
+      document.querySelector('.theme-toggle').addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
       });
     </script>
   </body>
