@@ -191,8 +191,8 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
             <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
-                <li><span class="system-label">Version:</span> 0.9.0 Beta</li>
-                <li><span class="system-label">Updated:</span> {{ site.time | date: "%Y-%m-%d" }}</li>
+                <li>Version: 0.9.0 Beta</li>
+                <li>Updated: {{ site.time | date: "%Y-%m-%d" }}</li>
                 <li><a href="{{ '/pages/terms' | relative_url }}">[98] Terms</a></li>
                 <li><a href="{{ '/pages/privacy' | relative_url }}">[99] Privacy</a></li>
               </ul>
@@ -205,15 +205,15 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
       <main class="main-content">
         <div class="content-window">
           <div class="window-content">
+            <div class="window-title">{{ page.title }}</div>
             <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
-              <div class="article-header">
-                <h1>{{ page.title }}</h1>
+              <ul>
                 {% if page.date %}
-                <div class="article-date">{{ page.date | date: "%Y-%m-%d" }}</div>
+                <li><span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span></li>
                 {% endif %}
-              </div>
-              {{ content }}
+                {{ content }}
+              </ul>
             </div>
             <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
           </div>
