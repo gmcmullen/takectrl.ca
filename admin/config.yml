@@ -37,51 +37,8 @@ collections:
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
 
-  - name: "static_pages"
-    label: "Static Pages"
-    files:
-      - name: "terms"
-        label: "Terms of Use"
-        file: "pages/terms.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      
-      - name: "privacy"
-        label: "Privacy Policy"
-        file: "pages/privacy.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      
-      - name: "contact"
-        label: "Contact Us"
-        file: "pages/contact.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      
-      - name: "support"
-        label: "Support CTRL"
-        file: "pages/support.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-      
-      - name: "mission"
-        label: "Our Mission"
-        file: "pages/mission.md"
-        fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
-
-  - name: "new_pages"
-    label: "New Pages"
+  - name: "pages"
+    label: "Pages"
     folder: "pages"
     create: true
     fields:
