@@ -217,21 +217,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
             <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
-                {% for page in site.about %}
-                <li><a href="{{ page.url | relative_url }}">[{{ forloop.index | plus: 6 }}] {{ page.title }}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
-            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
-          </div>
-        </div>
-
-        <div class="menu-section">
-          <div class="window-title">Site Info</div>
-          <div class="window-content">
-            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
-            <div class="window-inner">
-              <ul>
+                <li>Contact: </li></li:>
                 <li>Version: 0.9.0 Beta</li>
                 <li>Updated: {{ site.time | date: "%Y-%m-%d" }}</li>
                 <li><a href="{{ '/pages/terms' | relative_url }}">[98] Terms</a></li>
@@ -270,42 +256,41 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
     </footer>
 
     <script>
+      // Initialize theme and ASCII header
       document.addEventListener('DOMContentLoaded', () => {
-        // Set initial theme from localStorage
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'light') {
+        if (localStorage.getItem('theme') === 'light') {
           document.body.classList.add('light-mode');
         }
-
-        // Get all headers and select a random one
+        
         const headers = document.querySelectorAll('#ascii-headers .header');
         const randomIndex = Math.floor(Math.random() * headers.length);
         document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
       });
 
-      // Add BBS-style keyboard navigation
+      // Keyboard navigation
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'h' || e.key === 'H') {
+        const key = e.key.toLowerCase();
+        
+        if (key === 'h') {
           alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
-        } else if (e.key === 'q' || e.key === 'Q') {
+        } else if (key === 'q') {
           if (confirm('Are you sure you want to quit CTRL BBS?')) {
             window.close();
           }
-        } else if (e.key === 'm' || e.key === 'M') {
+        } else if (key === 'm') {
           window.location.href = '/';
-        } else if (e.key === 'p' || e.key === 'P') {
+        } else if (key === 'p') {
           window.history.back();
-        } else if (e.key === 'l' || e.key === 'L') {
+        } else if (key === 'l') {
           document.body.classList.toggle('light-mode');
           localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        } else if (e.key === 'r' || e.key === 'R') {
-          // Get all headers and select a new random one
+        } else if (key === 'r') {
           const headers = document.querySelectorAll('#ascii-headers .header');
           const randomIndex = Math.floor(Math.random() * headers.length);
           document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
-        } else if (e.key >= '1' && e.key <= '9') {
+        } else if (key >= '1' && key <= '9') {
           const menuItems = document.querySelectorAll('a[href^="/"]');
-          const index = parseInt(e.key) - 1;
+          const index = parseInt(key) - 1;
           if (menuItems[index]) {
             menuItems[index].click();
           }

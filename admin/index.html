@@ -8,19 +8,6 @@
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js"></script>
-    <script>
-      // Initialize the CMS
-      CMS.init();
-
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", user => {
-          if (!user) {
-            window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <script>CMS.init();</script>
   </body>
 </html> 

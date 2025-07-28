@@ -9,10 +9,6 @@ backend:
 media_folder: "images"
 public_folder: "/images"
 
-local_backend: true
-
-publish_mode: editorial_workflow
-
 collections:
   - name: "posts"
     label: "Blog Posts"
@@ -20,7 +16,6 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -30,7 +25,6 @@ collections:
     folder: "_projects"
     create: true
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -40,7 +34,6 @@ collections:
     folder: "pages"
     create: true
     fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
 
@@ -51,6 +44,5 @@ collections:
         label: "Home Page"
         file: "index.md"
         fields:
-          - {label: "Layout", name: "layout", widget: "hidden", default: "default"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"} 
