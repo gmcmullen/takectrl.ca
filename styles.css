@@ -102,9 +102,9 @@ body.light-mode {
 .site-header {
   background-color: transparent;
   padding: 0;
-  padding-left: var(--space-md);
+  padding-left: 1rem;
   margin: 0;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 1.5rem;
   border: none;
 }
 
@@ -144,8 +144,8 @@ body.light-mode {
   flex: 1;
   max-width: 1200px;
   margin: 0;
-  padding: 0 var(--space-md);
-  gap: var(--space-lg);
+  padding: 0 1rem;
+  gap: 1.5rem;
   width: 100%;
   box-sizing: border-box;
 }
@@ -154,7 +154,7 @@ body.light-mode {
   width: 300px;
   min-width: 300px;
   max-width: 300px;
-  padding: 0 var(--space-md) 0 0;
+  padding: 0 1rem 0 0;
 }
 
 .terminal-window {
@@ -226,7 +226,7 @@ body.light-mode {
   list-style: none;
   padding: 0;
   margin: 0;
-  margin-left: var(--space-md);
+  margin-left: 1rem;
 }
 
 .window-inner ul li {
@@ -234,7 +234,7 @@ body.light-mode {
   padding: 0;
   font-size: 10pt;
   line-height: 1.8;
-  margin-left: var(--space-md);
+  margin-left: 1rem;
 }
 
 .window-content a {
@@ -319,7 +319,7 @@ body.light-mode {
 
 .content-window .window-content {
   padding: 0;
-  margin-left: var(--space-md);
+  margin-left: 1rem;
 }
 
 .content-window .window-inner {
@@ -888,7 +888,7 @@ p {
   font-weight: normal !important;
   margin: 0;
   margin-top: 1rem;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 1.5rem;
   padding: 0;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10pt;
