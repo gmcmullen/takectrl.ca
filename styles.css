@@ -762,6 +762,10 @@ blockquote {
   width: 100%;
   display: block;
   max-height: none;
+  min-height: 20em; /* Set minimum height to match tallest ASCII art (16 lines) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .ascii-header pre {
@@ -777,6 +781,10 @@ blockquote {
   display: block;
   max-height: none;
   overflow: visible;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #ascii-headers {
@@ -786,11 +794,20 @@ blockquote {
 
 #ascii-headers .header {
   max-height: none;
+  min-height: 20em; /* Match the visible header height (16 lines) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #ascii-headers .header pre {
   max-height: none;
   overflow: visible;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
 }
 
 /* Tables */
@@ -950,6 +967,7 @@ p {
 .header-text {
   font-weight: normal !important;
   margin: 0;
+  margin-top: 1rem;
   padding: 0;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10pt;
