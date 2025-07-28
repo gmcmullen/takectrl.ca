@@ -59,6 +59,16 @@
   --border-shadow-dark: #1a231f;
   --border-highlight-light: #ffffff;
   --border-highlight-dark: #adadad;
+  
+  /* Additional missing variables */
+  --text-light: #1a231f;
+  --text-dark: #adadad;
+  --footer-link: #f34616;
+  --footer-link-hover: #e13d0f;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 body {
@@ -134,7 +144,7 @@ body.light-mode {
   flex: 1;
   max-width: 1200px;
   margin: 0;
-  padding: 0;
+  padding: 0 var(--space-md);
   gap: var(--space-lg);
   width: 100%;
   box-sizing: border-box;
@@ -144,7 +154,7 @@ body.light-mode {
   width: 300px;
   min-width: 300px;
   max-width: 300px;
-  padding: 0;
+  padding: 0 var(--space-md) 0 0;
 }
 
 .terminal-window {
@@ -878,6 +888,7 @@ p {
   font-weight: normal !important;
   margin: 0;
   margin-top: 1rem;
+  margin-bottom: var(--space-lg);
   padding: 0;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10pt;
