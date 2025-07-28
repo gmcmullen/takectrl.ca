@@ -39,12 +39,6 @@ collections:
 
   - name: "static_pages"
     label: "Static Pages"
-    folder: "pages"
-    create: true
-    fields:
-      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
     files:
       - name: "terms"
         label: "Terms of Use"
@@ -85,6 +79,15 @@ collections:
           - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "new_pages"
+    label: "New Pages"
+    folder: "pages"
+    create: true
+    fields:
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "home"
     label: "Home"
