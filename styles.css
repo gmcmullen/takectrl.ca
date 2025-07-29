@@ -237,13 +237,24 @@ body.light-mode {
   margin-left: 1rem;
 }
 
-/* Page content lists should show bullets */
-.window-inner ul:not(.recent-posts) {
+/* Only main content lists should show bullets, not sidebar menus */
+.main-content .window-inner ul:not(.recent-posts) {
   list-style: disc;
   padding-left: 1.5rem;
 }
 
-.window-inner ul:not(.recent-posts) li {
+.main-content .window-inner ul:not(.recent-posts) li {
+  margin-left: 0;
+  padding: 0.25rem 0;
+}
+
+/* Sidebar menu lists should have no bullets */
+.sidebar .window-inner ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar .window-inner ul li {
   margin-left: 0;
   padding: 0.25rem 0;
 }
@@ -914,4 +925,6 @@ p {
 
 .post-date {
   color: var(--bbs-dim);
+  list-style: none;
+  display: block;
 } 
