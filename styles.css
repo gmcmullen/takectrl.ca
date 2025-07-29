@@ -705,7 +705,7 @@ blockquote {
   line-height: 1;
   font-family: monospace;
   white-space: pre;
-  color: var(--bbs-header);
+  color: var(--bbs-pink);
   background-color: transparent;
   border: none;
   width: 100%;
