@@ -1,9 +1,8 @@
 ---
-title: Biometrics
-date: 2025-03-25
+title: Brain-Computer Interfaces
+date: 2025-07-29T18:41:44.468Z
 layout: post
 ---
-
 # Biometrics
 
-Coming soon. Our research into biometric surveillance and facial recognition technology in Canada. 
+Coming soon. Our research into developments in brain-computer interfaces and potential privacy implications.
