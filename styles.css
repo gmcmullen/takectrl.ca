@@ -237,6 +237,17 @@ body.light-mode {
   margin-left: 1rem;
 }
 
+/* Page content lists should show bullets */
+.window-inner ul:not(.recent-posts) {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.window-inner ul:not(.recent-posts) li {
+  margin-left: 0;
+  padding: 0.25rem 0;
+}
+
 .window-content a {
   color: var(--bbs-link);
   text-decoration: none;
@@ -676,7 +687,7 @@ blockquote {
   line-height: 1;
   font-family: monospace;
   white-space: pre;
-  color: var(--bbs-header);
+  color: var(--bbs-pink);
   background-color: transparent;
   border: none;
   width: 100%;
