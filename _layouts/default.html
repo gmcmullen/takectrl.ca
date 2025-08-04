@@ -12,7 +12,7 @@
         <div class="ascii-header" id="ascii-header">
           <!-- Initial header will be set by JavaScript -->
         </div>
-        <p class="header-text">─────────[ Canadian Tech Rights Lab ]─────────</p>
+        <p class="header-text">──[ Canadian Tech Rights Lab ]─────────</p>
       </div>
     </header>
 
@@ -293,7 +293,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
           alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
         } else if (key === 'q') {
           if (confirm('Are you sure you want to quit CTRL BBS?')) {
-            window.close();
+            window.location.href = 'about:blank';
           }
         } else if (key === 'm') {
           window.location.href = '/';
