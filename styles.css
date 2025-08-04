@@ -273,7 +273,7 @@ body.light-mode {
 
 /* Align plain text items with numbered items in About section */
 .sidebar .menu-section:last-child .window-inner ul li:not(:has(a)) {
-  padding-left: 3.5rem;
+  padding-left: 0.75rem;
 }
 
 .window-content a {
