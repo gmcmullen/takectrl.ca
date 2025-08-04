@@ -1,3 +1,15 @@
+/*
+ * CTRL - Canadian Tech Rights Lab
+ * Main Stylesheet
+ * 
+ * A retro BBS-style theme with:
+ * - Dark/light mode support
+ * - ASCII art headers
+ * - Keyboard navigation
+ * - Responsive design
+ * - Netlify CMS integration
+ */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -17,6 +29,10 @@
 }
 
 
+
+/* ==========================================================================
+   CSS Variables & Theme Configuration
+   ========================================================================== */
 
 :root {
   /* BBS Colors - Dark Mode (Default) */
@@ -70,6 +86,10 @@
   --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
   --shadow-md: 0 8px 16px rgba(0,0,0,0.1);
 }
+
+/* ==========================================================================
+   Base Styles & Layout
+   ========================================================================== */
 
 body {
   font-family: 'IBM Plex Mono', monospace;
@@ -249,6 +269,11 @@ body.light-mode {
 .sidebar .window-inner ul li {
   margin-left: 0;
   padding: 0.25rem 0;
+}
+
+/* Align plain text items with numbered items in About section */
+.sidebar .menu-section:last-child .window-inner ul li:not(:has(a)) {
+  padding-left: 2.5rem;
 }
 
 .window-content a {

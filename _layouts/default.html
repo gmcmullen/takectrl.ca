@@ -307,7 +307,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
           const randomIndex = Math.floor(Math.random() * headers.length);
           document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
         } else if (key >= '1' && key <= '9') {
-          const menuItems = document.querySelectorAll('a[href^="/"]');
+          const menuItems = document.querySelectorAll('a[href*="/"]');
           const index = parseInt(key) - 1;
           if (menuItems[index]) {
             menuItems[index].click();
