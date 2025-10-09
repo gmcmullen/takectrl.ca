@@ -1,6 +1,6 @@
 ---
 title: Electronic Device Searches
-date: 2025-03-25
+date: 2025-10-09T23:53:18.639Z
 layout: post
 ---
 # Electronic Device Searches
