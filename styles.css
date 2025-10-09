@@ -423,23 +423,94 @@ body.light-mode {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
-    padding: var(--space-md);
+    padding: var(--space-sm);
+    gap: var(--space-sm);
   }
 
   .sidebar {
     width: 100%;
     min-width: auto;
     max-width: none;
-    border-right: none;
-    border-bottom: none;
-    padding-right: 0;
-    padding-bottom: var(--space-md);
-    margin-bottom: var(--space-md);
+    padding: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .menu-section {
+    margin-bottom: var(--space-sm);
   }
 
   .ascii-border {
     width: 100%;
+    font-size: 8pt;
+  }
+
+  .ascii-header {
+    min-height: 6em;
+    font-size: 8pt;
+  }
+
+  .ascii-header pre {
+    font-size: 8pt;
+    line-height: 0.8;
+  }
+
+  .header-text {
     font-size: 9pt;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .window-title {
+    font-size: 9pt;
+  }
+
+  .window-inner ul li {
+    font-size: 9pt;
+    line-height: 1.6;
+  }
+
+  .window-content a {
+    font-size: 9pt;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .site-footer {
+    padding: var(--space-sm);
+    flex-direction: column;
+    gap: var(--space-sm);
+    text-align: center;
+  }
+
+  .footer-content {
+    justify-content: center;
+  }
+
+  .theme-toggle {
+    font-size: 9pt;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* Mobile-specific improvements */
+  .site-header {
+    padding-left: 0.5rem;
+  }
+
+  .window-inner {
+    padding: var(--space-sm);
+  }
+
+  .content-window .window-content {
+    margin-left: 0.5rem;
+  }
+
+  /* Make ASCII art more compact on mobile */
+  #ascii-headers .header {
+    min-height: 6em;
+  }
+
+  #ascii-headers .header pre {
+    font-size: 8pt;
+    line-height: 0.8;
   }
 }
 

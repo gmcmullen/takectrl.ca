@@ -221,7 +221,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
                 {% for post in site.posts limit:5 %}
                 <li>
                   <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
-                  <a href="{{ post.url | relative_url }}" class="post-title">[{{ forloop.index | plus: 3 }}] {{ post.title }}</a>
+                  <a href="{{ post.url | relative_url }}" class="post-title">[{{ forloop.index | plus: site.projects.size }}] {{ post.title }}</a>
                 </li>
                 {% endfor %}
               </ul>
@@ -290,9 +290,9 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
         const key = e.key.toLowerCase();
         
         if (key === 'h') {
-          alert('CTRL BBS Help\n\nUse number keys to navigate menu items.');
+          alert('CTRL Help\n\nUse number keys to navigate menu items.');
         } else if (key === 'q') {
-          if (confirm('Are you sure you want to quit CTRL BBS?')) {
+          if (confirm('Are you sure you want to lose CTRL?')) {
             window.location.href = 'about:blank';
           }
         } else if (key === 'm') {
