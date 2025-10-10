@@ -17,7 +17,7 @@ In August 2025, we made access to information and freedom of information request
 | RCMP             | Request acknowledged on August 21, 2025.                                                                 |
 | VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025.  |
 
-## R﻿esponses
+## Responses
 
 So far, the VPD has provided two pages from its Regulation and Procedures Manual (RPM):
 
@@ -26,7 +26,7 @@ So far, the VPD has provided two pages from its Regulation and Procedures Manual
 
 We will provide a summary of those documents at a later date, but we have several concerns, including the open-ended definition of "exigent circumstances",  lack of prior judicial authorization, chilling potential of seizure of devices used to record police, and conflation of asset with evidence for cryptocurrency. 
 
-## O﻿riginal Request
+## Original Request
 
 This is what we asked for:
 
