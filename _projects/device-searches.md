@@ -1,23 +1,25 @@
 ---
 title: Electronic Device Searches
-date: 2025-10-10T02:06:37.329Z
+date: 2025-10-10T17:54:38.131Z
 layout: post
 ---
 # Electronic Device Searches
 
 *Updated: October 9, 2025*
 
-In August 2025, we made access to information and freedom of information requests to the Royal Canadian Mounted Police (RCMP), Canada Border Services Agency (CBSA), and Vancouver Police Department (VPD) requesting information on their policies and procedures for search and seizure of electronic devices.
+In August 2025, we made access to information and freedom of information requests to the Royal Canadian Mounted Police (RCMP), Canada Border Services Agency (CBSA), and Vancouver Police Department (VPD). We requested information on their policies and procedures for the search and seizure of electronic devices. 
 
 ## Status of Requests
 
-| **Organization** | **Response**                                                                                             |
-| ---------------- | -------------------------------------------------------------------------------------------------------- |
-| CBSA             | Notice of Extension sent on September 19, 2025.                                                          |
-| RCMP             | Request acknowledged on August 21, 2025.                                                                 |
-| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025.  |
+| **Organization** | **Response**                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| CBSA             | Notice of Extension sent on September 19, 2025.                                                         |
+| RCMP             | Request acknowledged on August 21, 2025.                                                                |
+| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025. |
 
 ## Responses
+
+### V﻿PD
 
 So far, the VPD has provided two pages from its Regulation and Procedures Manual (RPM):
 
