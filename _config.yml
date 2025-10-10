@@ -48,4 +48,8 @@ exclude:
   - Gemfile.lock
   - node_modules
   - vendor
-  - .git 
+  - .git
+
+# Include additional directories
+include:
+  - files 
