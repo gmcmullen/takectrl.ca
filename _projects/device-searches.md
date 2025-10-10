@@ -1,30 +1,32 @@
 ---
 title: Electronic Device Searches
-date: 2025-10-10T02:06:37.329Z
+date: 2025-10-10T17:57:03.122Z
 layout: post
 ---
 # Electronic Device Searches
 
 *Updated: October 9, 2025*
 
-In August 2025, we made access to information and freedom of information requests to the Royal Canadian Mounted Police (RCMP), Canada Border Services Agency (CBSA), and Vancouver Police Department (VPD) requesting information on their policies and procedures for search and seizure of electronic devices.
+In August 2025, we made access to information and freedom of information requests to the Royal Canadian Mounted Police (RCMP), Canada Border Services Agency (CBSA), and Vancouver Police Department (VPD). We requested information on their policies and procedures for the search and seizure of electronic devices. 
 
 ## Status of Requests
 
-| **Organization** | **Response**                                                                                             |
-| ---------------- | -------------------------------------------------------------------------------------------------------- |
-| CBSA             | Notice of Extension sent on September 19, 2025.                                                          |
-| RCMP             | Request acknowledged on August 21, 2025.                                                                 |
-| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025.  |
+| **Organization** | **Response**                                                                                            |
+| ---------------- | ------------------------------------------------------------------------------------------------------- |
+| CBSA             | Notice of Extension sent on September 19, 2025.                                                         |
+| RCMP             | Request acknowledged on August 21, 2025.                                                                |
+| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025. |
 
 ## Responses
+
+### V﻿PD
 
 So far, the VPD has provided two pages from its Regulation and Procedures Manual (RPM):
 
 * [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)[](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
 * [RPM 1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devices](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
 
-We will provide a summary of those documents at a later date, but we have several concerns, including the open-ended definition of "exigent circumstances",  lack of prior judicial authorization, chilling potential of seizure of devices used to record police, and conflation of asset with evidence for cryptocurrency. 
+We will provide a summary of those documents at a later date. We have several concerns, including the open-ended definition of "exigent circumstances", lack of prior judicial authorization, chilling potential of seizure of devices used to record police, and conflation of “asset” with “evidence” for cryptocurrency, which risks creating an unaccountable form of asset forfeiture.
 
 ## Original Request
 
