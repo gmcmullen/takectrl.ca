@@ -1,6 +1,6 @@
 ---
 title: Electronic Device Searches
-date: 2025-10-10T01:07:26.353Z
+date: 2025-10-10T02:06:37.329Z
 layout: post
 ---
 # Electronic Device Searches
@@ -11,11 +11,11 @@ In August 2025, we made access to information and freedom of information request
 
 ## Status of Requests
 
-| **Organization** | **Response**                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| CBSA             | Notice of Extension sent on September 19, 2025.                                                                     |
-| RCMP             | Request acknowledged on August 21, 2025.                                                                            |
-| VPD              | Partial response received on October 3, 2025. Additional records subject to additional extension to November 2025.  |
+| **Organization** | **Response**                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------------------------- |
+| CBSA             | Notice of Extension sent on September 19, 2025.                                                          |
+| RCMP             | Request acknowledged on August 21, 2025.                                                                 |
+| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025.  |
 
 ## R﻿esponses
 
