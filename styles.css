@@ -512,6 +512,22 @@ body.light-mode {
     font-size: 8pt;
     line-height: 0.8;
   }
+
+  /* Hide About section in sidebar on mobile */
+  .sidebar .menu-section:last-child {
+    display: none;
+  }
+
+  /* Show About section above footer on mobile */
+  .mobile-about {
+    display: block;
+    margin: var(--space-md) 0;
+    padding: 0 var(--space-sm);
+  }
+
+  .mobile-about .menu-section {
+    margin-bottom: 0;
+  }
 }
 
 /* Content Styling */
