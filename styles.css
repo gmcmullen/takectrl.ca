@@ -120,11 +120,11 @@ body.light-mode {
 }
 
 body.light-mode a {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+  text-decoration-color: rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode a:hover {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
+  text-decoration-color: rgba(0, 0, 0, 0.6);
 }
 
 .site-header {
@@ -567,16 +567,19 @@ body.light-mode a:hover {
 
 a {
   color: var(--bbs-link);
-  text-decoration: none;
   font-size: 10pt;
   transition: color var(--transition-fast);
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  text-underline-offset: 1px;
+  text-decoration-thickness: 1px;
 }
 
 a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+  text-decoration-color: rgba(255, 255, 255, 0.6);
 }
 
 .dark-mode a:hover {
