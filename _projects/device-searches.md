@@ -1,6 +1,6 @@
 ---
 title: Electronic Device Searches
-date: 2025-10-10T01:01:52.380Z
+date: 2025-10-10T02:06:37.329Z
 layout: post
 ---
 # Electronic Device Searches
@@ -11,18 +11,18 @@ In August 2025, we made access to information and freedom of information request
 
 ## Status of Requests
 
-| **Organization** | **Response**                                                                                                        |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| CBSA             | Notice of Extension sent on September 19, 2025.                                                                     |
-| RCMP             | Request acknowledged on August 21, 2025.                                                                            |
-| VPD              | Partial response received on October 3, 2025. Additional records subject to additional extension to November 2025.  |
+| **Organization** | **Response**                                                                                             |
+| ---------------- | -------------------------------------------------------------------------------------------------------- |
+| CBSA             | Notice of Extension sent on September 19, 2025.                                                          |
+| RCMP             | Request acknowledged on August 21, 2025.                                                                 |
+| VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025.  |
 
 ## R﻿esponses
 
-So far, the VPD has provided two pages from its Regulation and Procedures Manual:
+So far, the VPD has provided two pages from its Regulation and Procedures Manual (RPM):
 
-* [1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scenes](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)
-* [](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment)[1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devices](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
+* [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)[](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
+* [RPM 1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devices](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
 
 We will provide a summary of those documents at a later date, but we have several concerns, including the open-ended definition of "exigent circumstances",  lack of prior judicial authorization, chilling potential of seizure of devices used to record police, and conflation of asset with evidence for cryptocurrency. 
 
