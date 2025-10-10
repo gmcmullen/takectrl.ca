@@ -119,6 +119,14 @@ body.light-mode {
   --bbs-border: var(--bbs-border-light);
 }
 
+body.light-mode a {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode a:hover {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
+}
+
 .site-header {
   background-color: transparent;
   padding: 0;
@@ -562,11 +570,13 @@ a {
   text-decoration: none;
   font-size: 10pt;
   transition: color var(--transition-fast);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
 }
 
 a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
 }
 
 .dark-mode a:hover {
