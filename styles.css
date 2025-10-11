@@ -120,11 +120,11 @@ body.light-mode {
 }
 
 body.light-mode a {
-  text-decoration-color: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
 }
 
 body.light-mode a:hover {
-  text-decoration-color: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
 }
 
 .site-header {
@@ -570,15 +570,16 @@ a {
   font-size: 10pt;
   transition: color var(--transition-fast);
   text-decoration: underline;
-  text-decoration-style: dotted;
   text-decoration-color: rgba(255, 255, 255, 0.3);
   text-underline-offset: 1px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-  text-decoration-color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
 }
 
 .dark-mode a:hover {
