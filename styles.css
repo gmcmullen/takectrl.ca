@@ -127,6 +127,14 @@ body.light-mode a:hover {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
 }
 
+body.light-mode .window-content a {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+body.light-mode .window-content a:hover {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
+}
+
 .site-header {
   background-color: transparent;
   padding: 0;
@@ -290,11 +298,13 @@ body.light-mode a:hover {
   padding: var(--space-xs) var(--space-sm);
   font-size: 10pt;
   display: inline-block;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
 }
 
 .window-content a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
 }
 
 .recent-posts li {
