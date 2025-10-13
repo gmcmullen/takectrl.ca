@@ -47,6 +47,7 @@
   --bbs-border: #333333;
   --bbs-pink: #ff69b4;
   --accent: #f34616;
+  --link-underline: rgba(255, 255, 255, 0.3);
   
   /* Light Mode Colors */
   --bbs-bg-light: #ffffff;
@@ -59,6 +60,7 @@
   --bbs-header-light: #000000;
   --bbs-border-light: #cccccc;
   --bbs-pink-light: #ff1493;
+  --link-underline-light: rgba(0, 0, 0, 0.3);
   
   /* Spacing */
   --space-xs: 0.5rem;
@@ -117,34 +119,11 @@ body.light-mode {
   --bbs-link-hover: var(--bbs-link-hover-light);
   --bbs-header: var(--bbs-header-light);
   --bbs-border: var(--bbs-border-light);
-}
-
-body.light-mode a {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+  --link-underline: var(--link-underline-light);
 }
 
 body.light-mode a:hover {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
-}
-
-body.light-mode .window-content a::after {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.3) 0px,
-    rgba(0, 0, 0, 0.3) 2px,
-    transparent 2px,
-    transparent 4px
-  );
-}
-
-body.light-mode .window-content a:hover::after {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.6) 0px,
-    rgba(0, 0, 0, 0.6) 2px,
-    transparent 2px,
-    transparent 4px
-  );
+  color: var(--bbs-link-hover);
 }
 
 .site-header {
@@ -306,42 +285,18 @@ body.light-mode .window-content a:hover::after {
 
 .window-content a {
   color: var(--bbs-link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 2px;
   padding: var(--space-xs) var(--space-sm);
   font-size: 10pt;
   display: inline-block;
-  position: relative;
-}
-
-.window-content a::after {
-  content: '';
-  position: absolute;
-  left: var(--space-sm);
-  right: var(--space-sm);
-  bottom: 1px;
-  height: 1px;
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.3) 0px,
-    rgba(255, 255, 255, 0.3) 2px,
-    transparent 2px,
-    transparent 4px
-  );
 }
 
 .window-content a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-}
-
-.window-content a:hover::after {
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.6) 0px,
-    rgba(255, 255, 255, 0.6) 2px,
-    transparent 2px,
-    transparent 4px
-  );
 }
 
 .recent-posts li {
@@ -617,16 +572,14 @@ a {
   font-size: 10pt;
   transition: color var(--transition-fast);
   text-decoration: underline;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
-  text-underline-offset: 1px;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
-  text-decoration: none;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 2px;
 }
 
 a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
 }
 
 .dark-mode a:hover {
