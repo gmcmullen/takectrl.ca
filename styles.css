@@ -127,12 +127,24 @@ body.light-mode a:hover {
   border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
 }
 
-body.light-mode .window-content a {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+body.light-mode .window-content a::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3) 0px,
+    rgba(0, 0, 0, 0.3) 2px,
+    transparent 2px,
+    transparent 4px
+  );
 }
 
-body.light-mode .window-content a:hover {
-  border-bottom: 1px dotted rgba(0, 0, 0, 0.6);
+body.light-mode .window-content a:hover::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.6) 0px,
+    rgba(0, 0, 0, 0.6) 2px,
+    transparent 2px,
+    transparent 4px
+  );
 }
 
 .site-header {
@@ -298,13 +310,38 @@ body.light-mode .window-content a:hover {
   padding: var(--space-xs) var(--space-sm);
   font-size: 10pt;
   display: inline-block;
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.window-content a::after {
+  content: '';
+  position: absolute;
+  left: var(--space-sm);
+  right: var(--space-sm);
+  bottom: 1px;
+  height: 1px;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.3) 0px,
+    rgba(255, 255, 255, 0.3) 2px,
+    transparent 2px,
+    transparent 4px
+  );
 }
 
 .window-content a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-  border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+}
+
+.window-content a:hover::after {
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.6) 0px,
+    rgba(255, 255, 255, 0.6) 2px,
+    transparent 2px,
+    transparent 4px
+  );
 }
 
 .recent-posts li {
