@@ -325,7 +325,10 @@ body.light-mode a:hover {
 
 .recent-posts .post-title {
   color: var(--bbs-link);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 2px;
   padding: var(--space-xs) var(--space-sm);
   display: block;
   font-size: 10pt;
@@ -338,7 +341,10 @@ body.light-mode a:hover {
 
 .post-title {
   color: var(--text-light);
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--link-underline);
+  text-underline-offset: 2px;
   white-space: normal;
   word-wrap: break-word;
   display: block;
