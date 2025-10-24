@@ -1,0 +1,79 @@
+User-agent: *
+Allow: /
+
+# Block AI scrapers and training bots
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
+Disallow: /
+
+User-agent: BingBot
+Disallow: /
+
+User-agent: facebookexternalhit
+Disallow: /
+
+User-agent: Twitterbot
+Disallow: /
+
+User-agent: LinkedInBot
+Disallow: /
+
+User-agent: WhatsApp
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+# Allow legitimate search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow access to public content
+Allow: /pages/
+Allow: /_posts/
+Allow: /_projects/
+Allow: /files/
+Allow: /fonts/
+Allow: /styles.css
+Allow: /CNAME
+
+# Block admin and configuration files
+Disallow: /admin/
+Disallow: /_config.yml
+Disallow: /_layouts/
+Disallow: /_data/
+Disallow: /_about/
+Disallow: /Gemfile
+Disallow: /README.md
+
+# Block draft posts (if any)
+Disallow: /*draft*
+
+# Sitemap location (if you create one)
+# Sitemap: https://takectrl.ca/sitemap.xml

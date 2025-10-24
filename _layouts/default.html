@@ -7,10 +7,19 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
   </head>
   <body>
+    <!-- Skip navigation for screen readers and keyboard users -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#sidebar-nav" class="skip-link">Skip to navigation</a>
+    
     <header class="site-header">
       <div class="header-content">
-        <div class="ascii-header" id="ascii-header">
+        <div class="ascii-header" id="ascii-header" role="img" aria-label="CTRL Logo">
           <!-- Initial header will be set by JavaScript -->
+        </div>
+        <!-- Screen reader alternative -->
+        <div class="sr-only">
+          <h1>CTRL - Canadian Tech Rights Lab</h1>
+          <p>Fighting for Canadians' rights in our digital future</p>
         </div>
         <p class="header-text">──[ Canadian Tech Rights Lab ]─────────</p>
       </div>
@@ -196,7 +205,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
     </div>
 
     <div class="container">
-      <aside class="sidebar">
+      <aside class="sidebar" id="sidebar-nav" role="navigation" aria-label="Site navigation">
         <div class="menu-section">
           <div class="window-title">Projects</div>
           <div class="window-content">
@@ -247,7 +256,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
         </div>
       </aside>
 
-      <main class="main-content">
+      <main class="main-content" id="main-content" role="main">
         <div class="content-window">
           <div class="window-content">
             <div class="window-title">{{ page.title }}</div>
@@ -289,7 +298,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
       <div class="footer-content">
         <p>Copyright 2025 Canadian Tech Rights Lab</p>
       </div>
-      <button class="theme-toggle">[L]ight/Dark</button>
+      <button class="theme-toggle" aria-label="Toggle between light and dark mode" aria-pressed="false">[L]ight/Dark</button>
     </footer>
 
     <script>
@@ -309,6 +318,16 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
         const key = e.key.toLowerCase();
         
         if (key === 'h') {
+          // Announce help to screen readers
+          const helpText = 'CTRL Help: Use number keys 1-9 to navigate menu items. Press H for help, Q to quit, M for main page, P to go back, L to toggle light/dark mode, R to randomize header.';
+          const announcement = document.createElement('div');
+          announcement.setAttribute('aria-live', 'assertive');
+          announcement.setAttribute('aria-atomic', 'true');
+          announcement.className = 'sr-only';
+          announcement.textContent = helpText;
+          document.body.appendChild(announcement);
+          setTimeout(() => document.body.removeChild(announcement), 3000);
+          
           alert('CTRL Help\n\nUse number keys to navigate menu items.');
         } else if (key === 'q') {
           if (confirm('Are you sure you want to lose CTRL?')) {
@@ -334,10 +353,26 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
         }
       });
 
-      // Theme toggle button
-      document.querySelector('.theme-toggle').addEventListener('click', () => {
+      // Theme toggle button with accessibility
+      const themeToggle = document.querySelector('.theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        const isLightMode = document.body.classList.contains('light-mode');
         document.body.classList.toggle('light-mode');
-        localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        const newTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', newTheme);
+        
+        // Update ARIA attributes for screen readers
+        themeToggle.setAttribute('aria-pressed', newTheme === 'light' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', `Currently in ${newTheme} mode. Click to switch to ${newTheme === 'light' ? 'dark' : 'light'} mode.`);
+        
+        // Announce theme change to screen readers
+        const announcement = document.createElement('div');
+        announcement.setAttribute('aria-live', 'polite');
+        announcement.setAttribute('aria-atomic', 'true');
+        announcement.className = 'sr-only';
+        announcement.textContent = `Theme switched to ${newTheme} mode`;
+        document.body.appendChild(announcement);
+        setTimeout(() => document.body.removeChild(announcement), 1000);
       });
     </script>
   </body>

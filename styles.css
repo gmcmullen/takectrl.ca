@@ -90,6 +90,73 @@
 }
 
 /* ==========================================================================
+   Accessibility & Screen Reader Support
+   ========================================================================== */
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Skip links - visible on focus */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--bbs-bright);
+  color: var(--bbs-bg);
+  padding: 8px;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10pt;
+  z-index: 1000;
+  border: 1px solid var(--bbs-border);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Focus indicators */
+a:focus,
+button:focus {
+  outline: 2px solid var(--bbs-pink);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --bbs-bg: #000000;
+    --bbs-text: #ffffff;
+    --bbs-border: #ffffff;
+  }
+  
+  body.light-mode {
+    --bbs-bg: #ffffff;
+    --bbs-text: #000000;
+    --bbs-border: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
    Base Styles & Layout
    ========================================================================== */
 
