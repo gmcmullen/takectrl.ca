@@ -2,6 +2,7 @@
 title: Electronic Device Searches
 date: 2025-10-10T17:57:03.122Z
 layout: post
+tag: device-searches
 ---
 # Electronic Device Searches
 

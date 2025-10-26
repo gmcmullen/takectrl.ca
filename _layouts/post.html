@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+{% comment %}
+  This layout shows:
+  1. The project/post content itself (pinned at top)
+  2. All posts with the same tag, sorted by date descending
+  
+  For projects: shows project content + related posts
+  For posts: shows post content (no additional listing needed)
+{% endcomment %}
+
+{{ content }}
+
+{% comment %} Show related posts for projects {% endcomment %}
+{% if page.tag and page.path contains '_projects' %}
+  {% assign related_posts = site.posts | where_exp: "post", "post.tags contains page.tag" | sort: 'date' | reverse %}
+  
+  {% if related_posts.size > 0 %}
+    <h2>Posts</h2>
+    <ul>
+      {% for post in related_posts %}
+      <li>
+        <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span> 
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endif %}
+
