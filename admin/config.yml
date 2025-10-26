@@ -25,7 +25,7 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Tag", name: "tag", widget: "select", options: ["ati-foi", "ai-policing", "bci", "data-brokers", "device-searches", "copyright"]}
+      - {label: "Tags", name: "tags", widget: "list", default: [], field: {label: "Tag", name: "tag", widget: "select", options: ["ati-foi", "ai-policing", "bci", "data-brokers", "device-searches", "copyright"]}}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "pages"

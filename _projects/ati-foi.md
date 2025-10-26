@@ -2,7 +2,8 @@
 title: ATI / FOI Requests
 date: 2025-03-25
 layout: post
-tag: ati-foi
+tags:
+  - ati-foi
 ---
 
 # ATI/FOI Requests

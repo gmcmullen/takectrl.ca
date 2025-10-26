@@ -9,13 +9,27 @@ layout: default
   
   For projects: shows project content + related posts
   For posts: shows post content (no additional listing needed)
+  
+  Handles both single tag (page.tag) and multiple tags (page.tags) for backward compatibility
 {% endcomment %}
 
 {{ content }}
 
 {% comment %} Show related posts for projects {% endcomment %}
-{% if page.tag and page.path contains '_projects' %}
-  {% assign related_posts = site.posts | where_exp: "post", "post.tags contains page.tag" | sort: 'date' | reverse %}
+{% assign project_tags = page.tags | default: page.tag %}
+{% if project_tags and page.path contains '_projects' %}
+  {% if project_tags.first %}
+    {% comment %} Multiple tags (array) {% endcomment %}
+    {% assign related_posts = '' | split: '' %}
+    {% for tag in project_tags %}
+      {% assign posts_with_tag = site.posts | where_exp: "post", "post.tags contains tag" %}
+      {% assign related_posts = related_posts | concat: posts_with_tag %}
+    {% endfor %}
+    {% assign related_posts = related_posts | uniq | sort: 'date' | reverse %}
+  {% else %}
+    {% comment %} Single tag (string) {% endcomment %}
+    {% assign related_posts = site.posts | where_exp: "post", "post.tags contains project_tags" | sort: 'date' | reverse %}
+  {% endif %}
   
   {% if related_posts.size > 0 %}
     <h2>Posts</h2>
