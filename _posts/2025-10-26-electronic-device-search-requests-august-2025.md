@@ -5,9 +5,9 @@ tags:
   - ati-foi
   - device-searches
 ---
-## O﻿riginal Requests
+## Original Requests
 
-I﻿n August 2025, we asked the RCMP, CBSA, and Vancouver Police Department for the following information:
+In August 2025, we asked the RCMP, CBSA, and Vancouver Police Department for the following information:
 
 > All records from 2020 to present relating to the search or seizure of electronic devices, including but not limited to smartphones, computers, tablets, and storage media. This includes, without limitation:
 >
@@ -48,5 +48,5 @@ As of October 26, 2025:
 | **Organization** | **Response**                                                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------- |
 | CBSA             | Notice of Extension sent on September 19, 2025.                                                         |
-| RCMP             | Request acknowledged on August 21, 2025.                                                                |
+| RCMP             | Request acknowledged on August 21, 2025. Request scope adjusted on November 12, 2025.                   |
 | VPD              | Partial response received on October 3, 2025. Additional records subject to extension to November 2025. |
