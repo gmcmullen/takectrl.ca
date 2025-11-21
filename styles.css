@@ -163,6 +163,7 @@ button:focus {
 body {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10pt;
+  font-weight: normal;
   background-color: var(--bbs-bg);
   color: var(--bbs-text);
   margin: 0;
@@ -618,7 +619,12 @@ body.light-mode a:hover {
   background-color: var(--bbs-pink);
   color: var(--bbs-bg);
   display: inline-block;
-  margin: 1rem 0;
+  margin: 1rem 0 0.5rem;
+}
+
+.window-content h1::before {
+  content: "# ";
+  color: var(--bbs-dim);
 }
 
 body.light-mode .window-content h1 {
@@ -668,6 +674,7 @@ body.light-mode .window-content h1 {
   margin-bottom: 1rem;
   line-height: 1.4;
   font-size: 10pt;
+  font-weight: normal;
 }
 
 .window-content p:last-child {
@@ -848,7 +855,12 @@ h1 {
   background-color: var(--bbs-pink);
   color: var(--bbs-bg);
   display: inline-block;
-  margin: 1rem 0;
+  margin: 1rem 0 0.5rem;
+}
+
+h1::before {
+  content: "# ";
+  color: var(--bbs-dim);
 }
 
 body.light-mode h1 {
@@ -898,6 +910,7 @@ p {
   color: var(--bbs-text);
   line-height: 1.4;
   font-size: 10pt;
+  font-weight: normal;
   margin: 0.5rem 0;
 }
 
