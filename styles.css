@@ -353,9 +353,9 @@ body.light-mode a:hover {
 
 .window-content a {
   color: var(--bbs-link);
-  padding: var(--space-xs) var(--space-sm);
+  padding: 0;
   font-size: 10pt;
-  display: inline-block;
+  display: inline;
 }
 
 .window-content a:hover {
@@ -543,7 +543,7 @@ body.light-mode a:hover {
 
   .window-content a {
     font-size: 9pt;
-    padding: 0.25rem 0.5rem;
+    padding: 0;
   }
 
   .site-footer {
