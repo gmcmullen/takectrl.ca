@@ -601,17 +601,67 @@ body.light-mode a:hover {
   }
 }
 
-/* Content Styling */
-.window-content h1 {
+/* Content Styling - BBS Headers */
+.window-content h1,
+.window-content h2,
+.window-content h3,
+.window-content h4 {
   font-size: 10pt;
-  margin-bottom: 0.5rem;
-  color: var(--bbs-pink);
+  margin: 1rem 0;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
+/* H1: Bold, highlighted pink with black text in dark mode, bold highlighted black with white text in light mode */
+.window-content h1 {
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+body.light-mode .window-content h1 {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* H2: Bold, pink, with two grey hashes in front */
 .window-content h2 {
-  font-size: 10pt;
-  margin: 1.5rem 0 1rem;
+  font-weight: bold;
   color: var(--bbs-pink);
+  margin: 1.5rem 0 1rem;
+}
+
+.window-content h2::before {
+  content: "## ";
+  color: var(--bbs-dim);
+}
+
+/* H3: Bold, italic, pink, with 3 grey hashes in front */
+.window-content h3 {
+  font-weight: bold;
+  font-style: italic;
+  color: var(--bbs-pink);
+  margin: 1.25rem 0 0.75rem;
+}
+
+.window-content h3::before {
+  content: "### ";
+  color: var(--bbs-dim);
+}
+
+/* H4: Italic, pink, 4 grey hashes in front */
+.window-content h4 {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--bbs-pink);
+  margin: 1rem 0 0.5rem;
+}
+
+.window-content h4::before {
+  content: "#### ";
+  color: var(--bbs-dim);
 }
 
 .window-content p {
@@ -784,30 +834,63 @@ th {
   color: var(--bbs-bg);
 }
 
-/* Content typography - normalized sizes */
+/* Content typography - BBS Headers (general, not just in window-content) */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--bbs-bright);
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10pt;
   margin: 1rem 0;
-  font-weight: 700;
 }
 
+/* H1: Bold, highlighted pink with black text in dark mode, bold highlighted black with white text in light mode */
 h1 {
-  color: var(--bbs-header);
+  font-weight: bold;
+  padding: 0.25rem 0.5rem;
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+  display: inline-block;
+  margin: 1rem 0;
 }
 
+body.light-mode h1 {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* H2: Bold, pink, with two grey hashes in front */
 h2 {
-  color: var(--bbs-highlight);
-}
-
-h1::before {
-  content: "### ";
-  color: var(--bbs-dim);
+  font-weight: bold;
+  color: var(--bbs-pink);
+  margin: 1.5rem 0 1rem;
 }
 
 h2::before {
   content: "## ";
+  color: var(--bbs-dim);
+}
+
+/* H3: Bold, italic, pink, with 3 grey hashes in front */
+h3 {
+  font-weight: bold;
+  font-style: italic;
+  color: var(--bbs-pink);
+  margin: 1.25rem 0 0.75rem;
+}
+
+h3::before {
+  content: "### ";
+  color: var(--bbs-dim);
+}
+
+/* H4: Italic, pink, 4 grey hashes in front */
+h4 {
+  font-weight: normal;
+  font-style: italic;
+  color: var(--bbs-pink);
+  margin: 1rem 0 0.5rem;
+}
+
+h4::before {
+  content: "#### ";
   color: var(--bbs-dim);
 }
 
