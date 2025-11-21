@@ -620,19 +620,19 @@ body.light-mode a:hover {
   color: var(--bbs-bg);
   display: inline-block;
   margin: 1rem 0 0.5rem;
-  position: relative;
-  padding-left: 1.5em;
 }
 
 .window-content h1::before {
   content: "# ";
-  color: var(--bbs-dim);
-  position: absolute;
-  left: 0;
+  color: var(--bbs-bg);
 }
 
 body.light-mode .window-content h1 {
   background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-mode .window-content h1::before {
   color: #ffffff;
 }
 
@@ -860,19 +860,19 @@ h1 {
   color: var(--bbs-bg);
   display: inline-block;
   margin: 1rem 0 0.5rem;
-  position: relative;
-  padding-left: 1.5em;
 }
 
 h1::before {
   content: "# ";
-  color: var(--bbs-dim);
-  position: absolute;
-  left: 0;
+  color: var(--bbs-bg);
 }
 
 body.light-mode h1 {
   background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-mode h1::before {
   color: #ffffff;
 }
 
