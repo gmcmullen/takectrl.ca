@@ -1,13 +1,15 @@
 ---
 title: VPD - Electronic Device Search FOI Request
-date: 2025-11-21T18:17:07.408Z
+date: 2025-11-21T19:54:00.101Z
 tags:
   - ati-foi
   - device-searches
 ---
+# Request
+
 In August 2025, we made access to information and freedom of information requests to the Royal Canadian Mounted Police (RCMP), Canada Border Services Agency (CBSA), and Vancouver Police Department (VPD). We [requested](https://takectrl.ca/projects/device-searches/) information on their policies and procedures for the search and seizure of electronic devices.
 
-T﻿his post details what we've learned from the VPD.
+You'll find the information we received from the VPD under the heading "Response". We will provide analysis and commentary under the heading "Analysis".
 
 # Response
 
@@ -23,7 +25,7 @@ We still hope to receive technical documentation, manuals, training materials, p
 
 The VPD provided two pages from its Regulation and Procedures Manual (RPM):
 
-* [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)[](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
+* [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)
 * [RPM 1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devices](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
 
 We will provide a summary of those documents at a later date. 
@@ -58,3 +60,34 @@ VPD also provided a table breaking down the number of searches conducted by DFU 
 | 2023  |   1063 |
 | 2024  |    849 |
 | 2025  |    510 (YTD) |
+
+# Details & Analysis 
+
+## Regulation and Procedures Manual (RPM)
+
+The VPD RPM documents cover two types of seizures: 1) seizure of recording equipment and images at crime scenes, and 2) seizing digital media, cryptocurrency, and electronic devices.
+
+### Seizure of Recording Equipment or Images at Crime Scenes
+
+Document: [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)
+
+#### Details
+
+Section 1.7.6(i) of the VPD RPM covers police handling of recording equipment (defined as "a device capable of capturing still images, video images, or audio recordings") belonging to media or members of the public, and the content of those devices.
+
+The document reminds VPD members that the public has "the right to observe, photograph, and audio or video record in a public place, as long as they remain outside of police perimeters" and that the Charter right to freedom of the press means that "seizure of equipment, images or audio recordings from meda personnel will require a very high level of justification."
+
+If a member of the public identifies themselves as media, police "shall not seize their recording equipment unless there is an imminent public safety issue involved, or there are reasonable grounds to believe the evidence will be made unavailable to police (e.g., hidden or destroyed)".
+
+The RPM states that the Criminal Code allows police to seize recording devices if there are "exigent circumstances", including concerns that the evidence on the devices will be destroyed or that they will not be able to serve a search warrant on the owner of the device. Such seizures must be documented, along with the specific exigent circumstances that gave rise to the seizure.
+
+Finally, if a device is seized and then returned to the owner on the scene of the incident, documenting the seizure is still required under RPM 1.9.3 (Evidence and Property Management).
+
+#### Analysis
+
+We appreciate the clear statement of rights of the public and of the press, but there are some gaps in this RPM:
+
+- The public's right to record in public places includes recording the police in public places. 
+- The definition of "police perimeter" should be made clear, and should not extend so far as to make the right to record meaningless. 
+- "Exigent circumstances" are incredibly broad. There should be more guidance given on when it is appropriate to seize a device on the basis that evidence could be destroyed or be unavailable. 
+- The "exigent circumstances" standard should be even higher when the device contains recordings of potential police misconduct. 
