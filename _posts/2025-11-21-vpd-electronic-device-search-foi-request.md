@@ -24,43 +24,16 @@ We still hope to receive technical documentation, manuals, training materials, p
 
 ### October 3, 2025
 
-The VPD provided two pages from its Regulation and Procedures Manual (RPM):
+The VPD provided two documents from its Regulation and Procedures Manual (RPM):
 
 * [RPM 1.7.6(i) Seizure of Recording Equipment and/or Images at Crime Scene](/files/2025-FOI-VPD-Device-Search/RPM-1.7.6(i)-Seizure-of-Recording-Equipment.pdf)
 * [RPM 1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devices](/files/2025-FOI-VPD-Device-Search/RPM-1.9.19-Seizing-Digital-Media-Cryptocurrency-and-Electronic-Devices.pdf)
 
 ### November 19, 2025
 
-The VPD provided a list of vendors that provide tools used by its Digital Forensics Unit (DFU):
+The VPD provided a letter responding to specific questions about tools used to analyze seized devices, the number of seizures of electronic devices, and the authorities used to justify those seizures:
 
-* Cellebrite
-* Magnet Forensics
-* MSAB (Micro Systemation AB)
-* SCG Canada
-* Digital Intelligence
-* Arsenal Recon
-* XWays
-* Final Data
-* Passware
-* Deepspar
-* OpenText
-
-VPD broke out its searches into three categories of search authorities:
-
-* Judicial authorization (90%+)
-* Consent (9%+)
-* Coroner's Act (1%)
-
-VPD also provided a table breaking down the number of searches conducted by DFU each year. It noted the figures provided represent the number of times a tool was used, not the number of devices. For example, a server with 3 SSDs would count as 1 entry in evidence, but would count as 3 searches in this table.
-
-| **Year** | **Number of Searches** |
-| -------- | ---------------------- |
-| 2020     | 906                    |
-| 2021     | 1286                   |
-| 2022     | 943                    |
-| 2023     | 1063                   |
-| 2024     | 849                    |
-| 2025     | 510 (YTD)              |
+[1216A Reply](/files/1216A-Reply.pdf)
 
 # Details & Analysis
 
@@ -99,12 +72,67 @@ Document: [RPM 1.9.19 Seizing Digital Media, Cryptocurrency, and Electronic Devi
 
 #### Details
 
-In progress
+Section 1.9.19 of the VPD RPM covers seizures of "digital and electronic devices", digital media, and cryptocurrency. "Digital and electronic devices" has a broad definition, which includes but is not limited to:
+
+> computers, hard drives, tablets, cellular devices, other mobile devices, drones, vehicles, smart watches, and electronic storage media including CD/DVDs, USB thumb drives, memory cards and digital cameras.
+
+The VPD Digital Forensics Unit (DFU) conducts forensic analysis of seized electronic devices, supports technical investigations, and prepares findings for court. Members are to consult the DFU before accessing electronic devices, and provides a generic procedure for when consultation is not immediately possible.
+
+The VPD Forensic Video Unit is responsible for analysis of video and other media.
+
+Members are reminded that just because a device can be lawfully seized does not mean it can be lawfully searched. For example, a search warrant for a place may not allow a search of electronic devices found in that place.
+
+Process:
+
+1. Contact DFU Sergeant "for guidance on how to properly disconnect or seize the electronic device, to ensure digital data or evidence is not lost or compromised."
+2. If the device operates on a cellular network, the member is not to turn it on if it is off, turn it off if it is on, or try to use it.
+3. If the device is on, members are advised to keep it powered, either with a battery pack from the DFU office or Operations Command Centre, or permanent power. 
+4. The device is to be kept isolated from radio frequencies, either in a radio frequency proof container or in the DFU Faraday Room.
+5. Store the device and its battery pack inside a radio frequency proof container as soon as possible (presumably to prevent remote access or wiping) and seal the lid.
+6. Complete paperwork, including property tag, documentation of consent received for a search (if any), warrant for search, notes on what is required from the search, and an entry in the exhibit log book.
+7. For urgent device searches, a DFU supervisor can call a DFU investigator after hours.
 
 #### Analysis
 
-In progress
+We are concerned that treating cryptocurrency hardware wallets as if they were standard electronic devices or storage media could deny suspects or witnesses access to the funds in the wallet, thereby result in extrajudicial asset forfeiture or asset freezing. We will request additional information on the handling of cryptocurrency and associated hardware.
 
-## Forensic Tools
+## Forensic Tools & Seizure Statistics
 
-In progress
+Document: [1216A Reply](/files/1216A-Reply.pdf)
+
+### Details
+
+The VPD provided a list of vendors that provide tools used by its Digital Forensics Unit (DFU):
+
+* Cellebrite
+* Magnet Forensics
+* MSAB (Micro Systemation AB)
+* SCG Canada
+* Digital Intelligence
+* Arsenal Recon
+* XWays
+* Final Data
+* Passware
+* Deepspar
+* OpenText
+
+VPD broke out its searches into three categories of search authorities:
+
+* Judicial authorization (90%+)
+* Consent (9%+)
+* Coroner's Act (1%)
+
+VPD also provided a table breaking down the number of searches conducted by DFU each year. It noted the figures provided represent the number of times a tool was used, not the number of devices. For example, a server with 3 SSDs would count as 1 entry in evidence, but would count as 3 searches in this table.
+
+| **Year** | **Number of Searches** |
+| -------- | ---------------------- |
+| 2020     | 906                    |
+| 2021     | 1286                   |
+| 2022     | 943                    |
+| 2023     | 1063                   |
+| 2024     | 849                    |
+| 2025     | 510 (YTD)              |
+
+### Analysis
+
+#### Forensic Tools
