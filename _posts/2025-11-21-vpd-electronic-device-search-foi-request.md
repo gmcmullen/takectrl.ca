@@ -1,6 +1,6 @@
 ---
 title: VPD - Electronic Device Search FOI Request
-date: 2025-11-21T19:54:00.101Z
+date: 2025-11-24T20:04:34.420Z
 tags:
   - ati-foi
   - device-searches
