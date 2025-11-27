@@ -102,6 +102,8 @@ Document: [1216A Reply](/files/1216A-Reply.pdf)
 
 ### Details
 
+#### Forensic Tools
+
 The VPD provided a list of vendors that provide tools used by its Digital Forensics Unit (DFU):
 
 * Cellebrite
@@ -115,6 +117,10 @@ The VPD provided a list of vendors that provide tools used by its Digital Forens
 * Passware
 * Deepspar
 * OpenText
+
+VPD's FOI team advised that searching for records for all 11 providers across 5 years would result in an enormous fee, so we agreed to narrow the scope of the request for such records to 4 years (2021-2025) and 6 of the 11 providers: Cellebrite, Magnet Forensics, MSAB, SGC Canada, Arsenal Recon, and Passware. Of the 11, these present the greatest concern with respect to Canadians' *Charter* rights, and knowing more about how VPD uses these tools would be illuminating.
+
+#### Seizure Statistics
 
 VPD broke out its searches into three categories of search authorities:
 
@@ -136,3 +142,28 @@ VPD also provided a table breaking down the number of searches conducted by DFU 
 ### Analysis
 
 #### Forensic Tools
+
+We are still waiting for the VPD to deliver records relating to the providers of forensic tools used by the DFU. While we wait, we used publicly available information to determine what tools from each of those providers the VPD is likely using, and what they are likely used for.
+
+| **Provider** | **Likely Tools** | **Likely Use** |
+|--------------|------------------|----------------|
+| [Cellebrite](https://cellebrite.com/) | [Cellebrite UFED](https://cellebrite.com/en/products/ufed/) | Extracts data from seized phones and similar devices, including files, app databases, deleted items, and system logs, using vendor-supported and exploit-based methods. |
+| Cellebrite | [Cellebrite Physical Analyzer](https://cellebrite.com/en/products/physical-analyzer/) | Parses and interprets UFED extractions, reconstructing messages, app activity, locations, and other artifacts into a searchable format. |
+| [Magnet Forensics](https://www.magnetforensics.com/) | [Magnet AXIOM](https://www.magnetforensics.com/products/magnet-axiom/) | Ingests evidence from computers, mobile extractions, and cloud sources, and organizes it into artifacts such as browser history, communications, file usage, and timelines. |
+| Magnet Forensics | [Magnet OUTRIDER](https://www.magnetforensics.com/products/magnet-outrider/) | Performs rapid scans of devices to identify high-risk material or activity so investigators can decide which devices need full forensic imaging. |
+| [MSAB](https://www.msab.com/) | [XRY](https://www.msab.com/product/xry-extract/) | Mobile extraction platform used when other tools do not support the device. Often used for older smartphones and handsets.  |
+| MSAB | [XAMN](https://www.msab.com/product/analyze/) | Analyzes XRY extractions, allowing examiners to filter, search, and review communications, media, and other mobile artifacts. |
+| [SCG Canada](https://scgcanada.com/) | [CFID – Covert Forensic Imaging Device](https://scgcanada.com/product/) | Field device for quickly copying data from phones, memory cards, USB drives, and drone logs when full lab equipment is not available. |
+| [Digital Intelligence](https://digitalintelligence.com/) | [FRED Forensic Workstations](https://digitalintelligence.com/products/fred/) | Hardware configured for forensic labs. Used to run imaging tools and analysis software on large volumes of digital evidence. |
+| Digital Intelligence | [UltraBlock / Write Blockers](https://digitalintelligence.com/store/t/solutions/forensic-imaging/write-blockers) | Hardware that allows investigators to read data from a suspect drive without modifying it during the imaging process. |
+| [Arsenal Recon](https://arsenalrecon.com/) | [Arsenal Image Mounter](https://arsenalrecon.com/products/arsenal-image-mounter) | Mounts forensic disk images so they behave like physical drives, enabling examiners to explore the system as if it were live, including encrypted volumes when keys are available. |
+| Arsenal Recon | [Registry Recon](https://arsenalrecon.com/products/registry-recon) | Rebuilds a Windows registry from active and deleted fragments to reveal historical system and user activity. |
+| Arsenal Recon | [Hibernation Recon](https://arsenalrecon.com/products/hibernation-recon) | Extracts artifacts left in Windows hibernation files, such as remnants of memory, file paths, and user sessions. |
+| [X-Ways](https://www.x-ways.net/) | [X-Ways Forensics](https://www.x-ways.net/forensics/) | Examines computer disks at a low level, including file-system structures, deleted files, metadata, and carved fragments. |
+| [FinalData](https://finaldata.com/) | [FINALForensics](https://finaldata.com/finalforensics/) | Recovers files from damaged, corrupt, or partially accessible storage when standard forensic tools cannot read the media. |
+| FinalData | [FinalData Enterprise](https://finaldata.com/finaldata-enterprise/) | Restores deleted or damaged files from a variety of storage devices. |
+| [Passware](https://www.passware.com/) | [Passware Kit Forensic](https://www.passware.com/kit-forensic/) | Attempts to unlock encrypted or password-protected disks, containers, and documents using password attacks and available keys. |
+| Passware | [Passware Kit Ultimate](https://www.passware.com/kit-ultimate/) | Targets additional encrypted formats and uses distributed or GPU-based password attacks with [rainbow tables](https://en.wikipedia.org/wiki/Rainbow_table). |
+| [DeepSpar](https://www.deepspar.com/) | [DeepSpar Disk Imager](https://www.deepspar.com/products-ds-disk-imager) | Hardware that images failing or unstable drives by controlling how the drive is read to avoid further degradation. |
+| DeepSpar | [DeepSpar Forensic Add-On](https://www.deepspar.com/forensics-ds-disk-imager) | Adds forensic controls and logging to DeepSpar Disk Imager so the recovery process is documented and admissible in court. |
+| [OpenText](https://www.opentext.com/) | [EnCase Forensic](https://www.opentext.com/products/forensic) | Tool for acquiring and analyzing data from computers, performing keyword searches, examining file systems, and producing structured reports. |
