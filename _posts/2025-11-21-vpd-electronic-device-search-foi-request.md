@@ -1,6 +1,6 @@
 ---
 title: VPD - Electronic Device Search FOI Request
-date: 2025-11-24T20:04:34.420Z
+date: 2025-11-28T01:38:20.285Z
 tags:
   - ati-foi
   - device-searches
@@ -143,7 +143,9 @@ VPD also provided a table breaking down the number of searches conducted by DFU 
 
 #### Forensic Tools
 
-We are still waiting for the VPD to deliver records relating to the providers of forensic tools used by the DFU. While we wait, we used publicly available information to determine what tools from each of those providers the VPD is likely using, and what they are likely used for.
+We are still waiting for the VPD to deliver records relating to the providers of forensic tools used by the DFU. While we wait, we used publicly available information to determine what tools from each of those providers the VPD is likely using, and what they are likely used for. 
+
+Note that while the providers have been confirmed to be used by VPD, the Likely Tools and Likely Use columns are just our best guesses, based on public information and what we do know about VPD practices. We hope to have more information on Cellebrite, Magnet Forensics, MSAB, SGC Canada, Arsenal Recon, and Passware soon.
 
 | **Provider** | **Likely Tools** | **Likely Use** |
 |--------------|------------------|----------------|
