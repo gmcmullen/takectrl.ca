@@ -343,12 +343,7 @@ body.light-mode a:hover {
 
 .sidebar .window-inner ul li {
   margin-left: 0;
-  padding: 0.25rem 0;
-}
-
-/* Align plain text items with numbered items in About section */
-.sidebar .menu-section:last-child .window-inner ul li:not(:has(a)) {
-  padding-left: 0.75rem;
+  padding: 0.25rem 0 0.25rem 0.75rem;
 }
 
 .window-content a {
