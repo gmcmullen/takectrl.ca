@@ -23,7 +23,7 @@ We are working on:
 
 * Artificial intelligence in policing, immigration, and national security.
 * Searches of electronic devices by police and at borders.
-* Private sector data acquired and usd by law enforcement and national security agencies.
+* Private sector data acquired and used by law enforcement and national security agencies.
 * Brain-computer interfaces and privacy.
 
 We would like to work on:

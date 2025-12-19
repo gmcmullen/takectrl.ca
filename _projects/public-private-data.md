@@ -5,7 +5,7 @@ layout: post
 tags:
   - data-brokers
 ---
-# Public Sector Use of Private SectorData
+# Public Sector Use of Private Sector Data
 
 Coming soon. Our research into public sector use of private sector data. 
 
