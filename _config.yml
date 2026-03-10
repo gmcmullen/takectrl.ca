@@ -2,6 +2,7 @@ title: CTRL - Canadian Tech Rights Lab
 description: Canadian Tech Rights Lab - Fighting for Canadians' rights in our digital future
 baseurl: ""
 url: "https://takectrl.ca"
+version: "0.9.1"
 
 # GitHub Pages settings
 lsi: false
@@ -11,7 +12,6 @@ highlighter: rouge
 gist:
   noscript: false
 kramdown:
-  math_engine: mathjax
   syntax_highlighter: rouge
 
 # Collections

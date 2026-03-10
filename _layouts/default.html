@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% if page.title == 'Home' %}CTRL - Canadian Tech Rights Lab{% else %}CTRL - {{ page.title }}{% endif %}</title>
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>
   </head>
   <body>
     <!-- Skip navigation for screen readers and keyboard users -->
@@ -239,22 +240,6 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
           </div>
         </div>
 
-        <div class="menu-section">
-          <div class="window-title">About</div>
-          <div class="window-content">
-            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
-            <div class="window-inner">
-              <ul>
-                <li><a href="{% link pages/mission.md %}">Principles & Projects</a></li>
-                <li><a href="{{ '/pages/terms' | relative_url }}">Terms & Privacy</a></li>
-                <li>Contact: info [at] takectrl.ca</li>
-                <li>Version: 0.9.1</li>
-                <li>Updated: {{ site.time | date: "%Y-%m-%d" }}</li>
-              </ul>
-            </div>
-            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
-          </div>
-        </div>
       </aside>
 
       <main class="main-content" id="main-content" role="main">
@@ -274,11 +259,9 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
           </div>
         </div>
       </main>
-    </div>
 
-    <!-- Mobile About section (hidden on desktop) -->
-    <div class="mobile-about" style="display: none;">
-      <div class="menu-section">
+      <!-- About section — sidebar column on desktop, below main on mobile (CSS grid handles placement) -->
+      <div class="menu-section about-section" role="complementary" aria-label="About">
         <div class="window-title">About</div>
         <div class="window-content">
           <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
@@ -287,7 +270,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
               <li><a href="{% link pages/mission.md %}">Principles & Projects</a></li>
               <li><a href="{{ '/pages/terms' | relative_url }}">Terms & Privacy</a></li>
               <li>Contact: info [at] takectrl.ca</li>
-              <li>Version: 0.9.1</li>
+              <li>Version: {{ site.version }}</li>
               <li>Updated: {{ site.time | date: "%Y-%m-%d" }}</li>
             </ul>
           </div>
@@ -296,86 +279,31 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
       </div>
     </div>
 
+    <!-- Help dialog — shown when H is pressed -->
+    <dialog id="help-dialog" class="bbs-dialog" aria-labelledby="help-title">
+      <div class="window-title" id="help-title">[ CTRL Help ]</div>
+      <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
+      <div class="window-inner">
+        <ul>
+          <li>[H] Help (this screen)</li>
+          <li>[M] Main page</li>
+          <li>[P] Previous page</li>
+          <li>[L] Toggle light/dark mode</li>
+          <li>[R] Randomize header</li>
+          <li>[1-9] Navigate sidebar items</li>
+          <li>[Esc] Close</li>
+        </ul>
+      </div>
+      <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
+      <button class="dialog-close" autofocus>[X] Close</button>
+    </dialog>
+
     <footer class="site-footer">
       <div class="footer-content">
-        <p>Copyright 2025 Canadian Tech Rights Lab</p>
+        <p>Copyright {{ site.time | date: "%Y" }} Canadian Tech Rights Lab</p>
       </div>
       <button class="theme-toggle" aria-label="Toggle between light and dark mode" aria-pressed="false">[L]ight/Dark</button>
     </footer>
 
-    <script>
-      // Initialize theme and ASCII header
-      document.addEventListener('DOMContentLoaded', () => {
-        if (localStorage.getItem('theme') === 'light') {
-          document.body.classList.add('light-mode');
-        }
-        
-        const headers = document.querySelectorAll('#ascii-headers .header');
-        const randomIndex = Math.floor(Math.random() * headers.length);
-        document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
-      });
-
-      // Keyboard navigation
-      document.addEventListener('keydown', (e) => {
-        const key = e.key.toLowerCase();
-        
-        if (key === 'h') {
-          // Announce help to screen readers
-          const helpText = 'CTRL Help: Use number keys 1-9 to navigate menu items. Press H for help, Q to quit, M for main page, P to go back, L to toggle light/dark mode, R to randomize header.';
-          const announcement = document.createElement('div');
-          announcement.setAttribute('aria-live', 'assertive');
-          announcement.setAttribute('aria-atomic', 'true');
-          announcement.className = 'sr-only';
-          announcement.textContent = helpText;
-          document.body.appendChild(announcement);
-          setTimeout(() => document.body.removeChild(announcement), 3000);
-          
-          alert('CTRL Help\n\nUse number keys to navigate menu items.');
-        } else if (key === 'q') {
-          if (confirm('Are you sure you want to lose CTRL?')) {
-            window.location.href = 'about:blank';
-          }
-        } else if (key === 'm') {
-          window.location.href = '/';
-        } else if (key === 'p') {
-          window.history.back();
-        } else if (key === 'l') {
-          document.body.classList.toggle('light-mode');
-          localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
-        } else if (key === 'r') {
-          const headers = document.querySelectorAll('#ascii-headers .header');
-          const randomIndex = Math.floor(Math.random() * headers.length);
-          document.getElementById('ascii-header').innerHTML = headers[randomIndex].innerHTML;
-        } else if (key >= '1' && key <= '9') {
-          const menuItems = document.querySelectorAll('a[href*="/"]');
-          const index = parseInt(key) - 1;
-          if (menuItems[index]) {
-            menuItems[index].click();
-          }
-        }
-      });
-
-      // Theme toggle button with accessibility
-      const themeToggle = document.querySelector('.theme-toggle');
-      themeToggle.addEventListener('click', () => {
-        const isLightMode = document.body.classList.contains('light-mode');
-        document.body.classList.toggle('light-mode');
-        const newTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-        localStorage.setItem('theme', newTheme);
-        
-        // Update ARIA attributes for screen readers
-        themeToggle.setAttribute('aria-pressed', newTheme === 'light' ? 'true' : 'false');
-        themeToggle.setAttribute('aria-label', `Currently in ${newTheme} mode. Click to switch to ${newTheme === 'light' ? 'dark' : 'light'} mode.`);
-        
-        // Announce theme change to screen readers
-        const announcement = document.createElement('div');
-        announcement.setAttribute('aria-live', 'polite');
-        announcement.setAttribute('aria-atomic', 'true');
-        announcement.className = 'sr-only';
-        announcement.textContent = `Theme switched to ${newTheme} mode`;
-        document.body.appendChild(announcement);
-        setTimeout(() => document.body.removeChild(announcement), 1000);
-      });
-    </script>
   </body>
 </html> 

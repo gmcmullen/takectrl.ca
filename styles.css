@@ -26,6 +26,7 @@
   src: url('./fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 /* ==========================================================================
@@ -239,25 +240,31 @@ body.light-mode h1::before {
   background-color: transparent;
 }
 
-.dark-mode .header-content p {
-  color: var(--text-dark);
-}
-
 .container {
-  display: flex;
-  flex: 1;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-areas:
+    "sidebar main"
+    "about   main";
+  flex: 1;            /* still a flex child of body */
   max-width: 1200px;
   margin: 0;
   padding: 0 1rem;
-  gap: 1.5rem;
+  column-gap: 1.5rem;
+  row-gap: 0;
   width: 100%;
   box-sizing: border-box;
 }
 
 .sidebar {
-  width: 300px;
-  min-width: 300px;
-  max-width: 300px;
+  grid-area: sidebar;
+  align-self: start;
+  padding: 0 1rem 0 0;
+}
+
+.about-section {
+  grid-area: about;
+  align-self: start;
   padding: 0 1rem 0 0;
 }
 
@@ -271,14 +278,6 @@ body.light-mode h1::before {
   position: relative;
   width: 100%;
   box-sizing: border-box;
-}
-
-.dark-mode .terminal-window {
-  background-color: var(--window-bg-dark);
-  border: 1px solid var(--border-dark);
-  box-shadow: 
-    2px 2px 0 var(--border-shadow-dark),
-    -2px -2px 0 var(--border-highlight-dark);
 }
 
 .window-header {
@@ -336,12 +335,14 @@ body.light-mode h1::before {
   padding: 0.25rem 0;
 }
 
-.sidebar .window-inner ul {
+.sidebar .window-inner ul,
+.about-section .window-inner ul {
   list-style: none;
   padding-left: 0;
 }
 
-.sidebar .window-inner ul li {
+.sidebar .window-inner ul li,
+.about-section .window-inner ul li {
   margin-left: 0;
   padding: 0.25rem 0 0.25rem 0.75rem;
 }
@@ -398,17 +399,13 @@ body.light-mode h1::before {
   display: block;
 }
 
-.dark-mode .post-title {
-  color: var(--text-dark);
-}
-
 .post-title:hover {
   color: var(--bbs-bg);
   background-color: var(--bbs-text);
 }
 
 .main-content {
-  flex: 1;
+  grid-area: main;
   background-color: var(--bbs-bg);
   padding: 0;
 }
@@ -559,10 +556,6 @@ a {
 a:hover {
   color: var(--bbs-link-hover);
   background-color: var(--bbs-bright);
-}
-
-.dark-mode a:hover {
-  color: var(--bbs-link-hover);
 }
 
 /* ==========================================================================
@@ -738,21 +731,22 @@ blockquote {
 
 @media (max-width: 768px) {
   .container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "sidebar"
+      "main"
+      "about";
     padding: var(--space-sm);
     gap: var(--space-sm);
   }
 
   .sidebar {
-    width: 100%;
-    min-width: auto;
-    max-width: none;
     padding: 0;
-    margin-bottom: var(--space-sm);
-    border-right: none;
-    border-bottom: none;
-    padding-right: 0;
     padding-bottom: var(--space-md);
+  }
+
+  .about-section {
+    padding: var(--space-sm) 0 0;
   }
 
   .menu-section {
@@ -831,19 +825,45 @@ blockquote {
     padding: 0.25rem 0.5rem;
   }
 
-  /* Hide About section in sidebar on mobile */
-  .sidebar .menu-section:last-child {
-    display: none;
-  }
+}
 
-  /* Show About section above footer on mobile */
-  .mobile-about {
-    display: block;
-    margin: var(--space-md) 0;
-    padding: 0 var(--space-sm);
-  }
+/* ==========================================================================
+   Help Dialog
+   ========================================================================== */
 
-  .mobile-about .menu-section {
-    margin-bottom: 0;
-  }
+.bbs-dialog {
+  background-color: var(--bbs-bg);
+  color: var(--bbs-text);
+  border: 1px solid var(--bbs-border);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10pt;
+  padding: var(--space-md);
+  max-width: 400px;
+  width: 90%;
+}
+
+.bbs-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dialog-close {
+  display: block;
+  margin-top: var(--space-md);
+  background: none;
+  border: none;
+  color: var(--bbs-pink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10pt;
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-sm);
+}
+
+.dialog-close:hover {
+  color: var(--bbs-bg);
+  background-color: var(--bbs-pink);
+}
+
+.dialog-close:focus {
+  outline: 2px solid var(--bbs-pink);
+  outline-offset: 2px;
 }
