@@ -950,6 +950,14 @@ body.reading-mode th {
    ========================================================================== */
 
 body.print-preview {
+  /* Override the theme variables themselves, not just body's own color/
+     background — most elements (tables, lists, .main-content's background)
+     read var(--bbs-text)/var(--bbs-bg) etc. directly, so in Dark Mode they'd
+     otherwise keep resolving to white-on-black regardless of what's set below. */
+  --bbs-bg: #ffffff;
+  --bbs-text: #000000;
+  --bbs-bright: #000000;
+  --bbs-border: #cccccc;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 11pt;
   background: #ffffff;
@@ -1015,6 +1023,12 @@ body.print-preview a {
 
 @media print {
   body {
+    /* See body.print-preview above for why the variables (not just body's
+       own color/background) need overriding here too. */
+    --bbs-bg: #ffffff;
+    --bbs-text: #000000;
+    --bbs-bright: #000000;
+    --bbs-border: #cccccc;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 11pt;
     background: #ffffff;
