@@ -665,6 +665,11 @@ blockquote {
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Selection */
 ::selection {
   background-color: var(--bbs-bright);
@@ -808,4 +813,197 @@ blockquote {
 .dialog-close:focus {
   outline: 2px solid var(--bbs-pink);
   outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Reading Mode
+   Site-wide typography swap to Georgia for long-form readability. Layout,
+   navigation, and the ASCII header are deliberately left untouched — only
+   font-family changes, so nothing here can affect ASCII alignment (every
+   ascii-* rule sets its own explicit font-family/line-height that wins
+   regardless of what body.reading-mode declares).
+   ========================================================================== */
+
+body.reading-mode {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body.reading-mode p,
+body.reading-mode li,
+body.reading-mode blockquote {
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Mode Hint Buttons — [R] Reading Mode / [P] Print View, shown under each
+   page title so both modes are keyboard- and mouse/touch-discoverable.
+   ========================================================================== */
+
+.mode-hint {
+  margin: 0 0 0.75rem;
+}
+
+.mode-toggle {
+  background: none;
+  border: 1px solid var(--bbs-border);
+  color: var(--bbs-pink);
+  padding: 0.15rem 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 9pt;
+  transition: all var(--transition-fast);
+}
+
+.mode-toggle:hover {
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+}
+
+.mode-toggle[aria-pressed="true"] {
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+}
+
+/* ==========================================================================
+   Print Header — hidden on screen; shown only in @media print and the
+   on-screen print preview (body.print-preview). Order matches the requested
+   printout: site name, article title, author (if any), date, URL.
+   ========================================================================== */
+
+.print-header {
+  display: none;
+}
+
+.print-header .print-sitename {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+}
+
+.print-header .print-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem;
+}
+
+.print-header .print-meta {
+  font-style: italic;
+  margin: 0 0 0.25rem;
+  font-size: 0.9rem;
+}
+
+.print-header .print-url {
+  margin: 0 0 1.5rem;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+/* ==========================================================================
+   Print Preview (on-screen) — mirrors @media print below so pressing P
+   shows exactly what will come out of the printer. Rules are intentionally
+   duplicated (not shared via a mixin) since this is plain CSS.
+   ========================================================================== */
+
+body.print-preview {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #ffffff;
+  color: #000000;
+}
+
+body.print-preview .site-header,
+body.print-preview .sidebar,
+body.print-preview .about-section,
+body.print-preview .site-footer,
+body.print-preview .content-window .window-title,
+body.print-preview .ascii-border,
+body.print-preview .mode-hint {
+  display: none;
+}
+
+body.print-preview .container {
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+body.print-preview .print-header {
+  display: block;
+}
+
+body.print-preview h1::before,
+body.print-preview h2::before,
+body.print-preview h3::before,
+body.print-preview h4::before {
+  content: none;
+}
+
+body.print-preview h1 {
+  background: none;
+  color: #000000;
+  display: block;
+  padding: 0;
+}
+
+body.print-preview a {
+  color: #000000;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   Print Stylesheet — applies automatically to any actual print job,
+   regardless of on-screen mode. Same visual result as body.print-preview.
+   ========================================================================== */
+
+@media print {
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #ffffff;
+    color: #000000;
+  }
+
+  .site-header,
+  .sidebar,
+  .about-section,
+  .site-footer,
+  .content-window .window-title,
+  .ascii-border,
+  .mode-hint,
+  #help-dialog,
+  .skip-link {
+    display: none !important;
+  }
+
+  .container {
+    display: block;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .print-header {
+    display: block;
+  }
+
+  h1::before,
+  h2::before,
+  h3::before,
+  h4::before {
+    content: none;
+  }
+
+  h1 {
+    background: none;
+    color: #000000;
+    display: block;
+    padding: 0;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: underline;
+  }
 }

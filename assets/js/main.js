@@ -8,6 +8,7 @@
 
 const helpDialog  = document.getElementById('help-dialog');
 const themeToggle = document.querySelector('.theme-toggle');
+const modeToggles = document.querySelectorAll('.mode-toggle');
 
 // ---------------------------------------------------------------------------
 // Screen reader announcements — briefly injects a live region, then removes it
@@ -50,6 +51,51 @@ function toggleTheme(announceChange) {
 }
 
 // ---------------------------------------------------------------------------
+// Mode toggle buttons — syncs the [R]/[P] hint buttons' pressed state
+// ---------------------------------------------------------------------------
+function syncModeButton(mode, on) {
+  modeToggles.forEach((btn) => {
+    if (btn.dataset.mode === mode) btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Reading mode — swaps body copy to Georgia for long-form readability.
+// Navigation, ASCII header, and layout are untouched. Persisted like theme.
+// ---------------------------------------------------------------------------
+const savedReadingMode = localStorage.getItem('readingMode');
+if (savedReadingMode === 'on') {
+  document.body.classList.add('reading-mode');
+}
+syncModeButton('reading', document.body.classList.contains('reading-mode'));
+
+function toggleReadingMode(announceChange) {
+  if (document.body.classList.contains('print-preview')) togglePrintPreview(false);
+
+  document.body.classList.toggle('reading-mode');
+  const on = document.body.classList.contains('reading-mode');
+  localStorage.setItem('readingMode', on ? 'on' : 'off');
+  syncModeButton('reading', on);
+
+  if (announceChange) announce(`Reading mode ${on ? 'enabled' : 'disabled'}`);
+}
+
+// ---------------------------------------------------------------------------
+// Print preview — on-screen look at the printer-friendly layout (also used
+// automatically by @media print when actually printing). Not persisted —
+// it's a momentary preview, not a standing preference.
+// ---------------------------------------------------------------------------
+function togglePrintPreview(announceChange) {
+  if (document.body.classList.contains('reading-mode')) toggleReadingMode(false);
+
+  document.body.classList.toggle('print-preview');
+  const on = document.body.classList.contains('print-preview');
+  syncModeButton('print', on);
+
+  if (announceChange) announce(`Print preview ${on ? 'enabled' : 'disabled'}`);
+}
+
+// ---------------------------------------------------------------------------
 // ASCII header randomiser — uses cloneNode to avoid innerHTML assignment
 // ---------------------------------------------------------------------------
 function randomiseHeader() {
@@ -72,21 +118,27 @@ document.querySelector('.dialog-close').addEventListener('click', () => {
 
 // ---------------------------------------------------------------------------
 // Keyboard navigation
-// Shortcuts are suppressed while the help dialog is open (Esc closes it natively).
+// While the help dialog is open, only X (or the dialog's native Escape
+// handling) does anything — other shortcuts are suppressed.
 // Shortcuts are also suppressed when focus is inside a form field.
 // ---------------------------------------------------------------------------
 document.addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
-  if (helpDialog.open) return;
 
   const key = e.key.toLowerCase();
+
+  if (helpDialog.open) {
+    if (key === 'x') helpDialog.close();
+    return;
+  }
 
   if (key === 'h') {
     helpDialog.showModal();
     announce(
-      'CTRL keyboard shortcuts: M — main page, P — previous page, ' +
-      'L — toggle light/dark mode, R — randomise header, ' +
-      '1 through 9 — navigate sidebar menu items, Escape — close this dialog.',
+      'CTRL keyboard shortcuts: H — help, M — main page, ' +
+      'L — toggle light/dark mode, R — toggle reading mode, P — toggle print view, ' +
+      'B — randomize ASCII banner, 0 through 9 — navigate sidebar menu items, ' +
+      'X or Escape — close this dialog.',
       'assertive',
       3000
     );
@@ -94,19 +146,22 @@ document.addEventListener('keydown', (e) => {
   } else if (key === 'm') {
     window.location.href = '/';
 
-  } else if (key === 'p') {
-    window.history.back();
-
   } else if (key === 'l') {
     toggleTheme(false);
 
   } else if (key === 'r') {
+    toggleReadingMode(true);
+
+  } else if (key === 'p') {
+    togglePrintPreview(true);
+
+  } else if (key === 'b') {
     randomiseHeader();
 
-  } else if (key >= '1' && key <= '9') {
+  } else if (key >= '0' && key <= '9') {
     // Scoped to sidebar links only — avoids matching unrelated page links
     const menuItems = document.querySelectorAll('.sidebar a');
-    const index = parseInt(key) - 1;
+    const index = key === '0' ? 9 : parseInt(key) - 1;
     if (menuItems[index]) menuItems[index].click();
   }
 });
@@ -116,4 +171,14 @@ document.addEventListener('keydown', (e) => {
 // ---------------------------------------------------------------------------
 themeToggle.addEventListener('click', () => {
   toggleTheme(true);
+});
+
+// ---------------------------------------------------------------------------
+// Mode hint buttons ([R] Reading Mode / [P] Print View, under each page title)
+// ---------------------------------------------------------------------------
+modeToggles.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.mode === 'reading') toggleReadingMode(true);
+    else if (btn.dataset.mode === 'print') togglePrintPreview(true);
+  });
 });

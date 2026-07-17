@@ -245,7 +245,20 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
       <main class="main-content" id="main-content" role="main">
         <div class="content-window">
           <div class="window-content">
+            <!-- Print-only header — hidden on screen, shown for @media print and the on-screen print preview (P) -->
+            <div class="print-header">
+              <p class="print-sitename">{{ site.title }}</p>
+              <p class="print-title">{{ page.title }}</p>
+              {% if page.author %}<p class="print-meta">By {{ page.author }}</p>{% endif %}
+              {% if page.date %}<p class="print-meta">{{ page.date | date: "%Y-%m-%d" }}</p>{% endif %}
+              <p class="print-url">{{ site.url }}{{ page.url }}</p>
+            </div>
+
             <div class="window-title">{{ page.title }}</div>
+            <p class="mode-hint">
+              <button type="button" class="mode-toggle" data-mode="reading" aria-pressed="false">[R] Reading Mode</button>
+              <button type="button" class="mode-toggle" data-mode="print" aria-pressed="false">[P] Print View</button>
+            </p>
             <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
             <div class="window-inner">
               <ul>
@@ -287,11 +300,12 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
         <ul>
           <li>[H] Help (this screen)</li>
           <li>[M] Main page</li>
-          <li>[P] Previous page</li>
           <li>[L] Toggle light/dark mode</li>
-          <li>[R] Randomize header</li>
-          <li>[1-9] Navigate sidebar items</li>
-          <li>[Esc] Close</li>
+          <li>[R] Toggle reading mode</li>
+          <li>[P] Toggle print view</li>
+          <li>[B] Randomize ASCII banner</li>
+          <li>[0-9] Navigate sidebar items</li>
+          <li>[X] or [Esc] Close</li>
         </ul>
       </div>
       <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
