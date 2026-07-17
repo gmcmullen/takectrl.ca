@@ -218,18 +218,51 @@ body.light-mode h1::before {
   font-weight: normal !important;
   margin: 0;
   margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding: 0;
   color: var(--bbs-text);
   background-color: transparent;
 }
 
+/* ==========================================================================
+   Menu Bar — Reading Mode / Light-Dark / Print View, grouped together
+   under the header on every page.
+   ========================================================================== */
+
+.menu-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.5rem;
+}
+
+.menu-bar button {
+  background: none;
+  border: 1px solid var(--bbs-border);
+  color: var(--bbs-pink);
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 9pt;
+  transition: all var(--transition-fast);
+}
+
+.menu-bar button:hover {
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+  border-color: var(--bbs-pink);
+}
+
+.menu-bar button[aria-pressed="true"] {
+  background-color: var(--bbs-pink);
+  color: var(--bbs-bg);
+  border-color: var(--bbs-pink);
+}
+
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
-  grid-template-areas:
-    "sidebar main"
-    "about   main";
+  grid-template-areas: "nav main";
   flex: 1;            /* still a flex child of body */
   max-width: 1200px;
   margin: 0;
@@ -240,15 +273,19 @@ body.light-mode h1::before {
   box-sizing: border-box;
 }
 
-.sidebar {
-  grid-area: sidebar;
+/* Sidebar + About stacked as one grid item, so About's position tracks the
+   nav column's own height instead of the (much taller) main column's — see
+   the mobile media query for how this un-nests back to 3 stacked sections. */
+.nav-column {
+  grid-area: nav;
   align-self: start;
+}
+
+.sidebar {
   padding: 0 1rem 0 0;
 }
 
 .about-section {
-  grid-area: about;
-  align-self: start;
   padding: 0 1rem 0 0;
 }
 
@@ -401,7 +438,7 @@ body.light-mode h1::before {
   text-align: center;
   color: var(--bbs-dim);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
@@ -409,22 +446,8 @@ body.light-mode h1::before {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-}
-
-.theme-toggle {
-  background: none;
-  border: 0px solid var(--bbs-border);
-  color: var(--bbs-bright);
-  padding: var(--space-xs) var(--space-sm);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.theme-toggle:hover {
-  background-color: var(--bbs-bright);
-  color: var(--bbs-bg);
 }
 
 /* ==========================================================================
@@ -522,6 +545,7 @@ a:hover {
   padding: 0;
   line-height: 1;
   font-family: monospace;
+  font-size: 10pt; /* pinned so Reading Mode's larger body font can't scale the art */
   white-space: pre;
   color: var(--bbs-pink);
   background-color: transparent;
@@ -538,6 +562,7 @@ a:hover {
   padding: 0;
   line-height: 1;
   font-family: monospace;
+  font-size: 10pt; /* pinned — see .ascii-header above */
   white-space: pre;
   color: var(--bbs-pink);
   background-color: transparent;
@@ -691,12 +716,20 @@ img {
     gap: var(--space-sm);
   }
 
+  /* Un-nest: Sidebar and About go back to being independent grid items so
+     they can slot into their own named rows around Main, as above. */
+  .nav-column {
+    display: contents;
+  }
+
   .sidebar {
+    grid-area: sidebar;
     padding: 0;
     padding-bottom: var(--space-md);
   }
 
   .about-section {
+    grid-area: about;
     padding: var(--space-sm) 0 0;
   }
 
@@ -771,9 +804,9 @@ img {
     justify-content: center;
   }
 
-  .theme-toggle {
-    font-size: 9pt;
-    padding: 0.25rem 0.5rem;
+  .menu-bar button {
+    font-size: 8pt;
+    padding: 0.2rem 0.5rem;
   }
 
 }
@@ -826,6 +859,7 @@ img {
 
 body.reading-mode {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 11pt;
 }
 
 body.reading-mode p,
@@ -834,35 +868,43 @@ body.reading-mode blockquote {
   line-height: 1.7;
 }
 
-/* ==========================================================================
-   Mode Hint Buttons — [R] Reading Mode / [P] Print View, shown under each
-   page title so both modes are keyboard- and mouse/touch-discoverable.
-   ========================================================================== */
-
-.mode-hint {
-  margin: 0 0 0.75rem;
+/* Headings carry hierarchy through size now, so the "# "-style hash
+   prefixes (a nod to raw markdown) are redundant clutter here. */
+body.reading-mode h1::before,
+body.reading-mode h2::before,
+body.reading-mode h3::before,
+body.reading-mode h4::before {
+  content: none;
 }
 
-.mode-toggle {
+/* Plain, sized heading instead of the pink pill-box BBS treatment. */
+body.reading-mode h1 {
   background: none;
-  border: 1px solid var(--bbs-border);
   color: var(--bbs-pink);
-  padding: 0.15rem 0.5rem;
-  margin-right: 0.5rem;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 9pt;
-  transition: all var(--transition-fast);
+  display: block;
+  padding: 0;
+  font-size: 1.6rem;
 }
 
-.mode-toggle:hover {
-  background-color: var(--bbs-pink);
-  color: var(--bbs-bg);
+body.reading-mode h2 {
+  font-size: 1.3rem;
 }
 
-.mode-toggle[aria-pressed="true"] {
-  background-color: var(--bbs-pink);
-  color: var(--bbs-bg);
+body.reading-mode h3 {
+  font-size: 1.15rem;
+}
+
+body.reading-mode h4 {
+  font-size: 1.05rem;
+}
+
+/* Minimal header style — a bottom border instead of a filled background,
+   so it doesn't read as a heavy grey block in light mode. */
+body.reading-mode th {
+  background-color: transparent;
+  color: var(--bbs-text);
+  border-bottom: 2px solid var(--bbs-border);
+  font-weight: bold;
 }
 
 /* ==========================================================================
@@ -909,17 +951,17 @@ body.reading-mode blockquote {
 
 body.print-preview {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 11pt;
   background: #ffffff;
   color: #000000;
 }
 
 body.print-preview .site-header,
-body.print-preview .sidebar,
-body.print-preview .about-section,
+body.print-preview .nav-column,
 body.print-preview .site-footer,
 body.print-preview .content-window .window-title,
 body.print-preview .ascii-border,
-body.print-preview .mode-hint {
+body.print-preview .page-date-item {
   display: none;
 }
 
@@ -932,6 +974,19 @@ body.print-preview .container {
 
 body.print-preview .print-header {
   display: block;
+}
+
+/* The print-header already shows the title — content's own leading H1
+   (a convention in some source files, e.g. project pages) would repeat it. */
+body.print-preview .window-inner h1:first-of-type {
+  display: none;
+}
+
+/* Content lives in a <ul> for the on-screen BBS bullet look; reset it here
+   so printed body text isn't indented relative to the flush-left print-header. */
+body.print-preview .window-inner ul {
+  margin-left: 0;
+  padding-left: 0;
 }
 
 body.print-preview h1::before,
@@ -961,17 +1016,17 @@ body.print-preview a {
 @media print {
   body {
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 11pt;
     background: #ffffff;
     color: #000000;
   }
 
   .site-header,
-  .sidebar,
-  .about-section,
+  .nav-column,
   .site-footer,
   .content-window .window-title,
   .ascii-border,
-  .mode-hint,
+  .page-date-item,
   #help-dialog,
   .skip-link {
     display: none !important;
@@ -986,6 +1041,15 @@ body.print-preview a {
 
   .print-header {
     display: block;
+  }
+
+  .window-inner h1:first-of-type {
+    display: none;
+  }
+
+  .window-inner ul {
+    margin-left: 0;
+    padding-left: 0;
   }
 
   h1::before,

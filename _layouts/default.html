@@ -23,6 +23,11 @@
           <p>Fighting for Canadians' rights in our digital future</p>
         </div>
         <p class="header-text">──[ Canadian Tech Rights Lab ]─────────</p>
+        <nav class="menu-bar" aria-label="Display options">
+          <button type="button" class="mode-toggle" data-mode="reading" aria-pressed="false">[R] Reading Mode</button>
+          <button type="button" class="theme-toggle" aria-label="Toggle between light and dark mode" aria-pressed="false">[L] Light/Dark</button>
+          <button type="button" class="mode-toggle" data-mode="print" aria-pressed="false">[P] Print View</button>
+        </nav>
       </div>
     </header>
 
@@ -206,6 +211,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
     </div>
 
     <div class="container">
+      <div class="nav-column">
       <aside class="sidebar" id="sidebar-nav" role="navigation" aria-label="Site navigation">
         <div class="menu-section">
           <div class="window-title">Projects</div>
@@ -242,38 +248,7 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
 
       </aside>
 
-      <main class="main-content" id="main-content" role="main">
-        <div class="content-window">
-          <div class="window-content">
-            <!-- Print-only header — hidden on screen, shown for @media print and the on-screen print preview (P) -->
-            <div class="print-header">
-              <p class="print-sitename">{{ site.title }}</p>
-              <p class="print-title">{{ page.title }}</p>
-              {% if page.author %}<p class="print-meta">By {{ page.author }}</p>{% endif %}
-              {% if page.date %}<p class="print-meta">{{ page.date | date: "%Y-%m-%d" }}</p>{% endif %}
-              <p class="print-url">{{ site.url }}{{ page.url }}</p>
-            </div>
-
-            <div class="window-title">{{ page.title }}</div>
-            <p class="mode-hint">
-              <button type="button" class="mode-toggle" data-mode="reading" aria-pressed="false">[R] Reading Mode</button>
-              <button type="button" class="mode-toggle" data-mode="print" aria-pressed="false">[P] Print View</button>
-            </p>
-            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
-            <div class="window-inner">
-              <ul>
-                {% if page.date %}
-                <li><span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span></li>
-                {% endif %}
-                {{ content }}
-              </ul>
-            </div>
-            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
-          </div>
-        </div>
-      </main>
-
-      <!-- About section — sidebar column on desktop, below main on mobile (CSS grid handles placement) -->
+      <!-- About section — stacked under Sidebar in .nav-column on desktop, below Main on mobile -->
       <div class="menu-section about-section" role="complementary" aria-label="About">
         <div class="window-title">About</div>
         <div class="window-content">
@@ -290,6 +265,34 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
           <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
         </div>
       </div>
+      </div>
+
+      <main class="main-content" id="main-content" role="main">
+        <div class="content-window">
+          <div class="window-content">
+            <!-- Print-only header — hidden on screen, shown for @media print and the on-screen print preview (P) -->
+            <div class="print-header">
+              <p class="print-sitename">{{ site.title }}</p>
+              <p class="print-title">{{ page.title }}</p>
+              {% if page.author %}<p class="print-meta">By {{ page.author }}</p>{% endif %}
+              {% if page.date %}<p class="print-meta">{{ page.date | date: "%Y-%m-%d" }}</p>{% endif %}
+              <p class="print-url">{{ site.url }}{{ page.url }}</p>
+            </div>
+
+            <div class="window-title">{{ page.title }}</div>
+            <div class="ascii-border ascii-border-top">┌────────────────────────────────</div>
+            <div class="window-inner">
+              <ul>
+                {% if page.date %}
+                <li class="page-date-item"><span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span></li>
+                {% endif %}
+                {{ content }}
+              </ul>
+            </div>
+            <div class="ascii-border ascii-border-bottom">└────────────────────────────────</div>
+          </div>
+        </div>
+      </main>
     </div>
 
     <!-- Help dialog — shown when H is pressed -->
@@ -316,7 +319,6 @@ P""Y8888PP88P""Y888P      `Y88P'"Y88</pre>
       <div class="footer-content">
         <p>Copyright {{ site.time | date: "%Y" }} Canadian Tech Rights Lab</p>
       </div>
-      <button class="theme-toggle" aria-label="Toggle between light and dark mode" aria-pressed="false">[L]ight/Dark</button>
     </footer>
 
   </body>
