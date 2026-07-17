@@ -10,6 +10,19 @@ const helpDialog  = document.getElementById('help-dialog');
 const themeToggle = document.querySelector('.theme-toggle');
 
 // ---------------------------------------------------------------------------
+// Screen reader announcements — briefly injects a live region, then removes it
+// ---------------------------------------------------------------------------
+function announce(text, priority = 'polite', duration = 1000) {
+  const el = document.createElement('div');
+  el.setAttribute('aria-live', priority);
+  el.setAttribute('aria-atomic', 'true');
+  el.className = 'sr-only';
+  el.textContent = text;
+  document.body.appendChild(el);
+  setTimeout(() => document.body.removeChild(el), duration);
+}
+
+// ---------------------------------------------------------------------------
 // Theme initialisation — reads localStorage and applies saved preference
 // ---------------------------------------------------------------------------
 const savedTheme = localStorage.getItem('theme');
@@ -17,6 +30,23 @@ if (savedTheme === 'light') {
   document.body.classList.add('light-mode');
   themeToggle.setAttribute('aria-pressed', 'true');
   themeToggle.setAttribute('aria-label', 'Currently in light mode. Click to switch to dark mode.');
+}
+
+// ---------------------------------------------------------------------------
+// Theme toggle — flips light/dark mode, persists it, and syncs ARIA state
+// ---------------------------------------------------------------------------
+function toggleTheme(announceChange) {
+  document.body.classList.toggle('light-mode');
+  const newTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+  localStorage.setItem('theme', newTheme);
+
+  themeToggle.setAttribute('aria-pressed', newTheme === 'light' ? 'true' : 'false');
+  themeToggle.setAttribute(
+    'aria-label',
+    `Currently in ${newTheme} mode. Click to switch to ${newTheme === 'light' ? 'dark' : 'light'} mode.`
+  );
+
+  if (announceChange) announce(`Theme switched to ${newTheme} mode`);
 }
 
 // ---------------------------------------------------------------------------
@@ -53,18 +83,13 @@ document.addEventListener('keydown', (e) => {
 
   if (key === 'h') {
     helpDialog.showModal();
-
-    // Announce to screen readers
-    const announcement = document.createElement('div');
-    announcement.setAttribute('aria-live', 'assertive');
-    announcement.setAttribute('aria-atomic', 'true');
-    announcement.className = 'sr-only';
-    announcement.textContent =
+    announce(
       'CTRL keyboard shortcuts: M — main page, P — previous page, ' +
       'L — toggle light/dark mode, R — randomise header, ' +
-      '1 through 9 — navigate sidebar menu items, Escape — close this dialog.';
-    document.body.appendChild(announcement);
-    setTimeout(() => document.body.removeChild(announcement), 3000);
+      '1 through 9 — navigate sidebar menu items, Escape — close this dialog.',
+      'assertive',
+      3000
+    );
 
   } else if (key === 'm') {
     window.location.href = '/';
@@ -73,14 +98,7 @@ document.addEventListener('keydown', (e) => {
     window.history.back();
 
   } else if (key === 'l') {
-    document.body.classList.toggle('light-mode');
-    const newTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-    localStorage.setItem('theme', newTheme);
-    themeToggle.setAttribute('aria-pressed', newTheme === 'light' ? 'true' : 'false');
-    themeToggle.setAttribute(
-      'aria-label',
-      `Currently in ${newTheme} mode. Click to switch to ${newTheme === 'light' ? 'dark' : 'light'} mode.`
-    );
+    toggleTheme(false);
 
   } else if (key === 'r') {
     randomiseHeader();
@@ -97,23 +115,5 @@ document.addEventListener('keydown', (e) => {
 // Theme toggle button
 // ---------------------------------------------------------------------------
 themeToggle.addEventListener('click', () => {
-  document.body.classList.toggle('light-mode');
-  const newTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-  localStorage.setItem('theme', newTheme);
-
-  // Sync ARIA state
-  themeToggle.setAttribute('aria-pressed', newTheme === 'light' ? 'true' : 'false');
-  themeToggle.setAttribute(
-    'aria-label',
-    `Currently in ${newTheme} mode. Click to switch to ${newTheme === 'light' ? 'dark' : 'light'} mode.`
-  );
-
-  // Announce to screen readers
-  const announcement = document.createElement('div');
-  announcement.setAttribute('aria-live', 'polite');
-  announcement.setAttribute('aria-atomic', 'true');
-  announcement.className = 'sr-only';
-  announcement.textContent = `Theme switched to ${newTheme} mode`;
-  document.body.appendChild(announcement);
-  setTimeout(() => document.body.removeChild(announcement), 1000);
+  toggleTheme(true);
 });

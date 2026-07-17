@@ -10,17 +10,6 @@
  * - Netlify CMS integration
  */
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @font-face {
   font-family: 'IBM Plex Mono';
   src: url('./fonts/IBM_Plex_Mono/IBMPlexMono-Regular.ttf') format('truetype');
@@ -114,8 +103,6 @@
   color: var(--bbs-bg);
   padding: 8px;
   text-decoration: none;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   z-index: 1000;
   border: 1px solid var(--bbs-border);
 }
@@ -218,7 +205,6 @@ body.light-mode h1::before {
 
 .header-content p {
   margin: 0;
-  font-size: 10pt;
   color: var(--bbs-text);
   padding-left: 2px;
   letter-spacing: 0.02em;
@@ -234,8 +220,6 @@ body.light-mode h1::before {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   padding: 0;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   color: var(--bbs-text);
   background-color: transparent;
 }
@@ -287,7 +271,6 @@ body.light-mode h1::before {
 }
 
 .window-title {
-  font-size: 10pt;
   padding: 0;
   margin: 0 0 0.25rem var(--space-md);
   font-weight: 700;
@@ -300,7 +283,6 @@ body.light-mode h1::before {
 
 .window-content {
   padding: 0;
-  font-size: 10pt;
   width: 100%;
   margin: 0;
   box-sizing: border-box;
@@ -320,7 +302,6 @@ body.light-mode h1::before {
 .window-inner ul li {
   margin: 0;
   padding: 0;
-  font-size: 10pt;
   line-height: 1.8;
   margin-left: 1rem;
 }
@@ -350,13 +331,7 @@ body.light-mode h1::before {
 .window-content a {
   color: var(--bbs-link);
   padding: 0;
-  font-size: 10pt;
   display: inline;
-}
-
-.window-content a:hover {
-  color: var(--bbs-link-hover);
-  background-color: var(--bbs-bright);
 }
 
 .recent-posts li {
@@ -366,7 +341,6 @@ body.light-mode h1::before {
 
 .recent-posts .post-date {
   color: var(--bbs-dim);
-  font-size: 10pt;
   display: block;
   margin-bottom: var(--space-xs);
 }
@@ -375,12 +349,6 @@ body.light-mode h1::before {
   color: var(--bbs-link);
   padding: var(--space-xs) var(--space-sm);
   display: block;
-  font-size: 10pt;
-}
-
-.recent-posts .post-title:hover {
-  color: var(--bbs-link-hover);
-  background-color: var(--bbs-bright);
 }
 
 .post-title {
@@ -388,8 +356,6 @@ body.light-mode h1::before {
   white-space: normal;
   word-wrap: break-word;
   display: block;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   transition: color 0.2s ease;
 }
 
@@ -397,11 +363,6 @@ body.light-mode h1::before {
   color: var(--bbs-dim);
   list-style: none;
   display: block;
-}
-
-.post-title:hover {
-  color: var(--bbs-bg);
-  background-color: var(--bbs-text);
 }
 
 .main-content {
@@ -422,6 +383,7 @@ body.light-mode h1::before {
 
 .content-window .window-inner {
   padding: var(--space-md);
+  max-width: 65ch;
 }
 
 .system-window {
@@ -441,7 +403,6 @@ body.light-mode h1::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 10pt;
 }
 
 .footer-content {
@@ -458,8 +419,6 @@ body.light-mode h1::before {
   color: var(--bbs-bright);
   padding: var(--space-xs) var(--space-sm);
   cursor: pointer;
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   transition: all var(--transition-fast);
 }
 
@@ -473,8 +432,6 @@ body.light-mode h1::before {
    ========================================================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   margin: 1rem 0;
 }
 
@@ -533,10 +490,9 @@ h4::before {
 
 p {
   color: var(--bbs-text);
-  line-height: 1.4;
-  font-size: 10pt;
+  line-height: 1.6;
   font-weight: normal;
-  margin: 0.5rem 0;
+  margin: 0 0 1rem;
 }
 
 .window-content p:last-child {
@@ -545,7 +501,6 @@ p {
 
 a {
   color: var(--bbs-link);
-  font-size: 10pt;
   transition: color var(--transition-fast);
   text-decoration: underline;
   text-decoration-style: dotted;
@@ -561,10 +516,6 @@ a:hover {
 /* ==========================================================================
    ASCII Art & Visual Elements
    ========================================================================== */
-
-.header {
-  animation: fadeIn 0.5s ease-out;
-}
 
 .ascii-header {
   margin: 0;
@@ -625,7 +576,6 @@ a:hover {
 
 .ascii-divider {
   color: var(--bbs-dim);
-  font-size: 10pt;
   margin: var(--space-md) 0;
   white-space: pre;
   font-family: monospace;
@@ -638,7 +588,6 @@ a:hover {
 
 .ascii-border {
   color: var(--bbs-dim);
-  font-size: 10pt;
   white-space: pre;
   font-family: monospace;
   line-height: 1;
@@ -667,7 +616,6 @@ a:hover {
 
 .article-date {
   color: var(--bbs-dim);
-  font-size: 10pt;
   margin-top: var(--space-sm);
 }
 
@@ -694,7 +642,6 @@ th, td {
   border: 1px solid var(--bbs-border);
   padding: 0.5rem;
   text-align: left;
-  font-size: 10pt;
 }
 
 th {
@@ -708,7 +655,6 @@ pre {
   padding: 1rem;
   color: var(--bbs-text);
   overflow-x: auto;
-  font-size: 10pt;
 }
 
 blockquote {
@@ -716,7 +662,7 @@ blockquote {
   margin: 0;
   padding-left: 1rem;
   color: var(--bbs-text);
-  font-size: 10pt;
+  line-height: 1.6;
 }
 
 /* Selection */
@@ -835,8 +781,6 @@ blockquote {
   background-color: var(--bbs-bg);
   color: var(--bbs-text);
   border: 1px solid var(--bbs-border);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   padding: var(--space-md);
   max-width: 400px;
   width: 90%;
@@ -852,8 +796,6 @@ blockquote {
   background: none;
   border: none;
   color: var(--bbs-pink);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10pt;
   cursor: pointer;
   padding: var(--space-xs) var(--space-sm);
 }
