@@ -500,7 +500,7 @@ h3::before {
 
 /* H4: Italic, pink, 4 grey hashes in front */
 h4 {
-  font-weight: normal;
+  font-weight: bold;
   font-style: italic;
   color: var(--bbs-pink);
   margin: 1rem 0 0.5rem;
