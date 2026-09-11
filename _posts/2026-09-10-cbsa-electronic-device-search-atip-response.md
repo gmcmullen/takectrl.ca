@@ -123,7 +123,7 @@ In [*R v Pike*, 2022 ONSC 2297](https://www.canlii.org/en/on/onsc/doc/2022/2022o
 
 CBSA responded to these decisions by creating a dual policy, allowing travellers entering Canada in Alberta or Ontario more rights than those entering in other provinces (PDF p 151):
 
-![Summary of thresholds for personal digital device examinations. Table shows authorities for Canada vs Alberta and Ontario.](/files/2026-ATIP-CBSA-Device-Search/CBSA-Thresholds.png)
+[![Summary of thresholds for personal digital device examinations. Table shows authorities for Canada vs Alberta and Ontario.](/files/2026-ATIP-CBSA-Device-Search/CBSA-Thresholds.png)](/files/2026-ATIP-CBSA-Device-Search/CBSA-Thresholds.png)
 
 Under Operational Bulletin OBO-2022-027, the CBSA instructed BSOs at ports in Ontario and Alberta that they could not rely on section 99(1)(a) of the *Customs Act* to conduct searches of electronic devices, and instead must rely on section 99(1)(e), which requires a higher standard of "suspects on reasonable grounds" (PDF p 150) (emphasis in original): 
 
@@ -161,7 +161,8 @@ However, the expected legislation did not become law, so to the best of our know
 #### Procedure flowchart
 
 The ATIP documents include a flowchart setting out the process for "Conducting a digital device examination" (PDF p 119). The flowchart begins with a BSO interviewing the traveller and goes through to potentially examining the device, detaining or seizing the device, or returning the device to the traveller.
-![Conducting a digital device examination. Image shows a flowchart provided by CBSA for decisionmaking in the time between initial conduct with a traveller and conducting a search of the traveller's electronic devices.](/files/2026-ATIP-CBSA-Device-Search/CBSA-Flowchart.png)
+
+[![Conducting a digital device examination. Image shows a flowchart provided by CBSA for decision-making from initial conduct with a traveller up to conducting a search of the traveller's electronic devices and potentially seizing those devices.](/files/2026-ATIP-CBSA-Device-Search/CBSA-Flowchart.png)](/files/2026-ATIP-CBSA-Device-Search/CBSA-Flowchart.png)
 
 #### Specific files or applications
 
