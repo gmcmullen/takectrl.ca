@@ -371,6 +371,13 @@ body.light-mode h1::before {
   display: inline;
 }
 
+/* Content links (article body, Recent post entries) get the pink accent;
+   nav-menu-style links (Projects, About) keep the plain chrome color. */
+.content-window .window-content a,
+.recent-posts .post-title {
+  color: var(--bbs-pink);
+}
+
 .recent-posts li {
   padding: var(--space-sm) 0;
   position: relative;
@@ -383,7 +390,6 @@ body.light-mode h1::before {
 }
 
 .recent-posts .post-title {
-  color: var(--bbs-link);
   padding: var(--space-xs) var(--space-sm);
   display: block;
 }
@@ -706,6 +712,13 @@ img {
    ========================================================================== */
 
 @media (max-width: 768px) {
+  /* Slightly larger than desktop's 10pt — mobile readability baseline.
+     Elements with their own explicit mobile font-size below (ASCII art,
+     borders) are unaffected since explicit declarations win over inheritance. */
+  body {
+    font-size: 11pt;
+  }
+
   .container {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -744,12 +757,12 @@ img {
 
   .ascii-header {
     min-height: 6em;
-    font-size: 8pt;
+    font-size: 9pt;
   }
 
   .ascii-header pre {
-    font-size: 8pt;
-    line-height: 0.8;
+    font-size: 9pt;
+    line-height: 0.9;
   }
 
   #ascii-headers .header {
@@ -757,18 +770,18 @@ img {
   }
 
   #ascii-headers .header pre {
-    font-size: 8pt;
-    line-height: 0.8;
+    font-size: 9pt;
+    line-height: 0.9;
   }
 
   .header-text {
-    font-size: 9pt;
+    font-size: 10pt;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
 
   .window-title {
-    font-size: 9pt;
+    font-size: 11pt;
   }
 
   .window-inner {
@@ -776,12 +789,12 @@ img {
   }
 
   .window-inner ul li {
-    font-size: 9pt;
-    line-height: 1.6;
+    font-size: 11pt;
+    line-height: 1.7;
   }
 
   .window-content a {
-    font-size: 9pt;
+    font-size: 11pt;
     padding: 0;
   }
 
@@ -805,8 +818,8 @@ img {
   }
 
   .menu-bar button {
-    font-size: 8pt;
-    padding: 0.2rem 0.5rem;
+    font-size: 10pt;
+    padding: 0.35rem 0.6rem;
   }
 
 }
