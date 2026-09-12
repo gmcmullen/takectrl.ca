@@ -371,10 +371,9 @@ body.light-mode h1::before {
   display: inline;
 }
 
-/* Content links (article body, Recent post entries) get the pink accent;
-   nav-menu-style links (Projects, About) keep the plain chrome color. */
-.content-window .window-content a,
-.recent-posts .post-title {
+/* Article body links get the pink accent; nav-menu-style links
+   (Projects, Recent, About) keep the plain chrome color. */
+.content-window .window-content a {
   color: var(--bbs-pink);
 }
 
