@@ -200,6 +200,10 @@ body.light-mode h1::before {
   margin: 0;
   margin-bottom: 1rem;
   border: none;
+  min-width: 0; /* flex items don't shrink below content's intrinsic width by default —
+                   without this, the widest ASCII banner line forces the whole page wider
+                   than the phone viewport, even with overflow-x:hidden on body/html */
+  max-width: 100%;
 }
 
 .header-content {
@@ -270,6 +274,7 @@ body.light-mode h1::before {
   grid-template-columns: 300px 1fr;
   grid-template-areas: "nav main";
   flex: 1;            /* still a flex child of body */
+  min-width: 0;       /* see .site-header — same flex shrink fix */
   max-width: 1200px;
   margin: 0;
   padding: 0 1rem;
@@ -285,6 +290,7 @@ body.light-mode h1::before {
 .nav-column {
   grid-area: nav;
   align-self: start;
+  min-width: 0;
 }
 
 .sidebar {
@@ -417,6 +423,7 @@ body.light-mode h1::before {
   grid-area: main;
   background-color: var(--bbs-bg);
   padding: 0;
+  min-width: 0;
 }
 
 .content-window {
@@ -698,7 +705,7 @@ pre {
 
 blockquote {
   border-left: 4px solid var(--bbs-dim);
-  margin: 0;
+  margin: 0 0 1.6em;
   padding-left: 1rem;
   color: var(--bbs-text);
   line-height: 1.6;
