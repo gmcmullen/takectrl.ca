@@ -1,28 +1,39 @@
 ---
 title: "CBSA - Electronic Device Search ATIP Response "
-date: 2026-09-10T22:30:38.600Z
+date: 2026-09-15T17:56:31.920Z
 tags:
   - device-searches
 ---
-Digital devices, and especially our smartphones, have become incredibly intimate devices. Our health, finances, politics, religion, sexuality, and personal relationships are laid bare by our phones. They contain detailed records of our conversations, calendars, movements, photo albums, reading history, and more. 
+Our digital devices, and especially our smartphones, are incredibly intimate. They are a window into our health, finances, politics, religion, sexuality, and personal relationships. They are detailed records of our conversations, calendars, movements, photo albums, medical appointments, late night anxieties, and much more. 
 
 Despite the intensely personal nature of the information on our electronic devices, and the essential role they play in our day-to-day lives, the Canada Border Services Agency (CBSA) claims broad authority to search travellers' electronic devices at the border, often without suspicion. 
 
 The last thorough attempt at documenting CBSA policy for electronic device searches was the second edition of the BCCLA's [Electronic Devices Privacy Handbook](https://bccla.org/resource/electronic-devices-privacy-handbook-a-guide-to-your-rights-at-the-border/), published in 2018. A lot has changed since then: 
 
-* Our electronic devices play an even more essential role in all our lives, and the volume of storage on devices has increased dramatically. 
-* CBSA has taken a more aggressive stance on passwords, requiring that travellers provide them and even arresting travellers who do not. 
-* Court decisions have also changed the landscape, finding CBSA's applications of the *Customs Act* and *IRPA* to searches of electronic devices were unconstitutional. 
+* Our devices play an even more intimate and essential role in all our lives.
+* The volume of storage on devices has increased dramatically. 
+* Court decisions have found that CBSA's applications of the *Customs Act* and *IRPA* to searches of electronic devices are unconstitutional. 
 
-In 2025, we made an Access to Information request to the Canada Border Services Agency for records relating to CBSA's searches and seizures of electronic devices like smartphones and laptops at the Canadian border. We asked about policies and procedures for when and how searches are conducted, tools and technological capabilities used, privacy and oversight, and statistics showing how common these practices are. We also asked about passwords and biometric credentials, and what happens if people refuse to provide them.
+To see how the landscape has changed, in 2025 we made an Access to Information request to the CBSA for records relating to its searches and seizures of electronic devices at the Canadian border. We asked about policies and procedures for when and how searches are conducted, tools and technological capabilities used, privacy and oversight, and statistics showing how common these practices are. We also asked about passwords and biometric credentials, and what happens if people refuse to provide them. The full text of the request is at the end of this post.
 
-In March 2026, CBSA responded. We learned: 
+In March 2026, CBSA responded. 
+
+**We learned**: 
 
 * There have been significant changes in how CBSA handles digital devices at the border between 2018 and the present. 
-* The changes were driven by court decisions telling the CBSA that its interpretation of the *Customs Act* and its authorities violated the *Charter*. 
-* The decisions resulted in an approximately 50% decrease in the number of digital devices searched by the CBSA on a monthly basis, at least in the provinces where the decisions are binding.
+* CBSA has taken a more aggressive stance on passwords, claiming that providing access to a device is a requirement of entry to Canada.
+* Changes in CBSA policy were driven by courts finding that CBSA's reliance on *Customs Act* and *IRPA* to justify suspicionless searches of devices was a violation of the *Charter*. 
+* These decisions resulted in an approximately 50% decrease in the number of digital devices searched by the CBSA on a monthly basis in the provinces where the decisions are binding (Ontario and Alberta).
+* Before the court decisions, nearly 75% of device searches conducted by CBSA found nothing in violation of the law. After, the false positive rate dropped to 56%.
 
-The response is available for download below, both as an OCRed PDF and the original document as received from CBSA. We will try to provide a more detailed analysis in future posts, including recommendations for travellers looking to protect their privacy. For now, we've pulled out a few highlights from the responses. Page references are to the PDF.
+**We did not learn**:
+
+* What indicators CBSA uses to target searches of devices.
+* What hardware and software tools CBSA uses to unlock, search, and copy devices. 
+
+This information was requested, but was either withheld or redacted by CBSA.
+ 
+The full response is available for download below, both as an OCRed PDF and the original document as received from CBSA. We will try to provide a more detailed analysis in future posts, including recommendations for travellers looking to protect their privacy. For now, we've pulled out a few highlights from the responses. Page references are to the PDF.
 
 ## Downloads
 
@@ -59,25 +70,39 @@ Searches should only be conducted when there is "a clear link to administering o
 
 #### Demanding passwords
 
-CBSA takes the position that "travellers have the legal obligation under the *Customs Act* to provide the means to access their goods, induding digital devices" (Policy, PDF p 116). Providing a password to an electronic device can be a condition of entry into Canada (Policy, PDF p 107):
+CBSA takes the position that "travellers have the legal obligation under the *Customs Act* to provide the means to access their goods, including digital devices" (Policy, PDF p 116). Providing a password to an electronic device can be a condition of entry into Canada (Policy, PDF p 107):
 
 > Where a password is required to gain access to a digital device, Officers should explain to a traveller that a password must be supplied in order for the traveller's obligations on entry to Canada under the *Customs* Act, the *IRPA* or other CBSA program legislation to be fulfilled.
 
-For devices secured by biometrics, CBSA suggests that BSOs consider whether a password will give the same access as the biometric authentication (Policy, PDF p 108)
+For devices secured by biometrics, CBSA advises that BSOs should obtain the password rather than allowing access by biometrics (Policy, PDF p 108):
 
 > While a device may primarily be protected by a biometrics-enabled method, the device can often also be accessed through a password. Where possible, Officers should seek to gain access to devices using this latter type of security method.
 
-When a traveller provides their password, BSOs must write the password on a piece of paper apart from their notes. If there is no evidence found, the BSO should give the paper with the password back to the traveller and advise the traveller to change their password immediately. If there is evidence found, the BSO should notify the traveller that the password will be kept in accordance with privacy legislation and record the password in their notes (Policy, PDF p 108).
+When a traveller provides their password, BSOs must write the password on a piece of paper apart from their notes. If there is no evidence found, the paper with the password is given to the traveller, and the traveller is told to change their password immediately. If there is evidence found, the password is recorded in the BSO's notes (Policy, PDF p 108).
 
 #### Other means of accessing devices
 
-During an examination of a digital device by a BSO at a port of entry, "assistance to gain access to the device shall not be obtained from any source outside the CBSA" (Policy, PDF p 116). This suggests that CBSA may have its own tools to access digital devices, either through a local Digital Forensics Officer or using specialized hardware and software after a device has been seized or detained. This may be discussed in a large redacted portion below this section.
+CBSA has Digital Forensic Units who can provide assistance unlocking devices or conducting searches. A notetaking guide states (PDF p 131):
 
-### Network access and cloud content
+>There are heightened sensitivities around the use of facilitative technology. It is important that the CBSA is transparent about the use of this technology and accounts for any support given to aid in the examination of digital devices.
 
-Before searching an electronic device, BSOs are instructed to disable network connectivity to that device. The Policy notes that "Airplane Mode" may not disable all connectivity, and requires disabling wifi and any tethering. Travellers can be asked for assistance in disabling network access, but are not allowed to do it themselves (Policy, PDF p 109). The ATIP response included several pages on how to enable Airplane Mode on iOS and Android devices (PDF p 120-129).
+Despite this commitment to transparency, the specific technologies used by CBSA are not detailed in the ATIP documents and may have been redacted or withheld. 
 
-One major development in CBSA policy is a coherent approach to handling cloud-based content. The Policy explicitly states that CBSA "must only access data that is stored on a traveller's digital device and must not access **any data** stored remotely" (emphasis in original) (Policy, PDF p 109). This policy was in place at least as early as November 2019 (PDF p 1).
+During an examination of a digital device by a BSO at a port of entry, "assistance to gain access to the device shall not be obtained from any source outside the CBSA" (Policy, PDF p 116). 
+
+### Network access
+
+Before searching a device, BSOs must disable network connectivity to that device to prevent remote wiping of the device (PDF p 120) and to ensure the BSO does not obtain anything from the internet that was not already on the device (PDF p 130). 
+
+The Policy notes that "Airplane Mode" may not disable all connectivity, and requires disabling wifi and any tethering. The ATIP response included several pages on how to enable Airplane Mode on iOS and Android devices (PDF p 120-129). 
+
+Travellers can provide directions to disable network access, but are not allowed to do it themselves (Policy, PDF p 109). 
+
+### Cloud content
+
+One major development in CBSA policy is a coherent approach to handling cloud-based content. The states that CBSA "must only access data that is stored on a traveller's digital device and must not access **any data** stored remotely" (emphasis in original) (Policy, PDF p 109). Disabling network access ensures that a search does not access cloud data (PDF p 130).
+
+This policy was in place at least as early as November 2019 (PDF p 1).
 
 ### Search standards
 
@@ -93,7 +118,9 @@ This Operational Bulletin and change to policy was presumably made in response t
 
 > \[111]      We are satisfied that s 99(1)(a) of the *Customs Act* violates s 8 of the *[Charter](https://www.canlii.org/en/ca/laws/stat/schedule-b-to-the-canada-act-1982-uk-1982-c-11/latest/schedule-b-to-the-canada-act-1982-uk-1982-c-11.html)* to the extent that it authorizes unlimited searches of the contents of personal electronic devices (such as cell phones or lap top computers). The provision is not saved by s 1 as a reasonable and demonstrably justified limit. Accordingly, we declare that the definition of “goods” in s 2 of *Customs Act* is of no force or effect insofar as the definition includes the contents of personal electronic devices for the purposes of s 99(1)(a).
 
-It is not explicitly stated in the Policy or the Operational Bulletin, but it is reasonable to assume that the detailed note-taking requirements and approval by a supervisor are intended to demonstrate and document a reasonable grounds to suspect before BSOs can conduct a search. 
+It is not explicitly stated in the Policy or the Operational Bulletin, but it is reasonable to assume that the detailed note-taking requirements and approval by a supervisor are intended to demonstrate and document a reasonable grounds to suspect before a search. 
+
+The notetaking requirements are further detailed by a guide titled "Digital Device Examinations - Notetaking Requirement: Rationale" (PDF p 130). This guide 
 
 #### Alberta: Reasonable suspicion under *IRPA* (*R v Al Askari*)
 
@@ -204,9 +231,9 @@ CBSA policy on when and how information collected from travellers' electronic de
 
 ## Search statistics
 
-CBSA provided statistics on the number of searches both before and after implementing OBO-2022-027 in April 2022 (PDF pp 157 and 161). 
+CBSA provided statistics on the number of searches both before and after implementing OBO-2022-027 in April 2022 (PDF pp 157 and 161). They included what they call a "resultant search rate", or "an examination where a customs- or immigration- related contravention or offence has been uncovered" under the *Customs Act* or *IRPA* (PDF p 161).
 
-Before the more rigorous standards were adopted in 2022, CBSA at ports in Alberta had a non-resultant search rate of 76.9% and Ontario 78.1%, meaning that for over 3/4 of the travellers whose electronic devices were searched, CBSA did not find violations of the *Customs Act* or *IRPA*:
+Using these statistics, we calculated the non-resultant search rate — the percentage of people subjected to a search by CBSA that did not find a violation of law. Before the more rigorous standards were adopted in 2022, CBSA at ports in Alberta had a non-resultant search rate of 76.9% and Ontario 78.1%, meaning that for over 3/4 of the travellers whose electronic devices were searched, CBSA did not find violations of the *Customs Act* or *IRPA*:
 
 **February 1, 2020-April 28, 2022**
 
@@ -217,7 +244,7 @@ Before the more rigorous standards were adopted in 2022, CBSA at ports in Albert
 | All Other           | 19,489,439           | 2,717              | 0.014%      | 800                | 29.4%                 | 70.6%                     |
 | **National Totals** | **50,058,903**       | **5,369**          | **0.011%**  | **1,385**          | **25.8%**             | **74.2%**                 |
 
-After the new standards came into effect, the resultant search rate was still under 50%, but was improved, suggesting that CBSA took greater care in targeting  travellers for searches because of the increased standards:
+After the new standards came into effect, the resultant search rate was still under 50%, but was improved, suggesting that CBSA took greater care in targeting  travellers for searches because of the increased standards.
 
 **April 29, 2022-April 30, 2024**
 
@@ -229,7 +256,7 @@ After the new standards came into effect, the resultant search rate was still un
 | **National Totals** | **162,149,517**      | **1,897**          | 0.0012%     | **829**            | **43.7%**             | **56.3%**                 |
 
 
-**Annual totals**
+**National totals**
 
 | Time Period | Number of Travellers | Number of Searches | Search Rate | Resultant Searches | Resultant Search Rate | Non-Resultant Search Rate |
 | ----------- | -------------------- | ------------------ | ----------- | ------------------ | --------------------- | ------------------------- |
@@ -242,7 +269,7 @@ After the new standards came into effect, the resultant search rate was still un
 
 ## Original Request
 
-The text of the original ATIP request is below:
+The original ATIP request was for:
 
 > All records from 2020 to the present relating to the search or seizure of electronic devices, including but not limited to smartphones, computers, tablets, and storage media. This includes, without limitation:
 >
@@ -253,9 +280,11 @@ The text of the original ATIP request is below:
 > * Policies governing the retention, return, or disposal of seized electronic devices.
 > * Policies governing the retention, use, deletion, or sharing—with other agencies or governments—of data copied or extracted from electronic devices.
 > * Policies and procedures relating to access to data stored on cloud services through applications or logged-in accounts on electronic devices during or after a search or seizure.
+
 >   **Tools and Technical Capabilities**
 > * Records describing or relating to software or hardware tools used to conduct searches or seizures of electronic devices, including tools used to bypass encryption, biometrics, passwords, passphrases, or other security measures.
 > * For each such tool, any manuals, technical documentation, training materials, promotional materials, contracts, purchase orders, or other records.
+
 >   **Privacy and Oversight**
 > * Privacy Impact Assessments or similar assessments, reviews, or reports relating to:
 >
